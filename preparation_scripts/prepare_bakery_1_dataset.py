@@ -4,7 +4,7 @@ import os
 import sqlite3
 from collections import defaultdict
 
-# Script to parse questions and relative sql queries from a txt file (see data/raw/bakery_1_michi.txt)
+# Parses natural language questions and corresponding SQL queries from a raw dataset text file (bakery_1_michi.txt)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 raw_file_path = os.path.join(BASE_DIR, "..", "data", "raw", "bakery_1_michi.txt")
