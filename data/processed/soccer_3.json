@@ -1,0 +1,327 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "db_id": "soccer_3",
+            "questions": [
+                "How many clubs are there?",
+                "Count the number of clubs."
+            ],
+            "sql": "SELECT count(*) FROM club",
+            "result": 9
+        },
+        {
+            "id": 1,
+            "db_id": "soccer_3",
+            "questions": [
+                "List the name of clubs in ascending alphabetical order.",
+                "What are the names of clubs, ordered alphabetically?"
+            ],
+            "sql": "SELECT Name FROM club ORDER BY Name ASC",
+            "result": [
+                "Arsenal",
+                "Aston Villa",
+                "Blackburn Rovers",
+                "Bolton Wanderers",
+                "Chelsea",
+                "Everton",
+                "Fulham",
+                "Hull City",
+                "Liverpool"
+            ]
+        },
+        {
+            "id": 2,
+            "db_id": "soccer_3",
+            "questions": [
+                "What are the managers and captains of clubs?",
+                "Return the managers and captains of all clubs."
+            ],
+            "sql": "SELECT Manager ,  Captain FROM club",
+            "result": [
+                [
+                    "Arsène Wenger",
+                    "Cesc Fàbregas"
+                ],
+                [
+                    "Martin O'Neill",
+                    "Martin Laursen"
+                ],
+                [
+                    "Sam Allardyce",
+                    "Ryan Nelsen"
+                ],
+                [
+                    "Gary Megson",
+                    "Kevin Davies"
+                ],
+                [
+                    "Guus Hiddink",
+                    "John Terry"
+                ],
+                [
+                    "David Moyes",
+                    "Phil Neville"
+                ],
+                [
+                    "Roy Hodgson",
+                    "Danny Murphy"
+                ],
+                [
+                    "Phil Brown",
+                    "Ian Ashbee"
+                ],
+                [
+                    "Rafael Benítez",
+                    "Steven Gerrard"
+                ]
+            ]
+        },
+        {
+            "id": 3,
+            "db_id": "soccer_3",
+            "questions": [
+                "List the name of clubs whose manufacturer is not \"Nike\"",
+                "What are the names of clubs who do not have the manufacturer Nike?"
+            ],
+            "sql": "SELECT Name FROM club WHERE Manufacturer != \"Nike\"",
+            "result": [
+                "Blackburn Rovers",
+                "Bolton Wanderers",
+                "Chelsea",
+                "Everton",
+                "Hull City",
+                "Liverpool"
+            ]
+        },
+        {
+            "id": 4,
+            "db_id": "soccer_3",
+            "questions": [
+                "What are the names of players in ascending order of wins count?",
+                "Return the names of players in order of count of wins, ascending."
+            ],
+            "sql": "SELECT Name FROM player ORDER BY Wins_count ASC",
+            "result": [
+                "Greg Norman",
+                "Jim Gallagher, Jr.",
+                "David Frost",
+                "Paul Azinger",
+                "Nick Price"
+            ]
+        },
+        {
+            "id": 5,
+            "db_id": "soccer_3",
+            "questions": [
+                "What is the name of the player with the highest earnings?",
+                "Return the name of the player who earns the most money."
+            ],
+            "sql": "SELECT Name FROM player ORDER BY Earnings DESC LIMIT 1",
+            "result": "Nick Price"
+        },
+        {
+            "id": 6,
+            "db_id": "soccer_3",
+            "questions": [
+                "What are the distinct countries of players with earnings higher than 1200000?",
+                "From which countries are players who make more than 1200000 from?"
+            ],
+            "sql": "SELECT DISTINCT Country FROM player WHERE Earnings  >  1200000",
+            "result": [
+                "Zimbabwe",
+                "United States",
+                "Australia"
+            ]
+        },
+        {
+            "id": 7,
+            "db_id": "soccer_3",
+            "questions": [
+                "What is the country of the player with the highest earnings among players that have more than 2 win counts?",
+                "Of players who have more than 2 wins, what is the country of the player who makes the most?"
+            ],
+            "sql": "SELECT Country FROM player WHERE Wins_count  >  2 ORDER BY Earnings DESC LIMIT 1",
+            "result": "Zimbabwe"
+        },
+        {
+            "id": 8,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show names of players and names of clubs they are in.",
+                "What are the names of players and the corresponding clubs that they are in?"
+            ],
+            "sql": "SELECT T2.Name ,  T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID",
+            "result": [
+                [
+                    "Nick Price",
+                    "Arsenal"
+                ],
+                [
+                    "Paul Azinger",
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Greg Norman",
+                    "Chelsea"
+                ],
+                [
+                    "Jim Gallagher, Jr.",
+                    "Everton"
+                ],
+                [
+                    "David Frost",
+                    "Fulham"
+                ]
+            ]
+        },
+        {
+            "id": 9,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show names of clubs that have players with more than 2 win counts.",
+                "What are the names of clubs that have players who have won more than twice?"
+            ],
+            "sql": "SELECT T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T2.Wins_count  >  2",
+            "result": [
+                "Arsenal",
+                "Blackburn Rovers"
+            ]
+        },
+        {
+            "id": 10,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show names of players from the club with manager \"Sam Allardyce\".",
+                "What are the names of players from the club managed by Sam Allardyce?"
+            ],
+            "sql": "SELECT T2.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T1.Manager  =  \"Sam Allardyce\"",
+            "result": "Paul Azinger"
+        },
+        {
+            "id": 11,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show names of clubs in descending order of average earnings of players belonging.",
+                "What are the names of clubs, ordered descending by the average earnings of players within each?"
+            ],
+            "sql": "SELECT T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID GROUP BY T1.Club_ID ORDER BY avg(T2.Earnings) DESC",
+            "result": [
+                "Arsenal",
+                "Blackburn Rovers",
+                "Chelsea",
+                "Everton",
+                "Fulham"
+            ]
+        },
+        {
+            "id": 12,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show different manufacturers and the number of clubs they are associated with.",
+                "How many clubs use each manufacturer?"
+            ],
+            "sql": "SELECT Manufacturer ,  COUNT(*) FROM club GROUP BY Manufacturer",
+            "result": [
+                [
+                    "Nike",
+                    3
+                ],
+                [
+                    "Reebok",
+                    1
+                ],
+                [
+                    "Umbro",
+                    3
+                ],
+                [
+                    "adidas",
+                    2
+                ]
+            ]
+        },
+        {
+            "id": 13,
+            "db_id": "soccer_3",
+            "questions": [
+                "Please show the most common manufacturer of clubs.",
+                "Which manufacturer is most common among clubs?"
+            ],
+            "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer ORDER BY COUNT(*) DESC LIMIT 1",
+            "result": "Umbro"
+        },
+        {
+            "id": 14,
+            "db_id": "soccer_3",
+            "questions": [
+                "List the manufacturers that are associated with more than one club.",
+                "Which manufacturers work for more than 1 club?"
+            ],
+            "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer HAVING COUNT(*)  >  1",
+            "result": [
+                "Nike",
+                "Umbro",
+                "adidas"
+            ]
+        },
+        {
+            "id": 15,
+            "db_id": "soccer_3",
+            "questions": [
+                "List the country that have more than one player.",
+                "Which countries have produced more than one player?"
+            ],
+            "sql": "SELECT Country FROM player GROUP BY Country HAVING COUNT(*)  >  1",
+            "result": "United States"
+        },
+        {
+            "id": 16,
+            "db_id": "soccer_3",
+            "questions": [
+                "List the name of clubs that do not have players.",
+                "What are the names of clubs that do not have any players?"
+            ],
+            "sql": "SELECT Name FROM club WHERE Club_ID NOT IN (SELECT Club_ID FROM player)",
+            "result": [
+                "Aston Villa",
+                "Bolton Wanderers",
+                "Hull City",
+                "Liverpool"
+            ]
+        },
+        {
+            "id": 17,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show the country of players with earnings more than 1400000 and players with earnings less than 1100000.",
+                "Which country has produced both players with earnings over 1400000 and players with earnings below 1100000?"
+            ],
+            "sql": "SELECT Country FROM player WHERE Earnings  >  1400000 INTERSECT SELECT Country FROM player WHERE Earnings  <  1100000",
+            "result": "United States"
+        },
+        {
+            "id": 18,
+            "db_id": "soccer_3",
+            "questions": [
+                "What is the number of distinct countries of all players?",
+                "How many different countries are players from?"
+            ],
+            "sql": "SELECT COUNT (DISTINCT Country) FROM player",
+            "result": 4
+        },
+        {
+            "id": 19,
+            "db_id": "soccer_3",
+            "questions": [
+                "Show the earnings of players from country \"Australia\" or \"Zimbabwe\".",
+                "What are the earnings of players from either of the countries of Australia or Zimbabwe?"
+            ],
+            "sql": "SELECT Earnings FROM player WHERE Country  =  \"Australia\" OR Country  =  \"Zimbabwe\"",
+            "result": [
+                1478557.0,
+                1359653.0
+            ]
+        }
+    ]
+}

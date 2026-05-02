@@ -1,0 +1,2091 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "db_id": "bakery_1",
+            "question": "Give me the ids of Cakes whose price is at least three times as much as the average price of Tart?",
+            "sql": "Select id From goods where food = \"Cake\" and price >= 3 * (select avg(price) from goods where food = \"Tart\")",
+            "result": [
+                "20-CA-7.5",
+                "24-8x10",
+                "25-STR-9",
+                "26-8x10",
+                "46-11"
+            ]
+        },
+        {
+            "id": 1,
+            "db_id": "bakery_1",
+            "question": "What is the three most popular goods in this bakery?",
+            "sql": "Select item From items Group by item Order by count (*) DESC LIMIT 3",
+            "result": [
+                "90-APP-11",
+                "90-APR-PF",
+                "90-BLK-PF"
+            ]
+        },
+        {
+            "id": 2,
+            "db_id": "bakery_1",
+            "question": "What are the distinct ids of all goods that are cheaper than some goods of type Tart?",
+            "sql": "Select distinct T1.id From goods as T1, goods as T2 where T1.price < T2.price and T2.food = \"Tart\"",
+            "result": [
+                "45-CH",
+                "45-CO",
+                "45-VA",
+                "50-ALM",
+                "50-APP",
+                "50-APR",
+                "50-CH",
+                "50-CHS",
+                "51-APP",
+                "51-APR",
+                "51-ATW",
+                "51-BC",
+                "51-BLU",
+                "70-GA",
+                "70-GON",
+                "70-LEM",
+                "70-M-CH-DZ",
+                "70-M-VA-SM-DZ",
+                "70-MAR",
+                "70-R",
+                "70-TU",
+                "70-W",
+                "90-APP-11",
+                "90-APR-PF",
+                "90-BER-11",
+                "90-BLK-PF",
+                "90-BLU-11",
+                "90-CHR-11",
+                "90-LEM-11"
+            ]
+        },
+        {
+            "id": 3,
+            "db_id": "bakery_1",
+            "question": "On which day did the bakery sell more than 100 dollars in total.",
+            "sql": "Select T3.date From goods as T1 JOIN items as T2 JOIN receipts as T3 ON T1.id = T2.item and T2.receipt = T3.ReceiptNumber Group by T3.date having sum(T1.price) > 100",
+            "result": [
+                "10-Oct-2007",
+                "12-Oct-2007",
+                "16-Oct-2007",
+                "19-Oct-2007",
+                "4-Oct-2007",
+                "7-Oct-2007",
+                "9-Oct-2007"
+            ]
+        },
+        {
+            "id": 4,
+            "db_id": "soccer_3",
+            "question": "What is the country of the player with the highest earnings among players that have more than 2 win counts?",
+            "sql": "SELECT Country FROM player WHERE Wins_count  >  2 ORDER BY Earnings DESC LIMIT 1",
+            "result": "Zimbabwe"
+        },
+        {
+            "id": 5,
+            "db_id": "soccer_3",
+            "question": "What are the managers and captains of clubs?",
+            "sql": "SELECT Manager ,  Captain FROM club",
+            "result": [
+                [
+                    "Arsène Wenger",
+                    "Cesc Fàbregas"
+                ],
+                [
+                    "Martin O'Neill",
+                    "Martin Laursen"
+                ],
+                [
+                    "Sam Allardyce",
+                    "Ryan Nelsen"
+                ],
+                [
+                    "Gary Megson",
+                    "Kevin Davies"
+                ],
+                [
+                    "Guus Hiddink",
+                    "John Terry"
+                ],
+                [
+                    "David Moyes",
+                    "Phil Neville"
+                ],
+                [
+                    "Roy Hodgson",
+                    "Danny Murphy"
+                ],
+                [
+                    "Phil Brown",
+                    "Ian Ashbee"
+                ],
+                [
+                    "Rafael Benítez",
+                    "Steven Gerrard"
+                ]
+            ]
+        },
+        {
+            "id": 6,
+            "db_id": "bakery_1",
+            "question": "List distinct receipt numbers for which someone bought a good that costs more than 13 dollars.",
+            "sql": "Select distinct T1.ReceiptNumber from receipts as T1 JOIN items as T2 JOIN goods as T3 ON T1.ReceiptNumber = T2.receipt and T2.item = T3.id Where T3.price > 13",
+            "result": [
+                51991,
+                83085,
+                13355,
+                52761,
+                58770,
+                55944,
+                16034,
+                64451,
+                77406,
+                99994,
+                64861,
+                33456,
+                26240,
+                37636,
+                12698,
+                26148,
+                85858,
+                67314,
+                11891,
+                45976,
+                53376,
+                96761,
+                68199,
+                49977,
+                96258,
+                12800,
+                70655,
+                19002,
+                72207,
+                38849,
+                32701,
+                68753,
+                96531,
+                53922,
+                64477,
+                77032,
+                34910,
+                45062,
+                40305,
+                33060,
+                12396,
+                70162,
+                98806,
+                61008,
+                96402,
+                35904,
+                34579,
+                17729,
+                61948,
+                95514,
+                24829,
+                44590,
+                65165,
+                16532
+            ]
+        },
+        {
+            "id": 7,
+            "db_id": "bakery_1",
+            "question": "What is the last name of the customers who shopped at the bakery more than 10 times?",
+            "sql": "Select T2.LastName From receipts as T1 JOIN customers as T2 ON T1.CustomerId = T2.id Group by T2.id having count(*) > 10",
+            "result": [
+                "LOGAN",
+                "SLINGLAND",
+                "TOUSSAND",
+                "HELING",
+                "SOPKO",
+                "CALLENDAR",
+                "CRUZEN",
+                "ZEME"
+            ]
+        },
+        {
+            "id": 8,
+            "db_id": "soccer_3",
+            "question": "Show the earnings of players from country \"Australia\" or \"Zimbabwe\".",
+            "sql": "SELECT Earnings FROM player WHERE Country  =  \"Australia\" OR Country  =  \"Zimbabwe\"",
+            "result": [
+                1478557.0,
+                1359653.0
+            ]
+        },
+        {
+            "id": 9,
+            "db_id": "bakery_1",
+            "question": "Find all the receipt numbers in which customer id 5 purchased Croissant.",
+            "sql": "Select ReceiptNumber From receipts Where CustomerId = 5 INTERSECT Select T1.receipt From items as T1 JOIN goods as T2 ON T1.item = T2.id Where T2.food = \"Croissant\"",
+            "result": [
+                28117,
+                89182,
+                91192
+            ]
+        },
+        {
+            "id": 10,
+            "db_id": "bakery_1",
+            "question": "Find all receipts which either has the earliest date or has a good with price above 10.",
+            "sql": "Select T1.Receipt From items as T1 JOIN goods as T2 ON T1.item = T2.id where T2.price > 10 UNION Select ReceiptNumber From receipts where date = (Select date From receipts Order by date LIMIT 1)",
+            "result": [
+                11891,
+                12396,
+                12698,
+                12800,
+                13355,
+                16034,
+                16532,
+                17729,
+                19002,
+                24829,
+                25906,
+                26148,
+                26240,
+                28117,
+                29908,
+                32701,
+                33060,
+                33456,
+                34579,
+                34910,
+                35904,
+                37636,
+                38849,
+                40305,
+                44590,
+                44798,
+                45062,
+                45976,
+                49977,
+                51991,
+                52761,
+                53240,
+                53376,
+                53922,
+                55944,
+                58770,
+                61008,
+                61948,
+                64451,
+                64477,
+                64861,
+                65165,
+                67314,
+                68199,
+                68753,
+                70162,
+                70655,
+                72207,
+                73437,
+                76663,
+                77032,
+                77406,
+                83085,
+                85492,
+                85858,
+                95514,
+                96258,
+                96402,
+                96531,
+                96761,
+                98806,
+                99994
+            ]
+        },
+        {
+            "id": 11,
+            "db_id": "bakery_1",
+            "question": "What are the ids of goods whose price is above twice the average price of all goods?",
+            "sql": "Select id From goods where price > 2 * (select avg(price) from goods)",
+            "result": [
+                "20-BC-C-10",
+                "20-BC-L-10",
+                "20-CA-7.5",
+                "24-8x10",
+                "25-STR-9",
+                "26-8x10",
+                "46-11"
+            ]
+        },
+        {
+            "id": 12,
+            "db_id": "soccer_3",
+            "question": "List the name of clubs that do not have players.",
+            "sql": "SELECT Name FROM club WHERE Club_ID NOT IN (SELECT Club_ID FROM player)",
+            "result": [
+                "Aston Villa",
+                "Bolton Wanderers",
+                "Hull City",
+                "Liverpool"
+            ]
+        },
+        {
+            "id": 13,
+            "db_id": "soccer_3",
+            "question": "List the name of clubs in ascending alphabetical order.",
+            "sql": "SELECT Name FROM club ORDER BY Name ASC",
+            "result": [
+                "Arsenal",
+                "Aston Villa",
+                "Blackburn Rovers",
+                "Bolton Wanderers",
+                "Chelsea",
+                "Everton",
+                "Fulham",
+                "Hull City",
+                "Liverpool"
+            ]
+        },
+        {
+            "id": 14,
+            "db_id": "bakery_1",
+            "question": "Return the cheapest price for goods with cheese flavor.",
+            "sql": "Select min(price) From goods where flavor = \"Cheese\"",
+            "result": [
+                1.75
+            ]
+        },
+        {
+            "id": 15,
+            "db_id": "bakery_1",
+            "question": "Find the ids of customers whose average spending for each good is above 5.",
+            "sql": "Select T3.CustomerId From goods as T1 JOIN items as T2 JOIN receipts as T3 ON T1.id = T2.item and T2.receipt = T3.ReceiptNumber Group by T3.CustomerId having avg(T1.price) > 5",
+            "result": [
+                4,
+                10
+            ]
+        },
+        {
+            "id": 16,
+            "db_id": "bakery_1",
+            "question": "Return the ordered list of all good ids.",
+            "sql": "Select distinct id From goods Order by id",
+            "result": [
+                "20-BC-C-10",
+                "20-BC-L-10",
+                "20-CA-7.5",
+                "24-8x10",
+                "25-STR-9",
+                "26-8x10",
+                "45-CH",
+                "45-CO",
+                "45-VA",
+                "46-11",
+                "50-ALM",
+                "50-APP",
+                "50-APR",
+                "50-CH",
+                "50-CHS",
+                "51-APP",
+                "51-APR",
+                "51-ATW",
+                "51-BC",
+                "51-BLU",
+                "70-GA",
+                "70-GON",
+                "70-LEM",
+                "70-M-CH-DZ",
+                "70-M-VA-SM-DZ",
+                "70-MAR",
+                "70-R",
+                "70-TU",
+                "70-W",
+                "90-ALM-I",
+                "90-APIE-10",
+                "90-APP-11",
+                "90-APR-PF",
+                "90-BER-11",
+                "90-BLK-PF",
+                "90-BLU-11",
+                "90-CH-PF",
+                "90-CHR-11",
+                "90-LEM-11",
+                "90-PEC-11"
+            ]
+        },
+        {
+            "id": 17,
+            "db_id": "bakery_1",
+            "question": "What is the item that was bought the least number of times?",
+            "sql": "Select item From items Group by item Order by count(*) LIMIT 1",
+            "result": [
+                "50-CH"
+            ]
+        },
+        {
+            "id": 18,
+            "db_id": "bakery_1",
+            "question": "Find all receipts in which either apple flavor pie was bought or customer id 12 shopped.",
+            "sql": "Select T1.receipt From items as T1 JOIN goods as T2 ON T1.item = T2.id where T2.flavor = \"Apple\" and T2.food = \"Pie\" UNION Select ReceiptNumber From receipts where CustomerId = 12",
+            "result": [
+                11548,
+                17685,
+                21545,
+                29226,
+                39109,
+                39605,
+                39685,
+                44798,
+                47353,
+                48647,
+                50660,
+                51991,
+                53376,
+                56365,
+                66227,
+                70796,
+                85492,
+                87454,
+                91937,
+                98806
+            ]
+        },
+        {
+            "id": 19,
+            "db_id": "bakery_1",
+            "question": "What is the average price for each food type?",
+            "sql": "Select avg(price), food From goods group by food",
+            "result": [
+                [
+                    1.95,
+                    "Bear Claw"
+                ],
+                [
+                    13.027142857142858,
+                    "Cake"
+                ],
+                [
+                    1.0671428571428572,
+                    "Cookie"
+                ],
+                [
+                    1.5699999999999998,
+                    "Croissant"
+                ],
+                [
+                    1.15,
+                    "Danish"
+                ],
+                [
+                    3.3333333333333335,
+                    "Eclair"
+                ],
+                [
+                    1.2,
+                    "Meringue"
+                ],
+                [
+                    5.25,
+                    "Pie"
+                ],
+                [
+                    3.4,
+                    "Tart"
+                ],
+                [
+                    1.15,
+                    "Twist"
+                ]
+            ]
+        },
+        {
+            "id": 20,
+            "db_id": "soccer_3",
+            "question": "Show names of clubs that have players with more than 2 win counts.",
+            "sql": "SELECT T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T2.Wins_count  >  2",
+            "result": [
+                "Arsenal",
+                "Blackburn Rovers"
+            ]
+        },
+        {
+            "id": 21,
+            "db_id": "soccer_3",
+            "question": "Show different manufacturers and the number of clubs they are associated with.",
+            "sql": "SELECT Manufacturer ,  COUNT(*) FROM club GROUP BY Manufacturer",
+            "result": [
+                [
+                    "Nike",
+                    3
+                ],
+                [
+                    "Reebok",
+                    1
+                ],
+                [
+                    "Umbro",
+                    3
+                ],
+                [
+                    "adidas",
+                    2
+                ]
+            ]
+        },
+        {
+            "id": 22,
+            "db_id": "bakery_1",
+            "question": "For each type of food, tell me how many customers have ever bought it.",
+            "sql": "Select T1.food, count(distinct T3.CustomerId) From goods as T1 JOIN items as T2 JOIN receipts as T3 ON T1.Id = T2.Item and T2.Receipt = T3.ReceiptNumber Group by T1.food",
+            "result": [
+                [
+                    "Bear Claw",
+                    15
+                ],
+                [
+                    "Cake",
+                    20
+                ],
+                [
+                    "Cookie",
+                    20
+                ],
+                [
+                    "Croissant",
+                    17
+                ],
+                [
+                    "Danish",
+                    17
+                ],
+                [
+                    "Eclair",
+                    16
+                ],
+                [
+                    "Meringue",
+                    15
+                ],
+                [
+                    "Pie",
+                    9
+                ],
+                [
+                    "Tart",
+                    20
+                ],
+                [
+                    "Twist",
+                    11
+                ]
+            ]
+        },
+        {
+            "id": 23,
+            "db_id": "bakery_1",
+            "question": "Find the ids of goods that have apple flavor.",
+            "sql": "Select id From goods Where flavor = \"Apple\"",
+            "result": [
+                "90-APIE-10",
+                "90-APP-11",
+                "50-APP",
+                "51-APP"
+            ]
+        },
+        {
+            "id": 24,
+            "db_id": "soccer_3",
+            "question": "What is the name of the player with the highest earnings?",
+            "sql": "SELECT Name FROM player ORDER BY Earnings DESC LIMIT 1",
+            "result": "Nick Price"
+        },
+        {
+            "id": 25,
+            "db_id": "bakery_1",
+            "question": "List all the flavors of Croissant available in this bakery.",
+            "sql": "Select flavor From goods where food = \"Croissant\"",
+            "result": [
+                "Almond",
+                "Apple",
+                "Apricot",
+                "Cheese",
+                "Chocolate"
+            ]
+        },
+        {
+            "id": 26,
+            "db_id": "bakery_1",
+            "question": "Find all the items that have chocolate flavor but were not bought more than 10 times.",
+            "sql": "Select distinct T1.item From items as T1 JOIN goods as T2 ON T1.item = T2.id Where T2.flavor = \"Chocolate\" EXCEPT Select distinct item From items Group by item having count(*) > 10",
+            "result": [
+                "50-CH"
+            ]
+        },
+        {
+            "id": 27,
+            "db_id": "bakery_1",
+            "question": "What is the cheapest cookie and its flavor?",
+            "sql": "select id, flavor from goods where food = \"Cookie\" order by price limit 1",
+            "result": [
+                [
+                    "70-LEM",
+                    "Lemon"
+                ]
+            ]
+        },
+        {
+            "id": 28,
+            "db_id": "bakery_1",
+            "question": "Find all receipts which has the latest date. Also tell me that date.",
+            "sql": "Select ReceiptNumber, date From receipts where date = (Select date From receipts Order by date Desc LIMIT 1)",
+            "result": [
+                [
+                    11923,
+                    "9-Oct-2007"
+                ],
+                [
+                    28117,
+                    "9-Oct-2007"
+                ],
+                [
+                    48647,
+                    "9-Oct-2007"
+                ],
+                [
+                    56724,
+                    "9-Oct-2007"
+                ],
+                [
+                    61008,
+                    "9-Oct-2007"
+                ],
+                [
+                    65091,
+                    "9-Oct-2007"
+                ],
+                [
+                    70162,
+                    "9-Oct-2007"
+                ],
+                [
+                    77406,
+                    "9-Oct-2007"
+                ],
+                [
+                    89588,
+                    "9-Oct-2007"
+                ],
+                [
+                    95514,
+                    "9-Oct-2007"
+                ]
+            ]
+        },
+        {
+            "id": 29,
+            "db_id": "bakery_1",
+            "question": "Return the lowest and highest prices of goods grouped and ordered by food type.",
+            "sql": "Select min(price), max(price), food From goods group by food order by food",
+            "result": [
+                [
+                    1.95,
+                    1.95,
+                    "Bear Claw"
+                ],
+                [
+                    8.95,
+                    15.95,
+                    "Cake"
+                ],
+                [
+                    0.79,
+                    1.25,
+                    "Cookie"
+                ],
+                [
+                    1.45,
+                    1.75,
+                    "Croissant"
+                ],
+                [
+                    1.15,
+                    1.15,
+                    "Danish"
+                ],
+                [
+                    3.25,
+                    3.5,
+                    "Eclair"
+                ],
+                [
+                    1.15,
+                    1.25,
+                    "Meringue"
+                ],
+                [
+                    5.25,
+                    5.25,
+                    "Pie"
+                ],
+                [
+                    3.25,
+                    3.75,
+                    "Tart"
+                ],
+                [
+                    1.15,
+                    1.15,
+                    "Twist"
+                ]
+            ]
+        },
+        {
+            "id": 30,
+            "db_id": "bakery_1",
+            "question": "What are the ids of Cookies whose price is lower than any Croissant?",
+            "sql": "Select id From goods where food = \"Cookie\" and price <  (select min(price) from goods where food = 'Croissant')",
+            "result": [
+                "70-GA",
+                "70-GON",
+                "70-R",
+                "70-LEM",
+                "70-MAR",
+                "70-TU",
+                "70-W"
+            ]
+        },
+        {
+            "id": 31,
+            "db_id": "bakery_1",
+            "question": "List the id, flavor and type of food of goods ordered by price.",
+            "sql": "Select id, flavor, food From goods order by price",
+            "result": [
+                [
+                    "70-LEM",
+                    "Lemon",
+                    "Cookie"
+                ],
+                [
+                    "70-W",
+                    "Walnut",
+                    "Cookie"
+                ],
+                [
+                    "70-R",
+                    "Raspberry",
+                    "Cookie"
+                ],
+                [
+                    "70-GA",
+                    "Ganache",
+                    "Cookie"
+                ],
+                [
+                    "70-GON",
+                    "Gongolais",
+                    "Cookie"
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    "Vanilla",
+                    "Meringue"
+                ],
+                [
+                    "51-APR",
+                    "Apricot",
+                    "Danish"
+                ],
+                [
+                    "51-APP",
+                    "Apple",
+                    "Danish"
+                ],
+                [
+                    "51-ATW",
+                    "Almond",
+                    "Twist"
+                ],
+                [
+                    "51-BLU",
+                    "Blueberry",
+                    "Danish"
+                ],
+                [
+                    "70-M-CH-DZ",
+                    "Chocolate",
+                    "Meringue"
+                ],
+                [
+                    "70-MAR",
+                    "Marzipan",
+                    "Cookie"
+                ],
+                [
+                    "70-TU",
+                    "Tuile",
+                    "Cookie"
+                ],
+                [
+                    "50-ALM",
+                    "Almond",
+                    "Croissant"
+                ],
+                [
+                    "50-APP",
+                    "Apple",
+                    "Croissant"
+                ],
+                [
+                    "50-APR",
+                    "Apricot",
+                    "Croissant"
+                ],
+                [
+                    "50-CHS",
+                    "Cheese",
+                    "Croissant"
+                ],
+                [
+                    "50-CH",
+                    "Chocolate",
+                    "Croissant"
+                ],
+                [
+                    "51-BC",
+                    "Almond",
+                    "Bear Claw"
+                ],
+                [
+                    "45-CH",
+                    "Chocolate",
+                    "Eclair"
+                ],
+                [
+                    "45-VA",
+                    "Vanilla",
+                    "Eclair"
+                ],
+                [
+                    "90-APP-11",
+                    "Apple",
+                    "Tart"
+                ],
+                [
+                    "90-APR-PF",
+                    "Apricot",
+                    "Tart"
+                ],
+                [
+                    "90-BER-11",
+                    "Berry",
+                    "Tart"
+                ],
+                [
+                    "90-BLK-PF",
+                    "Blackberry",
+                    "Tart"
+                ],
+                [
+                    "90-BLU-11",
+                    "Blueberry",
+                    "Tart"
+                ],
+                [
+                    "90-CHR-11",
+                    "Cherry",
+                    "Tart"
+                ],
+                [
+                    "90-LEM-11",
+                    "Lemon",
+                    "Tart"
+                ],
+                [
+                    "45-CO",
+                    "Coffee",
+                    "Eclair"
+                ],
+                [
+                    "90-ALM-I",
+                    "Almond",
+                    "Tart"
+                ],
+                [
+                    "90-CH-PF",
+                    "Chocolate",
+                    "Tart"
+                ],
+                [
+                    "90-PEC-11",
+                    "Pecan",
+                    "Tart"
+                ],
+                [
+                    "90-APIE-10",
+                    "Apple",
+                    "Pie"
+                ],
+                [
+                    "20-BC-C-10",
+                    "Chocolate",
+                    "Cake"
+                ],
+                [
+                    "20-BC-L-10",
+                    "Lemon",
+                    "Cake"
+                ],
+                [
+                    "25-STR-9",
+                    "Strawberry",
+                    "Cake"
+                ],
+                [
+                    "46-11",
+                    "Napoleon",
+                    "Cake"
+                ],
+                [
+                    "20-CA-7.5",
+                    "Casino",
+                    "Cake"
+                ],
+                [
+                    "24-8x10",
+                    "Opera",
+                    "Cake"
+                ],
+                [
+                    "26-8x10",
+                    "Truffle",
+                    "Cake"
+                ]
+            ]
+        },
+        {
+            "id": 32,
+            "db_id": "soccer_3",
+            "question": "What is the number of distinct countries of all players?",
+            "sql": "SELECT COUNT (DISTINCT Country) FROM player",
+            "result": 4
+        },
+        {
+            "id": 33,
+            "db_id": "bakery_1",
+            "question": "Find the top three dates when the most goods were sold.",
+            "sql": "Select date From receipts Group by date Order by count(*) LIMIT 3",
+            "result": [
+                "1-Oct-2007",
+                "11-Oct-2007",
+                "26-Oct-2007"
+            ]
+        },
+        {
+            "id": 34,
+            "db_id": "bakery_1",
+            "question": "Find the first name and last name of a customer who visited on the earliest date.",
+            "sql": "Select T1.FirstName, T1.LastName From customers as T1 JOIN receipts as T2 ON T1.id = T2.CustomerId Order by T2.date LIMIT 1",
+            "result": [
+                [
+                    "JOSETTE",
+                    "SLINGLAND"
+                ]
+            ]
+        },
+        {
+            "id": 35,
+            "db_id": "bakery_1",
+            "question": "Give me the first name and last name of customers who have bought apple flavor Tart.",
+            "sql": "Select distinct T4.FirstName, T4.LastName from goods as T1 JOIN items as T2 JOIN receipts as T3 JOIN customers as T4 ON T1.id = T2.item and T2.receipt = T3.ReceiptNumber and T3.CustomerId = T4.id where T1.flavor = \"Apple\" and T1.food = \"Tart\"",
+            "result": [
+                [
+                    "RAYFORD",
+                    "SOPKO"
+                ],
+                [
+                    "ARIANE",
+                    "CRUZEN"
+                ],
+                [
+                    "RUPERT",
+                    "HELING"
+                ],
+                [
+                    "TERRELL",
+                    "ARZT"
+                ],
+                [
+                    "ALMETA",
+                    "DOMKOWSKI"
+                ],
+                [
+                    "NATACHA",
+                    "STENZ"
+                ],
+                [
+                    "JULIET",
+                    "LOGAN"
+                ],
+                [
+                    "CHARLENE",
+                    "MESDAQ"
+                ],
+                [
+                    "KIP",
+                    "ARNN"
+                ],
+                [
+                    "SHARRON",
+                    "TOUSSAND"
+                ],
+                [
+                    "DAVID",
+                    "CALLENDAR"
+                ],
+                [
+                    "STEPHEN",
+                    "ZEME"
+                ],
+                [
+                    "CORETTA",
+                    "DUKELOW"
+                ],
+                [
+                    "JOSETTE",
+                    "SLINGLAND"
+                ],
+                [
+                    "OSVALDO",
+                    "DUNLOW"
+                ]
+            ]
+        },
+        {
+            "id": 36,
+            "db_id": "bakery_1",
+            "question": "What are the ids of Cookie and Cake that cost between 3 and 7 dollars.",
+            "sql": "Select id From goods where (food = \"Cookie\" or food = \"Cake\") and price between 3 and 7",
+            "result": []
+        },
+        {
+            "id": 37,
+            "db_id": "bakery_1",
+            "question": "What are the goods that have Apricot flavor and are cheaper than 5 dollars?",
+            "sql": "Select id From goods where flavor = \"Apricot\" and price < 5",
+            "result": [
+                "90-APR-PF",
+                "50-APR",
+                "51-APR"
+            ]
+        },
+        {
+            "id": 38,
+            "db_id": "bakery_1",
+            "question": "What is average price of goods whose flavor is blackberry or blueberry?",
+            "sql": "Select avg(price) From goods where flavor = \"Blackberry\" or flavor = \"Blueberry\"",
+            "result": [
+                2.5500000000000003
+            ]
+        },
+        {
+            "id": 39,
+            "db_id": "bakery_1",
+            "question": "Give me the distinct id and price for all goods whose price is below the average of all goods?",
+            "sql": "Select distinct id, price From goods where price < (Select avg(price) From goods)",
+            "result": [
+                [
+                    "45-CH",
+                    3.25
+                ],
+                [
+                    "45-CO",
+                    3.5
+                ],
+                [
+                    "45-VA",
+                    3.25
+                ],
+                [
+                    "50-ALM",
+                    1.45
+                ],
+                [
+                    "50-APP",
+                    1.45
+                ],
+                [
+                    "50-APR",
+                    1.45
+                ],
+                [
+                    "50-CH",
+                    1.75
+                ],
+                [
+                    "50-CHS",
+                    1.75
+                ],
+                [
+                    "51-APP",
+                    1.15
+                ],
+                [
+                    "51-APR",
+                    1.15
+                ],
+                [
+                    "51-ATW",
+                    1.15
+                ],
+                [
+                    "51-BC",
+                    1.95
+                ],
+                [
+                    "51-BLU",
+                    1.15
+                ],
+                [
+                    "70-GA",
+                    1.15
+                ],
+                [
+                    "70-GON",
+                    1.15
+                ],
+                [
+                    "70-LEM",
+                    0.79
+                ],
+                [
+                    "70-M-CH-DZ",
+                    1.25
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    1.15
+                ],
+                [
+                    "70-MAR",
+                    1.25
+                ],
+                [
+                    "70-R",
+                    1.09
+                ],
+                [
+                    "70-TU",
+                    1.25
+                ],
+                [
+                    "70-W",
+                    0.79
+                ],
+                [
+                    "90-ALM-I",
+                    3.75
+                ],
+                [
+                    "90-APP-11",
+                    3.25
+                ],
+                [
+                    "90-APR-PF",
+                    3.25
+                ],
+                [
+                    "90-BER-11",
+                    3.25
+                ],
+                [
+                    "90-BLK-PF",
+                    3.25
+                ],
+                [
+                    "90-BLU-11",
+                    3.25
+                ],
+                [
+                    "90-CH-PF",
+                    3.75
+                ],
+                [
+                    "90-CHR-11",
+                    3.25
+                ],
+                [
+                    "90-LEM-11",
+                    3.25
+                ],
+                [
+                    "90-PEC-11",
+                    3.75
+                ]
+            ]
+        },
+        {
+            "id": 40,
+            "db_id": "bakery_1",
+            "question": "Give me the list of all goods whose id has \"APP\".",
+            "sql": "Select id from goods Where id LIKE \"%APP%\"",
+            "result": [
+                "50-APP",
+                "51-APP",
+                "90-APP-11"
+            ]
+        },
+        {
+            "id": 41,
+            "db_id": "bakery_1",
+            "question": "How many types of Cake does this bakery sell?",
+            "sql": "Select count(*) From goods where food = \"Cake\"",
+            "result": [
+                7
+            ]
+        },
+        {
+            "id": 42,
+            "db_id": "bakery_1",
+            "question": "On which date did some customer buy a good that costs more than 15 dollars?",
+            "sql": "Select distinct T1.date from receipts as T1 JOIN items as T2 JOIN goods as T3 ON T1.ReceiptNumber = T2.receipt and T2.item = T3.id Where T3.price > 15",
+            "result": [
+                "17-Oct-2007",
+                "12-Oct-2007",
+                "19-Oct-2007",
+                "27-Oct-2007",
+                "22-Oct-2007",
+                "16-Oct-2007",
+                "10-Oct-2007",
+                "9-Oct-2007",
+                "21-Oct-2007",
+                "7-Oct-2007",
+                "20-Oct-2007",
+                "23-Oct-2007",
+                "31-Oct-2007",
+                "3-Oct-2007",
+                "14-Oct-2007",
+                "4-Oct-2007",
+                "18-Oct-2007",
+                "6-Oct-2007",
+                "15-Oct-2007",
+                "25-Oct-2007",
+                "8-Oct-2007"
+            ]
+        },
+        {
+            "id": 43,
+            "db_id": "bakery_1",
+            "question": "Find flavor of cakes that cost more than 10 dollars.",
+            "sql": "Select flavor From goods where food = \"Cake\" and price > 10",
+            "result": [
+                "Casino",
+                "Opera",
+                "Strawberry",
+                "Truffle",
+                "Napoleon"
+            ]
+        },
+        {
+            "id": 44,
+            "db_id": "soccer_3",
+            "question": "Show names of players and names of clubs they are in.",
+            "sql": "SELECT T2.Name ,  T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID",
+            "result": [
+                [
+                    "Nick Price",
+                    "Arsenal"
+                ],
+                [
+                    "Paul Azinger",
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Greg Norman",
+                    "Chelsea"
+                ],
+                [
+                    "Jim Gallagher, Jr.",
+                    "Everton"
+                ],
+                [
+                    "David Frost",
+                    "Fulham"
+                ]
+            ]
+        },
+        {
+            "id": 45,
+            "db_id": "soccer_3",
+            "question": "What are the names of players in ascending order of wins count?",
+            "sql": "SELECT Name FROM player ORDER BY Wins_count ASC",
+            "result": [
+                "Greg Norman",
+                "Jim Gallagher, Jr.",
+                "David Frost",
+                "Paul Azinger",
+                "Nick Price"
+            ]
+        },
+        {
+            "id": 46,
+            "db_id": "soccer_3",
+            "question": "Show names of players from the club with manager \"Sam Allardyce\".",
+            "sql": "SELECT T2.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T1.Manager  =  \"Sam Allardyce\"",
+            "result": "Paul Azinger"
+        },
+        {
+            "id": 47,
+            "db_id": "bakery_1",
+            "question": "Which customer shopped most often? How many times?",
+            "sql": "Select CustomerId, count(*) From receipts Group by CustomerId Order by count(*) LIMIT 1",
+            "result": [
+                [
+                    2,
+                    6
+                ]
+            ]
+        },
+        {
+            "id": 48,
+            "db_id": "soccer_3",
+            "question": "Show names of clubs in descending order of average earnings of players belonging.",
+            "sql": "SELECT T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID GROUP BY T1.Club_ID ORDER BY avg(T2.Earnings) DESC",
+            "result": [
+                "Arsenal",
+                "Blackburn Rovers",
+                "Chelsea",
+                "Everton",
+                "Fulham"
+            ]
+        },
+        {
+            "id": 49,
+            "db_id": "soccer_3",
+            "question": "Show the country of players with earnings more than 1400000 and players with earnings less than 1100000.",
+            "sql": "SELECT Country FROM player WHERE Earnings  >  1400000 INTERSECT SELECT Country FROM player WHERE Earnings  <  1100000",
+            "result": "United States"
+        },
+        {
+            "id": 50,
+            "db_id": "bakery_1",
+            "question": "Find the id of customers who shopped at the bakery at least 15 times.",
+            "sql": "Select CustomerId From receipts Group by CustomerId having count(*) >= 15",
+            "result": [
+                6,
+                7,
+                8,
+                14,
+                20
+            ]
+        },
+        {
+            "id": 51,
+            "db_id": "soccer_3",
+            "question": "Please show the most common manufacturer of clubs.",
+            "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer ORDER BY COUNT(*) DESC LIMIT 1",
+            "result": "Umbro"
+        },
+        {
+            "id": 52,
+            "db_id": "bakery_1",
+            "question": "List the last names of all customers in an alphabetical oder.",
+            "sql": "Select distinct LastName From customers Order by LastName",
+            "result": [
+                "ARNN",
+                "ARZT",
+                "CALLENDAR",
+                "CRUZEN",
+                "DOMKOWSKI",
+                "DUKELOW",
+                "DUNLOW",
+                "ENGLEY",
+                "ESPOSITA",
+                "HAFFERKAMP",
+                "HELING",
+                "LOGAN",
+                "MCMAHAN",
+                "MESDAQ",
+                "SLINGLAND",
+                "SOPKO",
+                "STADICK",
+                "STENZ",
+                "TOUSSAND",
+                "ZEME"
+            ]
+        },
+        {
+            "id": 53,
+            "db_id": "soccer_3",
+            "question": "How many clubs are there?",
+            "sql": "SELECT count(*) FROM club",
+            "result": 9
+        },
+        {
+            "id": 54,
+            "db_id": "bakery_1",
+            "question": "Find the ids of customers who have spent more than 150 dollars in total.",
+            "sql": "Select T3.CustomerId From goods as T1 JOIN items as T2 JOIN receipts as T3 ON T1.id = T2.item and T2.receipt = T3.ReceiptNumber Group by T3.CustomerId having sum(T1.price) > 150",
+            "result": [
+                1,
+                6,
+                7,
+                8
+            ]
+        },
+        {
+            "id": 55,
+            "db_id": "bakery_1",
+            "question": "How many goods are available for each food type?",
+            "sql": "Select count(*), food From goods group by food",
+            "result": [
+                [
+                    1,
+                    "Bear Claw"
+                ],
+                [
+                    7,
+                    "Cake"
+                ],
+                [
+                    7,
+                    "Cookie"
+                ],
+                [
+                    5,
+                    "Croissant"
+                ],
+                [
+                    3,
+                    "Danish"
+                ],
+                [
+                    3,
+                    "Eclair"
+                ],
+                [
+                    2,
+                    "Meringue"
+                ],
+                [
+                    1,
+                    "Pie"
+                ],
+                [
+                    10,
+                    "Tart"
+                ],
+                [
+                    1,
+                    "Twist"
+                ]
+            ]
+        },
+        {
+            "id": 56,
+            "db_id": "bakery_1",
+            "question": "Return a list of the id and flavor for Cakes ordered by flavor.",
+            "sql": "Select id, flavor From goods where food = \"Cake\" order by flavor",
+            "result": [
+                [
+                    "20-CA-7.5",
+                    "Casino"
+                ],
+                [
+                    "20-BC-C-10",
+                    "Chocolate"
+                ],
+                [
+                    "20-BC-L-10",
+                    "Lemon"
+                ],
+                [
+                    "46-11",
+                    "Napoleon"
+                ],
+                [
+                    "24-8x10",
+                    "Opera"
+                ],
+                [
+                    "25-STR-9",
+                    "Strawberry"
+                ],
+                [
+                    "26-8x10",
+                    "Truffle"
+                ]
+            ]
+        },
+        {
+            "id": 57,
+            "db_id": "bakery_1",
+            "question": "What is the receipt number and date of the receipt in which the most expensive item was bought?",
+            "sql": "Select T1.ReceiptNumber, T1.Date From receipts as T1 JOIN items as T2 JOIN goods as T3 ON T1.ReceiptNumber = T2.receipt and T2.item = T3.id Order by T3.price Desc LIMIT 1",
+            "result": [
+                [
+                    51991,
+                    "17-Oct-2007"
+                ]
+            ]
+        },
+        {
+            "id": 58,
+            "db_id": "bakery_1",
+            "question": "List the distinct ids of all customers who bought a lemon cake?",
+            "sql": "Select DISTINCT T3.CustomerId From goods as T1 JOIN items as T2 JOIN receipts as T3 ON T1.Id = T2.Item and T2.Receipt = T3.ReceiptNumber Where T1.Flavor = \"Lemon\" and T1.Food = \"Cake\"",
+            "result": [
+                6,
+                11,
+                12,
+                3,
+                9,
+                2,
+                8
+            ]
+        },
+        {
+            "id": 59,
+            "db_id": "soccer_3",
+            "question": "List the country that have more than one player.",
+            "sql": "SELECT Country FROM player GROUP BY Country HAVING COUNT(*)  >  1",
+            "result": "United States"
+        },
+        {
+            "id": 60,
+            "db_id": "bakery_1",
+            "question": "What are highest, lowest, and average prices of goods, grouped and ordered by flavor?",
+            "sql": "Select max(price), min(price), avg(price), flavor From goods group by flavor order by flavor",
+            "result": [
+                [
+                    3.75,
+                    1.15,
+                    2.075,
+                    "Almond"
+                ],
+                [
+                    5.25,
+                    1.15,
+                    2.775,
+                    "Apple"
+                ],
+                [
+                    3.25,
+                    1.15,
+                    1.95,
+                    "Apricot"
+                ],
+                [
+                    3.25,
+                    3.25,
+                    3.25,
+                    "Berry"
+                ],
+                [
+                    3.25,
+                    3.25,
+                    3.25,
+                    "Blackberry"
+                ],
+                [
+                    3.25,
+                    1.15,
+                    2.2,
+                    "Blueberry"
+                ],
+                [
+                    15.95,
+                    15.95,
+                    15.95,
+                    "Casino"
+                ],
+                [
+                    1.75,
+                    1.75,
+                    1.75,
+                    "Cheese"
+                ],
+                [
+                    3.25,
+                    3.25,
+                    3.25,
+                    "Cherry"
+                ],
+                [
+                    8.95,
+                    1.25,
+                    3.79,
+                    "Chocolate"
+                ],
+                [
+                    3.5,
+                    3.5,
+                    3.5,
+                    "Coffee"
+                ],
+                [
+                    1.15,
+                    1.15,
+                    1.15,
+                    "Ganache"
+                ],
+                [
+                    1.15,
+                    1.15,
+                    1.15,
+                    "Gongolais"
+                ],
+                [
+                    8.95,
+                    0.79,
+                    4.329999999999999,
+                    "Lemon"
+                ],
+                [
+                    1.25,
+                    1.25,
+                    1.25,
+                    "Marzipan"
+                ],
+                [
+                    13.49,
+                    13.49,
+                    13.49,
+                    "Napoleon"
+                ],
+                [
+                    15.95,
+                    15.95,
+                    15.95,
+                    "Opera"
+                ],
+                [
+                    3.75,
+                    3.75,
+                    3.75,
+                    "Pecan"
+                ],
+                [
+                    1.09,
+                    1.09,
+                    1.09,
+                    "Raspberry"
+                ],
+                [
+                    11.95,
+                    11.95,
+                    11.95,
+                    "Strawberry"
+                ],
+                [
+                    15.95,
+                    15.95,
+                    15.95,
+                    "Truffle"
+                ],
+                [
+                    1.25,
+                    1.25,
+                    1.25,
+                    "Tuile"
+                ],
+                [
+                    3.25,
+                    1.15,
+                    2.2,
+                    "Vanilla"
+                ],
+                [
+                    0.79,
+                    0.79,
+                    0.79,
+                    "Walnut"
+                ]
+            ]
+        },
+        {
+            "id": 61,
+            "db_id": "bakery_1",
+            "question": "Give me a list of all the distinct items bought by the customer number 15.",
+            "sql": "Select distinct T1.item from items as T1 JOIN receipts as T2 ON T1.receipt = T2.ReceiptNumber Where T2.CustomerId = 15",
+            "result": [
+                "70-TU",
+                "25-STR-9",
+                "70-GON",
+                "90-LEM-11",
+                "90-APR-PF",
+                "70-LEM",
+                "70-M-CH-DZ",
+                "90-APP-11",
+                "45-VA",
+                "51-ATW",
+                "90-CH-PF",
+                "90-BLK-PF",
+                "20-CA-7.5",
+                "51-BC",
+                "90-BER-11"
+            ]
+        },
+        {
+            "id": 62,
+            "db_id": "bakery_1",
+            "question": "What are the ids of goods that cost less than 3 dollars?",
+            "sql": "Select id From goods Where price < 3",
+            "result": [
+                "70-GA",
+                "70-GON",
+                "70-R",
+                "70-LEM",
+                "70-M-CH-DZ",
+                "70-M-VA-SM-DZ",
+                "70-MAR",
+                "70-TU",
+                "70-W",
+                "50-ALM",
+                "50-APP",
+                "50-APR",
+                "50-CHS",
+                "50-CH",
+                "51-APR",
+                "51-APP",
+                "51-ATW",
+                "51-BC",
+                "51-BLU"
+            ]
+        },
+        {
+            "id": 63,
+            "db_id": "soccer_3",
+            "question": "List the manufacturers that are associated with more than one club.",
+            "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer HAVING COUNT(*)  >  1",
+            "result": [
+                "Nike",
+                "Umbro",
+                "adidas"
+            ]
+        },
+        {
+            "id": 64,
+            "db_id": "bakery_1",
+            "question": "What is the most expensive cake and its flavor?",
+            "sql": "select id, flavor from goods where food = \"Cake\" order by price desc limit 1",
+            "result": [
+                [
+                    "20-CA-7.5",
+                    "Casino"
+                ]
+            ]
+        },
+        {
+            "id": 65,
+            "db_id": "soccer_3",
+            "question": "What are the distinct countries of players with earnings higher than 1200000?",
+            "sql": "SELECT DISTINCT Country FROM player WHERE Earnings  >  1200000",
+            "result": [
+                "Zimbabwe",
+                "United States",
+                "Australia"
+            ]
+        },
+        {
+            "id": 66,
+            "db_id": "bakery_1",
+            "question": "For each type of food, what are the average, maximum and minimum price?",
+            "sql": "Select food, avg(price), max(price), min(price) from goods Group by food",
+            "result": [
+                [
+                    "Bear Claw",
+                    1.95,
+                    1.95,
+                    1.95
+                ],
+                [
+                    "Cake",
+                    13.027142857142858,
+                    15.95,
+                    8.95
+                ],
+                [
+                    "Cookie",
+                    1.0671428571428572,
+                    1.25,
+                    0.79
+                ],
+                [
+                    "Croissant",
+                    1.5699999999999998,
+                    1.75,
+                    1.45
+                ],
+                [
+                    "Danish",
+                    1.15,
+                    1.15,
+                    1.15
+                ],
+                [
+                    "Eclair",
+                    3.3333333333333335,
+                    3.5,
+                    3.25
+                ],
+                [
+                    "Meringue",
+                    1.2,
+                    1.25,
+                    1.15
+                ],
+                [
+                    "Pie",
+                    5.25,
+                    5.25,
+                    5.25
+                ],
+                [
+                    "Tart",
+                    3.4,
+                    3.75,
+                    3.25
+                ],
+                [
+                    "Twist",
+                    1.15,
+                    1.15,
+                    1.15
+                ]
+            ]
+        },
+        {
+            "id": 67,
+            "db_id": "bakery_1",
+            "question": "For each date, return how many distinct customers visited on that day.",
+            "sql": "Select date, count (distinct CustomerId) from receipts Group by date",
+            "result": [
+                [
+                    "1-Oct-2007",
+                    1
+                ],
+                [
+                    "10-Oct-2007",
+                    9
+                ],
+                [
+                    "11-Oct-2007",
+                    2
+                ],
+                [
+                    "12-Oct-2007",
+                    9
+                ],
+                [
+                    "13-Oct-2007",
+                    5
+                ],
+                [
+                    "14-Oct-2007",
+                    5
+                ],
+                [
+                    "15-Oct-2007",
+                    8
+                ],
+                [
+                    "16-Oct-2007",
+                    9
+                ],
+                [
+                    "17-Oct-2007",
+                    4
+                ],
+                [
+                    "18-Oct-2007",
+                    4
+                ],
+                [
+                    "19-Oct-2007",
+                    4
+                ],
+                [
+                    "2-Oct-2007",
+                    3
+                ],
+                [
+                    "20-Oct-2007",
+                    9
+                ],
+                [
+                    "21-Oct-2007",
+                    5
+                ],
+                [
+                    "22-Oct-2007",
+                    7
+                ],
+                [
+                    "23-Oct-2007",
+                    6
+                ],
+                [
+                    "24-Oct-2007",
+                    5
+                ],
+                [
+                    "25-Oct-2007",
+                    6
+                ],
+                [
+                    "26-Oct-2007",
+                    3
+                ],
+                [
+                    "27-Oct-2007",
+                    3
+                ],
+                [
+                    "28-Oct-2007",
+                    5
+                ],
+                [
+                    "29-Oct-2007",
+                    6
+                ],
+                [
+                    "3-Oct-2007",
+                    6
+                ],
+                [
+                    "30-Oct-2007",
+                    4
+                ],
+                [
+                    "31-Oct-2007",
+                    6
+                ],
+                [
+                    "4-Oct-2007",
+                    8
+                ],
+                [
+                    "5-Oct-2007",
+                    3
+                ],
+                [
+                    "6-Oct-2007",
+                    3
+                ],
+                [
+                    "7-Oct-2007",
+                    6
+                ],
+                [
+                    "8-Oct-2007",
+                    4
+                ],
+                [
+                    "9-Oct-2007",
+                    9
+                ]
+            ]
+        },
+        {
+            "id": 68,
+            "db_id": "soccer_3",
+            "question": "List the name of clubs whose manufacturer is not \"Nike\"",
+            "sql": "SELECT Name FROM club WHERE Manufacturer != \"Nike\"",
+            "result": [
+                "Blackburn Rovers",
+                "Bolton Wanderers",
+                "Chelsea",
+                "Everton",
+                "Hull City",
+                "Liverpool"
+            ]
+        },
+        {
+            "id": 69,
+            "db_id": "bakery_1",
+            "question": "What are the flavors available for Cake but not for Tart?",
+            "sql": "Select distinct flavor From goods where food = \"Cake\" EXCEPT Select distinct flavor From goods where food = \"Tart\"",
+            "result": [
+                "Casino",
+                "Napoleon",
+                "Opera",
+                "Strawberry",
+                "Truffle"
+            ]
+        },
+        {
+            "id": 70,
+            "db_id": "bakery_1",
+            "question": "Which good has \"70\" in its id? And what is its price?",
+            "sql": "Select id, price from goods Where id LIKE \"%70%\"",
+            "result": [
+                [
+                    "70-GA",
+                    1.15
+                ],
+                [
+                    "70-GON",
+                    1.15
+                ],
+                [
+                    "70-R",
+                    1.09
+                ],
+                [
+                    "70-LEM",
+                    0.79
+                ],
+                [
+                    "70-M-CH-DZ",
+                    1.25
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    1.15
+                ],
+                [
+                    "70-MAR",
+                    1.25
+                ],
+                [
+                    "70-TU",
+                    1.25
+                ],
+                [
+                    "70-W",
+                    0.79
+                ]
+            ]
+        },
+        {
+            "id": 71,
+            "db_id": "bakery_1",
+            "question": "Find the receipt numbers where both Cake and Cookie were bought.",
+            "sql": "Select T1.receipt From items as T1 JOIN goods as T2 ON T1.item = T2.id Where T2.food = \"Cake\" INTERSECT Select T1.receipt From items as T1 JOIN goods as T2 ON T1.item = T2.id Where T2.food = \"Cookie\"",
+            "result": [
+                12698,
+                12800,
+                13355,
+                16034,
+                16532,
+                17685,
+                21040,
+                26198,
+                29908,
+                34579,
+                40305,
+                53922,
+                55944,
+                61948,
+                62707,
+                64477,
+                65165,
+                67314,
+                68753,
+                70162,
+                70655,
+                72207,
+                77032,
+                86861,
+                95514,
+                96258,
+                96531,
+                96761
+            ]
+        }
+    ]
+}
