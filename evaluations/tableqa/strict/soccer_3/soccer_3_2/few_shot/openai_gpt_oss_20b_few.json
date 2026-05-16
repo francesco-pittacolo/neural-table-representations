@@ -1,0 +1,737 @@
+{
+    "summary": {
+        "pipeline": "tableqa",
+        "prompt_method": "few_shot",
+        "model": "openai/gpt-oss-20b",
+        "dataset": "soccer_3",
+        "subset": "soccer_3_2",
+        "evaluation_mode": "strict",
+        "num_examples": 20,
+        "skipped_context_errors": 0,
+        "metrics": {
+            "cell_precision": 0.925,
+            "cell_recall": 0.95,
+            "tuple_cardinality": 0.925,
+            "tuple_constraint": 0.95,
+            "tuple_order": 0.945
+        }
+    },
+    "data": [
+        {
+            "id": 0,
+            "question": "Count the number of clubs.",
+            "ground_truth": [
+                [
+                    "9"
+                ]
+            ],
+            "prediction": [
+                [
+                    "9"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 1,
+            "question": "What are the names of clubs, ordered alphabetically?",
+            "ground_truth": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Aston Villa"
+                ],
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Fulham"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Aston Villa"
+                ],
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Fulham"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 2,
+            "question": "Return the managers and captains of all clubs.",
+            "ground_truth": [
+                [
+                    "Arsène Wenger",
+                    "Cesc Fàbregas"
+                ],
+                [
+                    "Martin O'Neill",
+                    "Martin Laursen"
+                ],
+                [
+                    "Sam Allardyce",
+                    "Ryan Nelsen"
+                ],
+                [
+                    "Gary Megson",
+                    "Kevin Davies"
+                ],
+                [
+                    "Guus Hiddink",
+                    "John Terry"
+                ],
+                [
+                    "David Moyes",
+                    "Phil Neville"
+                ],
+                [
+                    "Roy Hodgson",
+                    "Danny Murphy"
+                ],
+                [
+                    "Phil Brown",
+                    "Ian Ashbee"
+                ],
+                [
+                    "Rafael Benítez",
+                    "Steven Gerrard"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Arsène Wenger",
+                    "Cesc Fàbregas"
+                ],
+                [
+                    "Martin O'Neill",
+                    "Martin Laursen"
+                ],
+                [
+                    "Sam Allardyce",
+                    "Ryan Nelsen"
+                ],
+                [
+                    "Gary Megson",
+                    "Kevin Davies"
+                ],
+                [
+                    "Guus Hiddink",
+                    "John Terry"
+                ],
+                [
+                    "David Moyes",
+                    "Phil Neville"
+                ],
+                [
+                    "Roy Hodgson",
+                    "Danny Murphy"
+                ],
+                [
+                    "Phil Brown",
+                    "Ian Ashbee"
+                ],
+                [
+                    "Rafael Benítez",
+                    "Steven Gerrard"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 3,
+            "question": "What are the names of clubs who do not have the manufacturer Nike?",
+            "ground_truth": [
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 4,
+            "question": "Return the names of players in order of count of wins, ascending.",
+            "ground_truth": [
+                [
+                    "Greg Norman"
+                ],
+                [
+                    "Jim Gallagher, Jr."
+                ],
+                [
+                    "David Frost"
+                ],
+                [
+                    "Paul Azinger"
+                ],
+                [
+                    "Nick Price"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Greg Norman"
+                ],
+                [
+                    "Jim Gallagher, Jr."
+                ],
+                [
+                    "David Frost"
+                ],
+                [
+                    "Paul Azinger"
+                ],
+                [
+                    "Nick Price"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 5,
+            "question": "Return the name of the player who earns the most money.",
+            "ground_truth": [
+                [
+                    "Nick Price"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Nick Price"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 6,
+            "question": "From which countries are players who make more than 1200000 from?",
+            "ground_truth": [
+                [
+                    "Zimbabwe"
+                ],
+                [
+                    "United States"
+                ],
+                [
+                    "Australia"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Zimbabwe"
+                ],
+                [
+                    "United States"
+                ],
+                [
+                    "Australia"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 7,
+            "question": "Of players who have more than 2 wins, what is the country of the player who makes the most?",
+            "ground_truth": [
+                [
+                    "Zimbabwe"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Zimbabwe"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 8,
+            "question": "What are the names of players and the corresponding clubs that they are in?",
+            "ground_truth": [
+                [
+                    "Nick Price",
+                    "Arsenal"
+                ],
+                [
+                    "Paul Azinger",
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Greg Norman",
+                    "Chelsea"
+                ],
+                [
+                    "Jim Gallagher, Jr.",
+                    "Everton"
+                ],
+                [
+                    "David Frost",
+                    "Fulham"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Nick Price",
+                    "Arsenal"
+                ],
+                [
+                    "Paul Azinger",
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Greg Norman",
+                    "Chelsea"
+                ],
+                [
+                    "Jim Gallagher, Jr.",
+                    "Everton"
+                ],
+                [
+                    "David Frost",
+                    "Fulham"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 9,
+            "question": "What are the names of clubs that have players who have won more than twice?",
+            "ground_truth": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Blackburn Rovers"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Blackburn Rovers"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 10,
+            "question": "What are the names of players from the club managed by Sam Allardyce?",
+            "ground_truth": [
+                [
+                    "Paul Azinger"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Paul Azinger"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 11,
+            "question": "What are the names of clubs, ordered descending by the average earnings of players within each?",
+            "ground_truth": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Fulham"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Fulham"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 12,
+            "question": "How many clubs use each manufacturer?",
+            "ground_truth": [
+                [
+                    "Nike",
+                    "3"
+                ],
+                [
+                    "Reebok",
+                    "1"
+                ],
+                [
+                    "Umbro",
+                    "3"
+                ],
+                [
+                    "adidas",
+                    "2"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Nike",
+                    "3"
+                ],
+                [
+                    "Umbro",
+                    "3"
+                ],
+                [
+                    "Reebok",
+                    "1"
+                ],
+                [
+                    "adidas",
+                    "2"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 0.9
+            }
+        },
+        {
+            "id": 13,
+            "question": "Which manufacturer is most common among clubs?",
+            "ground_truth": [
+                [
+                    "Umbro"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Nike"
+                ],
+                [
+                    "Umbro"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.5,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 0.5,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 14,
+            "question": "Which manufacturers work for more than 1 club?",
+            "ground_truth": [
+                [
+                    "Nike"
+                ],
+                [
+                    "Umbro"
+                ],
+                [
+                    "adidas"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Nike"
+                ],
+                [
+                    "Umbro"
+                ],
+                [
+                    "adidas"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 15,
+            "question": "Which countries have produced more than one player?",
+            "ground_truth": [
+                [
+                    "United States"
+                ]
+            ],
+            "prediction": [
+                [
+                    "United States"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 16,
+            "question": "What are the names of clubs that do not have any players?",
+            "ground_truth": [
+                [
+                    "Aston Villa"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 17,
+            "question": "Which country has produced both players with earnings over 1400000 and players with earnings below 1100000?",
+            "ground_truth": [
+                [
+                    "United States"
+                ]
+            ],
+            "prediction": [
+                [
+                    "United States"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 18,
+            "question": "How many different countries are players from?",
+            "ground_truth": [
+                [
+                    "4"
+                ]
+            ],
+            "prediction": [
+                [
+                    "4"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 19,
+            "question": "What are the earnings of players from either of the countries of Australia or Zimbabwe?",
+            "ground_truth": [
+                [
+                    "1478557.0"
+                ],
+                [
+                    "1359653.0"
+                ]
+            ],
+            "prediction": [
+                [
+                    "1478557.0"
+                ],
+                [
+                    "1359653.0"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        }
+    ]
+}

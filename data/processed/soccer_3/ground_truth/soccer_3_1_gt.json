@@ -1,0 +1,357 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "How many clubs are there?",
+            "sql": "SELECT count(*) FROM club",
+            "ground_truth": [
+                [
+                    "9"
+                ]
+            ]
+        },
+        {
+            "id": 1,
+            "question": "List the name of clubs in ascending alphabetical order.",
+            "sql": "SELECT Name FROM club ORDER BY Name ASC",
+            "ground_truth": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Aston Villa"
+                ],
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Fulham"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ]
+        },
+        {
+            "id": 2,
+            "question": "What are the managers and captains of clubs?",
+            "sql": "SELECT Manager ,  Captain FROM club",
+            "ground_truth": [
+                [
+                    "Arsène Wenger",
+                    "Cesc Fàbregas"
+                ],
+                [
+                    "Martin O'Neill",
+                    "Martin Laursen"
+                ],
+                [
+                    "Sam Allardyce",
+                    "Ryan Nelsen"
+                ],
+                [
+                    "Gary Megson",
+                    "Kevin Davies"
+                ],
+                [
+                    "Guus Hiddink",
+                    "John Terry"
+                ],
+                [
+                    "David Moyes",
+                    "Phil Neville"
+                ],
+                [
+                    "Roy Hodgson",
+                    "Danny Murphy"
+                ],
+                [
+                    "Phil Brown",
+                    "Ian Ashbee"
+                ],
+                [
+                    "Rafael Benítez",
+                    "Steven Gerrard"
+                ]
+            ]
+        },
+        {
+            "id": 3,
+            "question": "List the name of clubs whose manufacturer is not \"Nike\"",
+            "sql": "SELECT Name FROM club WHERE Manufacturer != \"Nike\"",
+            "ground_truth": [
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ]
+        },
+        {
+            "id": 4,
+            "question": "What are the names of players in ascending order of wins count?",
+            "sql": "SELECT Name FROM player ORDER BY Wins_count ASC",
+            "ground_truth": [
+                [
+                    "Greg Norman"
+                ],
+                [
+                    "Jim Gallagher, Jr."
+                ],
+                [
+                    "David Frost"
+                ],
+                [
+                    "Paul Azinger"
+                ],
+                [
+                    "Nick Price"
+                ]
+            ]
+        },
+        {
+            "id": 5,
+            "question": "What is the name of the player with the highest earnings?",
+            "sql": "SELECT Name FROM player ORDER BY Earnings DESC LIMIT 1",
+            "ground_truth": [
+                [
+                    "Nick Price"
+                ]
+            ]
+        },
+        {
+            "id": 6,
+            "question": "What are the distinct countries of players with earnings higher than 1200000?",
+            "sql": "SELECT DISTINCT Country FROM player WHERE Earnings  >  1200000",
+            "ground_truth": [
+                [
+                    "Zimbabwe"
+                ],
+                [
+                    "United States"
+                ],
+                [
+                    "Australia"
+                ]
+            ]
+        },
+        {
+            "id": 7,
+            "question": "What is the country of the player with the highest earnings among players that have more than 2 win counts?",
+            "sql": "SELECT Country FROM player WHERE Wins_count  >  2 ORDER BY Earnings DESC LIMIT 1",
+            "ground_truth": [
+                [
+                    "Zimbabwe"
+                ]
+            ]
+        },
+        {
+            "id": 8,
+            "question": "Show names of players and names of clubs they are in.",
+            "sql": "SELECT T2.Name ,  T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID",
+            "ground_truth": [
+                [
+                    "Nick Price",
+                    "Arsenal"
+                ],
+                [
+                    "Paul Azinger",
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Greg Norman",
+                    "Chelsea"
+                ],
+                [
+                    "Jim Gallagher, Jr.",
+                    "Everton"
+                ],
+                [
+                    "David Frost",
+                    "Fulham"
+                ]
+            ]
+        },
+        {
+            "id": 9,
+            "question": "Show names of clubs that have players with more than 2 win counts.",
+            "sql": "SELECT T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T2.Wins_count  >  2",
+            "ground_truth": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Blackburn Rovers"
+                ]
+            ]
+        },
+        {
+            "id": 10,
+            "question": "Show names of players from the club with manager \"Sam Allardyce\".",
+            "sql": "SELECT T2.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T1.Manager  =  \"Sam Allardyce\"",
+            "ground_truth": [
+                [
+                    "Paul Azinger"
+                ]
+            ]
+        },
+        {
+            "id": 11,
+            "question": "Show names of clubs in descending order of average earnings of players belonging.",
+            "sql": "SELECT T1.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID GROUP BY T1.Club_ID ORDER BY avg(T2.Earnings) DESC",
+            "ground_truth": [
+                [
+                    "Arsenal"
+                ],
+                [
+                    "Blackburn Rovers"
+                ],
+                [
+                    "Chelsea"
+                ],
+                [
+                    "Everton"
+                ],
+                [
+                    "Fulham"
+                ]
+            ]
+        },
+        {
+            "id": 12,
+            "question": "Show different manufacturers and the number of clubs they are associated with.",
+            "sql": "SELECT Manufacturer ,  COUNT(*) FROM club GROUP BY Manufacturer",
+            "ground_truth": [
+                [
+                    "Nike",
+                    "3"
+                ],
+                [
+                    "Reebok",
+                    "1"
+                ],
+                [
+                    "Umbro",
+                    "3"
+                ],
+                [
+                    "adidas",
+                    "2"
+                ]
+            ]
+        },
+        {
+            "id": 13,
+            "question": "Please show the most common manufacturer of clubs.",
+            "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer ORDER BY COUNT(*) DESC LIMIT 1",
+            "ground_truth": [
+                [
+                    "Umbro"
+                ]
+            ]
+        },
+        {
+            "id": 14,
+            "question": "List the manufacturers that are associated with more than one club.",
+            "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer HAVING COUNT(*)  >  1",
+            "ground_truth": [
+                [
+                    "Nike"
+                ],
+                [
+                    "Umbro"
+                ],
+                [
+                    "adidas"
+                ]
+            ]
+        },
+        {
+            "id": 15,
+            "question": "List the country that have more than one player.",
+            "sql": "SELECT Country FROM player GROUP BY Country HAVING COUNT(*)  >  1",
+            "ground_truth": [
+                [
+                    "United States"
+                ]
+            ]
+        },
+        {
+            "id": 16,
+            "question": "List the name of clubs that do not have players.",
+            "sql": "SELECT Name FROM club WHERE Club_ID NOT IN (SELECT Club_ID FROM player)",
+            "ground_truth": [
+                [
+                    "Aston Villa"
+                ],
+                [
+                    "Bolton Wanderers"
+                ],
+                [
+                    "Hull City"
+                ],
+                [
+                    "Liverpool"
+                ]
+            ]
+        },
+        {
+            "id": 17,
+            "question": "Show the country of players with earnings more than 1400000 and players with earnings less than 1100000.",
+            "sql": "SELECT Country FROM player WHERE Earnings  >  1400000 INTERSECT SELECT Country FROM player WHERE Earnings  <  1100000",
+            "ground_truth": [
+                [
+                    "United States"
+                ]
+            ]
+        },
+        {
+            "id": 18,
+            "question": "What is the number of distinct countries of all players?",
+            "sql": "SELECT COUNT (DISTINCT Country) FROM player",
+            "ground_truth": [
+                [
+                    "4"
+                ]
+            ]
+        },
+        {
+            "id": 19,
+            "question": "Show the earnings of players from country \"Australia\" or \"Zimbabwe\".",
+            "sql": "SELECT Earnings FROM player WHERE Country  =  \"Australia\" OR Country  =  \"Zimbabwe\"",
+            "ground_truth": [
+                [
+                    "1478557.0"
+                ],
+                [
+                    "1359653.0"
+                ]
+            ]
+        }
+    ]
+}

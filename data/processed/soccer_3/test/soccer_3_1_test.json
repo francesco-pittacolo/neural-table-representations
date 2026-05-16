@@ -1,0 +1,400 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "How many clubs are there?",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "question": "List the name of clubs in ascending alphabetical order.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "What are the managers and captains of clubs?",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "List the name of clubs whose manufacturer is not \"Nike\"",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "What are the names of players in ascending order of wins count?",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "What is the name of the player with the highest earnings?",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "question": "What are the distinct countries of players with earnings higher than 1200000?",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "question": "What is the country of the player with the highest earnings among players that have more than 2 win counts?",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "question": "Show names of players and names of clubs they are in.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                },
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "question": "Show names of clubs that have players with more than 2 win counts.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                },
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "question": "Show names of players from the club with manager \"Sam Allardyce\".",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                },
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "question": "Show names of clubs in descending order of average earnings of players belonging.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                },
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "question": "Show different manufacturers and the number of clubs they are associated with.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "question": "Please show the most common manufacturer of clubs.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "question": "List the manufacturers that are associated with more than one club.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "question": "List the country that have more than one player.",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "question": "List the name of clubs that do not have players.",
+            "schema": [
+                {
+                    "table": "club",
+                    "columns": [
+                        "Club_ID",
+                        "Name",
+                        "Manager",
+                        "Captain",
+                        "Manufacturer",
+                        "Sponsor"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "question": "Show the country of players with earnings more than 1400000 and players with earnings less than 1100000.",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "question": "What is the number of distinct countries of all players?",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "question": "Show the earnings of players from country \"Australia\" or \"Zimbabwe\".",
+            "schema": [
+                {
+                    "table": "player",
+                    "columns": [
+                        "Player_ID",
+                        "Name",
+                        "Country",
+                        "Earnings",
+                        "Events_number",
+                        "Wins_count",
+                        "Club_ID"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1688 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "What is the most expensive cake and its flavor?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Casino",
+                        "15.95"
+                    ],
+                    [
+                        "Opera",
+                        "15.95"
+                    ],
+                    [
+                        "Truffle",
+                        "15.95"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [{\"Flavor\":\"Casino\",\"Price\":15.95},{\"Flavor\":\"Opera\",\"Price\":15.95},{\"Flavor\":\"Truffle\",\"Price\":15.95}]}"
+            }
+        },
+        {
+            "id": 1,
+            "question": "What is the cheapest cookie and its flavor?",
+            "prediction": {
+                "answer": [
+                    [
+                        "70-LEM",
+                        "Lemon",
+                        "0.79"
+                    ],
+                    [
+                        "70-W",
+                        "Walnut",
+                        "0.79"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [{\"Id\":\"70-LEM\",\"Flavor\":\"Lemon\",\"Price\":0.79},{\"Id\":\"70-W\",\"Flavor\":\"Walnut\",\"Price\":0.79}]}"
+            }
+        },
+        {
+            "id": 2,
+            "question": "Find the ids of goods that have apple flavor.",
+            "prediction": {
+                "answer": [
+                    [
+                        "90-APIE-10"
+                    ],
+                    [
+                        "90-APP-11"
+                    ],
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "51-APP"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"90-APIE-10\", \"90-APP-11\", \"50-APP\", \"51-APP\"]}"
+            }
+        },
+        {
+            "id": 3,
+            "question": "What are the ids of goods that cost less than 3 dollars?",
+            "prediction": {
+                "answer": [
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-M-CH-DZ"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ],
+                    [
+                        "50-ALM"
+                    ],
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "50-APR"
+                    ],
+                    [
+                        "50-CHS"
+                    ],
+                    [
+                        "50-CH"
+                    ],
+                    [
+                        "51-APR"
+                    ],
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "51-ATW"
+                    ],
+                    [
+                        "51-BC"
+                    ],
+                    [
+                        "51-BLU"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"70-GA\",\"70-GON\",\"70-R\",\"70-LEM\",\"70-M-CH-DZ\",\"70-M-VA-SM-DZ\",\"70-MAR\",\"70-TU\",\"70-W\",\"50-ALM\",\"50-APP\",\"50-APR\",\"50-CHS\",\"50-CH\",\"51-APR\",\"51-APP\",\"51-ATW\",\"51-BC\",\"51-BLU\"]}"
+            }
+        },
+        {
+            "id": 4,
+            "question": "List the distinct ids of all customers who bought a lemon cake?",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8984, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 5,
+            "question": "For each type of food, tell me how many customers have ever bought it.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8863, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 6,
+            "question": "Find the id of customers who shopped at the bakery at least 15 times.",
+            "prediction": {
+                "answer": [
+                    [
+                        "6"
+                    ],
+                    [
+                        "7"
+                    ],
+                    [
+                        "8"
+                    ],
+                    [
+                        "14"
+                    ],
+                    [
+                        "20"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [6, 7, 8, 14, 20]}"
+            }
+        },
+        {
+            "id": 7,
+            "question": "What is the last name of the customers who shopped at the bakery more than 10 times?",
+            "prediction": {
+                "answer": [],
+                "status": "empty_output",
+                "error": null,
+                "raw_output": ""
+            }
+        },
+        {
+            "id": 8,
+            "question": "How many types of Cake does this bakery sell?",
+            "prediction": {
+                "answer": [
+                    [
+                        "7"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [7]}"
+            }
+        },
+        {
+            "id": 9,
+            "question": "List all the flavors of Croissant available in this bakery.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Almond"
+                    ],
+                    [
+                        "Apple"
+                    ],
+                    [
+                        "Apricot"
+                    ],
+                    [
+                        "Cheese"
+                    ],
+                    [
+                        "Chocolate"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Almond\", \"Apple\", \"Apricot\", \"Cheese\", \"Chocolate\"]}"
+            }
+        },
+        {
+            "id": 10,
+            "question": "Give me a list of all the distinct items bought by the customer number 15.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 10445, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 11,
+            "question": "For each type of food, what are the average, maximum and minimum price?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Bear Claw",
+                        "1.95",
+                        "1.95",
+                        "1.95"
+                    ],
+                    [
+                        "Cake",
+                        "13.03",
+                        "15.95",
+                        "8.95"
+                    ],
+                    [
+                        "Croissant",
+                        "1.57",
+                        "1.75",
+                        "1.45"
+                    ],
+                    [
+                        "Danish",
+                        "1.15",
+                        "1.15",
+                        "1.15"
+                    ],
+                    [
+                        "Eclair",
+                        "3.33",
+                        "3.5",
+                        "3.25"
+                    ],
+                    [
+                        "Cookie",
+                        "1.09",
+                        "1.25",
+                        "0.79"
+                    ],
+                    [
+                        "Meringue",
+                        "1.2",
+                        "1.25",
+                        "1.15"
+                    ],
+                    [
+                        "Pie",
+                        "5.25",
+                        "5.25",
+                        "5.25"
+                    ],
+                    [
+                        "Tart",
+                        "3.4",
+                        "3.75",
+                        "3.25"
+                    ],
+                    [
+                        "Twist",
+                        "1.15",
+                        "1.15",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [{\"Food\": \"Bear Claw\", \"average_price\": 1.95, \"max_price\": 1.95, \"min_price\": 1.95}, {\"Food\": \"Cake\", \"average_price\": 13.03, \"max_price\": 15.95, \"min_price\": 8.95}, {\"Food\": \"Croissant\", \"average_price\": 1.57, \"max_price\": 1.75, \"min_price\": 1.45}, {\"Food\": \"Danish\", \"average_price\": 1.15, \"max_price\": 1.15, \"min_price\": 1.15}, {\"Food\": \"Eclair\", \"average_price\": 3.33, \"max_price\": 3.5, \"min_price\": 3.25}, {\"Food\": \"Cookie\", \"average_price\": 1.09, \"max_price\": 1.25, \"min_price\": 0.79}, {\"Food\": \"Meringue\", \"average_price\": 1.2, \"max_price\": 1.25, \"min_price\": 1.15}, {\"Food\": \"Pie\", \"average_price\": 5.25, \"max_price\": 5.25, \"min_price\": 5.25}, {\"Food\": \"Tart\", \"average_price\": 3.4, \"max_price\": 3.75, \"min_price\": 3.25}, {\"Food\": \"Twist\", \"average_price\": 1.15, \"max_price\": 1.15, \"min_price\": 1.15}]}"
+            }
+        },
+        {
+            "id": 12,
+            "question": "Find the receipt numbers where both Cake and Cookie were bought.",
+            "prediction": {
+                "answer": [],
+                "status": "empty_output",
+                "error": null,
+                "raw_output": ""
+            }
+        },
+        {
+            "id": 13,
+            "question": "Find all the receipt numbers in which customer id 5 purchased Croissant.",
+            "prediction": {
+                "answer": null,
+                "status": "cannot_infer",
+                "error": null,
+                "raw_output": "{\"answer\": null}"
+            }
+        },
+        {
+            "id": 14,
+            "question": "What is the receipt number and date of the receipt in which the most expensive item was bought?",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11017, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 15,
+            "question": "What is the item that was bought the least number of times?",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8898, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 16,
+            "question": "How many goods are available for each food type?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Cake",
+                        "7"
+                    ],
+                    [
+                        "Eclair",
+                        "3"
+                    ],
+                    [
+                        "Tart",
+                        "10"
+                    ],
+                    [
+                        "Pie",
+                        "1"
+                    ],
+                    [
+                        "Cookie",
+                        "7"
+                    ],
+                    [
+                        "Meringue",
+                        "2"
+                    ],
+                    [
+                        "Croissant",
+                        "5"
+                    ],
+                    [
+                        "Danish",
+                        "3"
+                    ],
+                    [
+                        "Twist",
+                        "1"
+                    ],
+                    [
+                        "Bear Claw",
+                        "1"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [{\"Food\":\"Cake\",\"Count\":7},{\"Food\":\"Eclair\",\"Count\":3},{\"Food\":\"Tart\",\"Count\":10},{\"Food\":\"Pie\",\"Count\":1},{\"Food\":\"Cookie\",\"Count\":7},{\"Food\":\"Meringue\",\"Count\":2},{\"Food\":\"Croissant\",\"Count\":5},{\"Food\":\"Danish\",\"Count\":3},{\"Food\":\"Twist\",\"Count\":1},{\"Food\":\"Bear Claw\",\"Count\":1}]}"
+            }
+        },
+        {
+            "id": 17,
+            "question": "What is the average price for each food type?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Cake",
+                        "13.03"
+                    ],
+                    [
+                        "Eclair",
+                        "3.33"
+                    ],
+                    [
+                        "Tart",
+                        "3.4"
+                    ],
+                    [
+                        "Pie",
+                        "5.25"
+                    ],
+                    [
+                        "Cookie",
+                        "1.07"
+                    ],
+                    [
+                        "Meringue",
+                        "1.2"
+                    ],
+                    [
+                        "Croissant",
+                        "1.57"
+                    ],
+                    [
+                        "Danish",
+                        "1.15"
+                    ],
+                    [
+                        "Twist",
+                        "1.15"
+                    ],
+                    [
+                        "Bear Claw",
+                        "1.95"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"food\":\"Cake\",\"average_price\":13.03},{\"food\":\"Eclair\",\"average_price\":3.33},{\"food\":\"Tart\",\"average_price\":3.40},{\"food\":\"Pie\",\"average_price\":5.25},{\"food\":\"Cookie\",\"average_price\":1.07},{\"food\":\"Meringue\",\"average_price\":1.20},{\"food\":\"Croissant\",\"average_price\":1.57},{\"food\":\"Danish\",\"average_price\":1.15},{\"food\":\"Twist\",\"average_price\":1.15},{\"food\":\"Bear Claw\",\"average_price\":1.95}]}"
+            }
+        },
+        {
+            "id": 18,
+            "question": "What are the goods that have Apricot flavor and are cheaper than 5 dollars?",
+            "prediction": {
+                "answer": [
+                    [
+                        "50-APR",
+                        "Apricot",
+                        "Croissant",
+                        "1.45"
+                    ],
+                    [
+                        "51-APR",
+                        "Apricot",
+                        "Danish",
+                        "1.15"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "Apricot",
+                        "Tart",
+                        "3.25"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"Id\":\"50-APR\",\"Flavor\":\"Apricot\",\"Food\":\"Croissant\",\"Price\":1.45},{\"Id\":\"51-APR\",\"Flavor\":\"Apricot\",\"Food\":\"Danish\",\"Price\":1.15},{\"Id\":\"90-APR-PF\",\"Flavor\":\"Apricot\",\"Food\":\"Tart\",\"Price\":3.25}]}"
+            }
+        },
+        {
+            "id": 19,
+            "question": "Find flavor of cakes that cost more than 10 dollars.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Casino"
+                    ],
+                    [
+                        "Opera"
+                    ],
+                    [
+                        "Strawberry"
+                    ],
+                    [
+                        "Truffle"
+                    ],
+                    [
+                        "Napoleon"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Casino\", \"Opera\", \"Strawberry\", \"Truffle\", \"Napoleon\"]}"
+            }
+        },
+        {
+            "id": 20,
+            "question": "Give me the distinct id and price for all goods whose price is below the average of all goods?",
+            "prediction": {
+                "answer": [
+                    [
+                        "45-CH",
+                        "3.25"
+                    ],
+                    [
+                        "45-CO",
+                        "3.5"
+                    ],
+                    [
+                        "45-VA",
+                        "3.25"
+                    ],
+                    [
+                        "90-ALM-I",
+                        "3.75"
+                    ],
+                    [
+                        "90-APP-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "3.25"
+                    ],
+                    [
+                        "90-BER-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-BLK-PF",
+                        "3.25"
+                    ],
+                    [
+                        "90-BLU-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-CH-PF",
+                        "3.75"
+                    ],
+                    [
+                        "90-CHR-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-LEM-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-PEC-11",
+                        "3.75"
+                    ],
+                    [
+                        "70-GA",
+                        "1.15"
+                    ],
+                    [
+                        "70-GON",
+                        "1.15"
+                    ],
+                    [
+                        "70-R",
+                        "1.09"
+                    ],
+                    [
+                        "70-LEM",
+                        "0.79"
+                    ],
+                    [
+                        "70-M-CH-DZ",
+                        "1.25"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ",
+                        "1.15"
+                    ],
+                    [
+                        "70-MAR",
+                        "1.25"
+                    ],
+                    [
+                        "70-TU",
+                        "1.25"
+                    ],
+                    [
+                        "70-W",
+                        "0.79"
+                    ],
+                    [
+                        "50-ALM",
+                        "1.45"
+                    ],
+                    [
+                        "50-APP",
+                        "1.45"
+                    ],
+                    [
+                        "50-APR",
+                        "1.45"
+                    ],
+                    [
+                        "50-CHS",
+                        "1.75"
+                    ],
+                    [
+                        "50-CH",
+                        "1.75"
+                    ],
+                    [
+                        "51-APR",
+                        "1.15"
+                    ],
+                    [
+                        "51-APP",
+                        "1.15"
+                    ],
+                    [
+                        "51-ATW",
+                        "1.15"
+                    ],
+                    [
+                        "51-BC",
+                        "1.95"
+                    ],
+                    [
+                        "51-BLU",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"id\":\"45-CH\",\"price\":3.25},{\"id\":\"45-CO\",\"price\":3.5},{\"id\":\"45-VA\",\"price\":3.25},{\"id\":\"90-ALM-I\",\"price\":3.75},{\"id\":\"90-APP-11\",\"price\":3.25},{\"id\":\"90-APR-PF\",\"price\":3.25},{\"id\":\"90-BER-11\",\"price\":3.25},{\"id\":\"90-BLK-PF\",\"price\":3.25},{\"id\":\"90-BLU-11\",\"price\":3.25},{\"id\":\"90-CH-PF\",\"price\":3.75},{\"id\":\"90-CHR-11\",\"price\":3.25},{\"id\":\"90-LEM-11\",\"price\":3.25},{\"id\":\"90-PEC-11\",\"price\":3.75},{\"id\":\"70-GA\",\"price\":1.15},{\"id\":\"70-GON\",\"price\":1.15},{\"id\":\"70-R\",\"price\":1.09},{\"id\":\"70-LEM\",\"price\":0.79},{\"id\":\"70-M-CH-DZ\",\"price\":1.25},{\"id\":\"70-M-VA-SM-DZ\",\"price\":1.15},{\"id\":\"70-MAR\",\"price\":1.25},{\"id\":\"70-TU\",\"price\":1.25},{\"id\":\"70-W\",\"price\":0.79},{\"id\":\"50-ALM\",\"price\":1.45},{\"id\":\"50-APP\",\"price\":1.45},{\"id\":\"50-APR\",\"price\":1.45},{\"id\":\"50-CHS\",\"price\":1.75},{\"id\":\"50-CH\",\"price\":1.75},{\"id\":\"51-APR\",\"price\":1.15},{\"id\":\"51-APP\",\"price\":1.15},{\"id\":\"51-ATW\",\"price\":1.15},{\"id\":\"51-BC\",\"price\":1.95},{\"id\":\"51-BLU\",\"price\":1.15}]}"
+            }
+        },
+        {
+            "id": 21,
+            "question": "What are the distinct ids of all goods that are cheaper than some goods of type Tart?",
+            "prediction": {
+                "answer": [
+                    [
+                        "45-CH"
+                    ],
+                    [
+                        "45-CO"
+                    ],
+                    [
+                        "45-VA"
+                    ],
+                    [
+                        "50-ALM"
+                    ],
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "50-APR"
+                    ],
+                    [
+                        "50-CH"
+                    ],
+                    [
+                        "50-CHS"
+                    ],
+                    [
+                        "51-APR"
+                    ],
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "51-ATW"
+                    ],
+                    [
+                        "51-BC"
+                    ],
+                    [
+                        "51-BLU"
+                    ],
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-M-CH-DZ"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ],
+                    [
+                        "90-APP-11"
+                    ],
+                    [
+                        "90-APR-PF"
+                    ],
+                    [
+                        "90-BER-11"
+                    ],
+                    [
+                        "90-BLK-PF"
+                    ],
+                    [
+                        "90-BLU-11"
+                    ],
+                    [
+                        "90-CHR-11"
+                    ],
+                    [
+                        "90-LEM-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"45-CH\",\"45-CO\",\"45-VA\",\"50-ALM\",\"50-APP\",\"50-APR\",\"50-CH\",\"50-CHS\",\"51-APR\",\"51-APP\",\"51-ATW\",\"51-BC\",\"51-BLU\",\"70-GA\",\"70-GON\",\"70-M-CH-DZ\",\"70-M-VA-SM-DZ\",\"70-MAR\",\"70-R\",\"70-LEM\",\"70-TU\",\"70-W\",\"90-APP-11\",\"90-APR-PF\",\"90-BER-11\",\"90-BLK-PF\",\"90-BLU-11\",\"90-CHR-11\",\"90-LEM-11\"]}"
+            }
+        },
+        {
+            "id": 22,
+            "question": "List distinct receipt numbers for which someone bought a good that costs more than 13 dollars.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11684, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 23,
+            "question": "On which date did some customer buy a good that costs more than 15 dollars?",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11015, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 24,
+            "question": "Give me the list of all goods whose id has \"APP\".",
+            "prediction": {
+                "answer": [
+                    [
+                        "90-APP-11",
+                        "Apple",
+                        "Tart",
+                        "3.25"
+                    ],
+                    [
+                        "50-APP",
+                        "Apple",
+                        "Croissant",
+                        "1.45"
+                    ],
+                    [
+                        "51-APP",
+                        "Apple",
+                        "Danish",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"Id\":\"90-APP-11\",\"Flavor\":\"Apple\",\"Food\":\"Tart\",\"Price\":3.25},{\"Id\":\"50-APP\",\"Flavor\":\"Apple\",\"Food\":\"Croissant\",\"Price\":1.45},{\"Id\":\"51-APP\",\"Flavor\":\"Apple\",\"Food\":\"Danish\",\"Price\":1.15}]}"
+            }
+        },
+        {
+            "id": 25,
+            "question": "Which good has \"70\" in its id? And what is its price?",
+            "prediction": {
+                "answer": [
+                    [
+                        "70-GA",
+                        "1.15"
+                    ],
+                    [
+                        "70-GON",
+                        "1.15"
+                    ],
+                    [
+                        "70-R",
+                        "1.09"
+                    ],
+                    [
+                        "70-LEM",
+                        "0.79"
+                    ],
+                    [
+                        "70-M-CH-DZ",
+                        "1.25"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ",
+                        "1.15"
+                    ],
+                    [
+                        "70-MAR",
+                        "1.25"
+                    ],
+                    [
+                        "70-TU",
+                        "1.25"
+                    ],
+                    [
+                        "70-W",
+                        "0.79"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"id\":\"70-GA\",\"price\":1.15},{\"id\":\"70-GON\",\"price\":1.15},{\"id\":\"70-R\",\"price\":1.09},{\"id\":\"70-LEM\",\"price\":0.79},{\"id\":\"70-M-CH-DZ\",\"price\":1.25},{\"id\":\"70-M-VA-SM-DZ\",\"price\":1.15},{\"id\":\"70-MAR\",\"price\":1.25},{\"id\":\"70-TU\",\"price\":1.25},{\"id\":\"70-W\",\"price\":0.79}]}"
+            }
+        },
+        {
+            "id": 26,
+            "question": "List the last names of all customers in an alphabetical oder.",
+            "prediction": {
+                "answer": [
+                    [
+                        "ARNN"
+                    ],
+                    [
+                        "ARZT"
+                    ],
+                    [
+                        "CALLENDAR"
+                    ],
+                    [
+                        "CRUZEN"
+                    ],
+                    [
+                        "DOMKOWSKI"
+                    ],
+                    [
+                        "DUKELOW"
+                    ],
+                    [
+                        "DUNLOW"
+                    ],
+                    [
+                        "ENGLEY"
+                    ],
+                    [
+                        "ESPOSITA"
+                    ],
+                    [
+                        "HAFFERKAMP"
+                    ],
+                    [
+                        "HELING"
+                    ],
+                    [
+                        "LOGAN"
+                    ],
+                    [
+                        "MCMAHAN"
+                    ],
+                    [
+                        "MESDAQ"
+                    ],
+                    [
+                        "SLINGLAND"
+                    ],
+                    [
+                        "SOPKO"
+                    ],
+                    [
+                        "STADICK"
+                    ],
+                    [
+                        "STENZ"
+                    ],
+                    [
+                        "TOUSSAND"
+                    ],
+                    [
+                        "ZEME"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"ARNN\",\"ARZT\",\"CALLENDAR\",\"CRUZEN\",\"DOMKOWSKI\",\"DUKELOW\",\"DUNLOW\",\"ENGLEY\",\"ESPOSITA\",\"HAFFERKAMP\",\"HELING\",\"LOGAN\",\"MCMAHAN\",\"MESDAQ\",\"SLINGLAND\",\"SOPKO\",\"STADICK\",\"STENZ\",\"TOUSSAND\",\"ZEME\"]}"
+            }
+        },
+        {
+            "id": 27,
+            "question": "Return the ordered list of all good ids.",
+            "prediction": {
+                "answer": [
+                    [
+                        "20-BC-C-10"
+                    ],
+                    [
+                        "20-BC-L-10"
+                    ],
+                    [
+                        "20-CA-7.5"
+                    ],
+                    [
+                        "24-8x10"
+                    ],
+                    [
+                        "25-STR-9"
+                    ],
+                    [
+                        "26-8x10"
+                    ],
+                    [
+                        "45-CH"
+                    ],
+                    [
+                        "45-CO"
+                    ],
+                    [
+                        "45-VA"
+                    ],
+                    [
+                        "46-11"
+                    ],
+                    [
+                        "50-ALM"
+                    ],
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "50-APR"
+                    ],
+                    [
+                        "50-CH"
+                    ],
+                    [
+                        "50-CHS"
+                    ],
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "51-APR"
+                    ],
+                    [
+                        "51-ATW"
+                    ],
+                    [
+                        "51-BC"
+                    ],
+                    [
+                        "51-BLU"
+                    ],
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-M-CH-DZ"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ],
+                    [
+                        "90-ALM-I"
+                    ],
+                    [
+                        "90-APIE-10"
+                    ],
+                    [
+                        "90-APP-11"
+                    ],
+                    [
+                        "90-APR-PF"
+                    ],
+                    [
+                        "90-BER-11"
+                    ],
+                    [
+                        "90-BLK-PF"
+                    ],
+                    [
+                        "90-BLU-11"
+                    ],
+                    [
+                        "90-CH-PF"
+                    ],
+                    [
+                        "90-CHR-11"
+                    ],
+                    [
+                        "90-LEM-11"
+                    ],
+                    [
+                        "90-PEC-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"20-BC-C-10\",\"20-BC-L-10\",\"20-CA-7.5\",\"24-8x10\",\"25-STR-9\",\"26-8x10\",\"45-CH\",\"45-CO\",\"45-VA\",\"46-11\",\"50-ALM\",\"50-APP\",\"50-APR\",\"50-CH\",\"50-CHS\",\"51-APP\",\"51-APR\",\"51-ATW\",\"51-BC\",\"51-BLU\",\"70-GA\",\"70-GON\",\"70-LEM\",\"70-M-CH-DZ\",\"70-M-VA-SM-DZ\",\"70-MAR\",\"70-R\",\"70-TU\",\"70-W\",\"90-ALM-I\",\"90-APIE-10\",\"90-APP-11\",\"90-APR-PF\",\"90-BER-11\",\"90-BLK-PF\",\"90-BLU-11\",\"90-CH-PF\",\"90-CHR-11\",\"90-LEM-11\",\"90-PEC-11\"]}"
+            }
+        },
+        {
+            "id": 28,
+            "question": "Find all receipts in which either apple flavor pie was bought or customer id 12 shopped.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 9474, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 29,
+            "question": "Find all receipts which has the latest date. Also tell me that date.",
+            "prediction": {
+                "answer": [
+                    [
+                        "36343",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "39829",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "49845",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "60270",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "70796",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "85858",
+                        "31-Oct-2007"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"ReceiptNumber\":36343,\"Date\":\"31-Oct-2007\"},{\"ReceiptNumber\":39829,\"Date\":\"31-Oct-2007\"},{\"ReceiptNumber\":49845,\"Date\":\"31-Oct-2007\"},{\"ReceiptNumber\":60270,\"Date\":\"31-Oct-2007\"},{\"ReceiptNumber\":70796,\"Date\":\"31-Oct-2007\"},{\"ReceiptNumber\":85858,\"Date\":\"31-Oct-2007\"}]}"
+            }
+        },
+        {
+            "id": 30,
+            "question": "Find all receipts which either has the earliest date or has a good with price above 10.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8806, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 31,
+            "question": "What are the ids of Cookie and Cake that cost between 3 and 7 dollars.",
+            "prediction": {
+                "answer": [],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": []}"
+            }
+        },
+        {
+            "id": 32,
+            "question": "Find the first name and last name of a customer who visited on the earliest date.",
+            "prediction": {
+                "answer": [
+                    [
+                        "JOSETTE",
+                        "SLINGLAND"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [{\"FirstName\":\"JOSETTE\",\"LastName\":\"SLINGLAND\"}]}"
+            }
+        },
+        {
+            "id": 33,
+            "question": "What is average price of goods whose flavor is blackberry or blueberry?",
+            "prediction": {
+                "answer": [
+                    [
+                        "3.25"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [3.25]}"
+            }
+        },
+        {
+            "id": 34,
+            "question": "Return the cheapest price for goods with cheese flavor.",
+            "prediction": {
+                "answer": [
+                    [
+                        "1.75"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [1.75]}"
+            }
+        },
+        {
+            "id": 35,
+            "question": "What are highest, lowest, and average prices of goods, grouped and ordered by flavor?",
+            "prediction": {
+                "answer": [],
+                "status": "empty_output",
+                "error": null,
+                "raw_output": ""
+            }
+        },
+        {
+            "id": 36,
+            "question": "Return the lowest and highest prices of goods grouped and ordered by food type.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Bear Claw",
+                        "1.95",
+                        "1.95"
+                    ],
+                    [
+                        "Cake",
+                        "8.95",
+                        "15.95"
+                    ],
+                    [
+                        "Cookie",
+                        "0.79",
+                        "1.25"
+                    ],
+                    [
+                        "Croissant",
+                        "1.45",
+                        "1.75"
+                    ],
+                    [
+                        "Danish",
+                        "1.15",
+                        "1.15"
+                    ],
+                    [
+                        "Eclair",
+                        "3.25",
+                        "3.5"
+                    ],
+                    [
+                        "Meringue",
+                        "1.15",
+                        "1.25"
+                    ],
+                    [
+                        "Pie",
+                        "5.25",
+                        "5.25"
+                    ],
+                    [
+                        "Tart",
+                        "3.25",
+                        "3.75"
+                    ],
+                    [
+                        "Twist",
+                        "1.15",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"food\":\"Bear Claw\",\"lowest_price\":1.95,\"highest_price\":1.95},{\"food\":\"Cake\",\"lowest_price\":8.95,\"highest_price\":15.95},{\"food\":\"Cookie\",\"lowest_price\":0.79,\"highest_price\":1.25},{\"food\":\"Croissant\",\"lowest_price\":1.45,\"highest_price\":1.75},{\"food\":\"Danish\",\"lowest_price\":1.15,\"highest_price\":1.15},{\"food\":\"Eclair\",\"lowest_price\":3.25,\"highest_price\":3.5},{\"food\":\"Meringue\",\"lowest_price\":1.15,\"highest_price\":1.25},{\"food\":\"Pie\",\"lowest_price\":5.25,\"highest_price\":5.25},{\"food\":\"Tart\",\"lowest_price\":3.25,\"highest_price\":3.75},{\"food\":\"Twist\",\"lowest_price\":1.15,\"highest_price\":1.15}]}"
+            }
+        },
+        {
+            "id": 37,
+            "question": "Find the top three dates when the most goods were sold.",
+            "prediction": {
+                "answer": [],
+                "status": "empty_output",
+                "error": null,
+                "raw_output": ""
+            }
+        },
+        {
+            "id": 38,
+            "question": "Which customer shopped most often? How many times?",
+            "prediction": {
+                "answer": [
+                    [
+                        "8",
+                        "18"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [{\"CustomerId\": 8, \"Count\": 18}]}"
+            }
+        },
+        {
+            "id": 39,
+            "question": "For each date, return how many distinct customers visited on that day.",
+            "prediction": {
+                "answer": [],
+                "status": "empty_output",
+                "error": null,
+                "raw_output": ""
+            }
+        },
+        {
+            "id": 40,
+            "question": "Give me the first name and last name of customers who have bought apple flavor Tart.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11876, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 41,
+            "question": "What are the ids of Cookies whose price is lower than any Croissant?",
+            "prediction": {
+                "answer": [
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"70-GA\", \"70-GON\", \"70-R\", \"70-LEM\", \"70-MAR\", \"70-TU\", \"70-W\"]}"
+            }
+        },
+        {
+            "id": 42,
+            "question": "Give me the ids of Cakes whose price is at least three times as much as the average price of Tart?",
+            "prediction": {
+                "answer": [
+                    [
+                        "20-CA-7.5"
+                    ],
+                    [
+                        "24-8x10"
+                    ],
+                    [
+                        "25-STR-9"
+                    ],
+                    [
+                        "26-8x10"
+                    ],
+                    [
+                        "46-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"20-CA-7.5\", \"24-8x10\", \"25-STR-9\", \"26-8x10\", \"46-11\"]}"
+            }
+        },
+        {
+            "id": 43,
+            "question": "What are the ids of goods whose price is above twice the average price of all goods?",
+            "prediction": {
+                "answer": [
+                    [
+                        "20-BC-C-10"
+                    ],
+                    [
+                        "20-BC-L-10"
+                    ],
+                    [
+                        "20-CA-7.5"
+                    ],
+                    [
+                        "24-8x10"
+                    ],
+                    [
+                        "25-STR-9"
+                    ],
+                    [
+                        "26-8x10"
+                    ],
+                    [
+                        "46-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"20-BC-C-10\",\"20-BC-L-10\",\"20-CA-7.5\",\"24-8x10\",\"25-STR-9\",\"26-8x10\",\"46-11\"]}"
+            }
+        },
+        {
+            "id": 44,
+            "question": "List the id, flavor and type of food of goods ordered by price.",
+            "prediction": {
+                "answer": [
+                    [
+                        "70-LEM",
+                        "Lemon",
+                        "Cookie"
+                    ],
+                    [
+                        "70-W",
+                        "Walnut",
+                        "Cookie"
+                    ],
+                    [
+                        "70-R",
+                        "Raspberry",
+                        "Cookie"
+                    ],
+                    [
+                        "70-GA",
+                        "Ganache",
+                        "Cookie"
+                    ],
+                    [
+                        "70-GON",
+                        "Gongolais",
+                        "Cookie"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ",
+                        "Vanilla",
+                        "Meringue"
+                    ],
+                    [
+                        "51-APR",
+                        "Apricot",
+                        "Danish"
+                    ],
+                    [
+                        "51-APP",
+                        "Apple",
+                        "Danish"
+                    ],
+                    [
+                        "51-ATW",
+                        "Almond",
+                        "Twist"
+                    ],
+                    [
+                        "51-BLU",
+                        "Blueberry",
+                        "Danish"
+                    ],
+                    [
+                        "70-M-CH-DZ",
+                        "Chocolate",
+                        "Meringue"
+                    ],
+                    [
+                        "70-MAR",
+                        "Marzipan",
+                        "Cookie"
+                    ],
+                    [
+                        "70-TU",
+                        "Tuile",
+                        "Cookie"
+                    ],
+                    [
+                        "50-ALM",
+                        "Almond",
+                        "Croissant"
+                    ],
+                    [
+                        "50-APP",
+                        "Apple",
+                        "Croissant"
+                    ],
+                    [
+                        "50-APR",
+                        "Apricot",
+                        "Croissant"
+                    ],
+                    [
+                        "50-CHS",
+                        "Cheese",
+                        "Croissant"
+                    ],
+                    [
+                        "50-CH",
+                        "Chocolate",
+                        "Croissant"
+                    ],
+                    [
+                        "51-BC",
+                        "Almond",
+                        "Bear Claw"
+                    ],
+                    [
+                        "45-CH",
+                        "Chocolate",
+                        "Eclair"
+                    ],
+                    [
+                        "45-VA",
+                        "Vanilla",
+                        "Eclair"
+                    ],
+                    [
+                        "90-APP-11",
+                        "Apple",
+                        "Tart"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "Apricot",
+                        "Tart"
+                    ],
+                    [
+                        "90-BER-11",
+                        "Berry",
+                        "Tart"
+                    ],
+                    [
+                        "90-BLK-PF",
+                        "Blackberry",
+                        "Tart"
+                    ],
+                    [
+                        "90-BLU-11",
+                        "Blueberry",
+                        "Tart"
+                    ],
+                    [
+                        "90-CHR-11",
+                        "Cherry",
+                        "Tart"
+                    ],
+                    [
+                        "90-LEM-11",
+                        "Lemon",
+                        "Tart"
+                    ],
+                    [
+                        "45-CO",
+                        "Coffee",
+                        "Eclair"
+                    ],
+                    [
+                        "90-ALM-I",
+                        "Almond",
+                        "Tart"
+                    ],
+                    [
+                        "90-CH-PF",
+                        "Chocolate",
+                        "Tart"
+                    ],
+                    [
+                        "90-PEC-11",
+                        "Pecan",
+                        "Tart"
+                    ],
+                    [
+                        "90-APIE-10",
+                        "Apple",
+                        "Pie"
+                    ],
+                    [
+                        "20-BC-C-10",
+                        "Chocolate",
+                        "Cake"
+                    ],
+                    [
+                        "20-BC-L-10",
+                        "Lemon",
+                        "Cake"
+                    ],
+                    [
+                        "25-STR-9",
+                        "Strawberry",
+                        "Cake"
+                    ],
+                    [
+                        "46-11",
+                        "Napoleon",
+                        "Cake"
+                    ],
+                    [
+                        "20-CA-7.5",
+                        "Casino",
+                        "Cake"
+                    ],
+                    [
+                        "24-8x10",
+                        "Opera",
+                        "Cake"
+                    ],
+                    [
+                        "26-8x10",
+                        "Truffle",
+                        "Cake"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"id\":\"70-LEM\",\"flavor\":\"Lemon\",\"food\":\"Cookie\"},{\"id\":\"70-W\",\"flavor\":\"Walnut\",\"food\":\"Cookie\"},{\"id\":\"70-R\",\"flavor\":\"Raspberry\",\"food\":\"Cookie\"},{\"id\":\"70-GA\",\"flavor\":\"Ganache\",\"food\":\"Cookie\"},{\"id\":\"70-GON\",\"flavor\":\"Gongolais\",\"food\":\"Cookie\"},{\"id\":\"70-M-VA-SM-DZ\",\"flavor\":\"Vanilla\",\"food\":\"Meringue\"},{\"id\":\"51-APR\",\"flavor\":\"Apricot\",\"food\":\"Danish\"},{\"id\":\"51-APP\",\"flavor\":\"Apple\",\"food\":\"Danish\"},{\"id\":\"51-ATW\",\"flavor\":\"Almond\",\"food\":\"Twist\"},{\"id\":\"51-BLU\",\"flavor\":\"Blueberry\",\"food\":\"Danish\"},{\"id\":\"70-M-CH-DZ\",\"flavor\":\"Chocolate\",\"food\":\"Meringue\"},{\"id\":\"70-MAR\",\"flavor\":\"Marzipan\",\"food\":\"Cookie\"},{\"id\":\"70-TU\",\"flavor\":\"Tuile\",\"food\":\"Cookie\"},{\"id\":\"50-ALM\",\"flavor\":\"Almond\",\"food\":\"Croissant\"},{\"id\":\"50-APP\",\"flavor\":\"Apple\",\"food\":\"Croissant\"},{\"id\":\"50-APR\",\"flavor\":\"Apricot\",\"food\":\"Croissant\"},{\"id\":\"50-CHS\",\"flavor\":\"Cheese\",\"food\":\"Croissant\"},{\"id\":\"50-CH\",\"flavor\":\"Chocolate\",\"food\":\"Croissant\"},{\"id\":\"51-BC\",\"flavor\":\"Almond\",\"food\":\"Bear Claw\"},{\"id\":\"45-CH\",\"flavor\":\"Chocolate\",\"food\":\"Eclair\"},{\"id\":\"45-VA\",\"flavor\":\"Vanilla\",\"food\":\"Eclair\"},{\"id\":\"90-APP-11\",\"flavor\":\"Apple\",\"food\":\"Tart\"},{\"id\":\"90-APR-PF\",\"flavor\":\"Apricot\",\"food\":\"Tart\"},{\"id\":\"90-BER-11\",\"flavor\":\"Berry\",\"food\":\"Tart\"},{\"id\":\"90-BLK-PF\",\"flavor\":\"Blackberry\",\"food\":\"Tart\"},{\"id\":\"90-BLU-11\",\"flavor\":\"Blueberry\",\"food\":\"Tart\"},{\"id\":\"90-CHR-11\",\"flavor\":\"Cherry\",\"food\":\"Tart\"},{\"id\":\"90-LEM-11\",\"flavor\":\"Lemon\",\"food\":\"Tart\"},{\"id\":\"45-CO\",\"flavor\":\"Coffee\",\"food\":\"Eclair\"},{\"id\":\"90-ALM-I\",\"flavor\":\"Almond\",\"food\":\"Tart\"},{\"id\":\"90-CH-PF\",\"flavor\":\"Chocolate\",\"food\":\"Tart\"},{\"id\":\"90-PEC-11\",\"flavor\":\"Pecan\",\"food\":\"Tart\"},{\"id\":\"90-APIE-10\",\"flavor\":\"Apple\",\"food\":\"Pie\"},{\"id\":\"20-BC-C-10\",\"flavor\":\"Chocolate\",\"food\":\"Cake\"},{\"id\":\"20-BC-L-10\",\"flavor\":\"Lemon\",\"food\":\"Cake\"},{\"id\":\"25-STR-9\",\"flavor\":\"Strawberry\",\"food\":\"Cake\"},{\"id\":\"46-11\",\"flavor\":\"Napoleon\",\"food\":\"Cake\"},{\"id\":\"20-CA-7.5\",\"flavor\":\"Casino\",\"food\":\"Cake\"},{\"id\":\"24-8x10\",\"flavor\":\"Opera\",\"food\":\"Cake\"},{\"id\":\"26-8x10\",\"flavor\":\"Truffle\",\"food\":\"Cake\"}]}"
+            }
+        },
+        {
+            "id": 45,
+            "question": "Return a list of the id and flavor for Cakes ordered by flavor.",
+            "prediction": {
+                "answer": [
+                    [
+                        "20-CA-7.5",
+                        "Casino"
+                    ],
+                    [
+                        "20-BC-C-10",
+                        "Chocolate"
+                    ],
+                    [
+                        "20-BC-L-10",
+                        "Lemon"
+                    ],
+                    [
+                        "46-11",
+                        "Napoleon"
+                    ],
+                    [
+                        "24-8x10",
+                        "Opera"
+                    ],
+                    [
+                        "25-STR-9",
+                        "Strawberry"
+                    ],
+                    [
+                        "26-8x10",
+                        "Truffle"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"id\":\"20-CA-7.5\",\"flavor\":\"Casino\"},{\"id\":\"20-BC-C-10\",\"flavor\":\"Chocolate\"},{\"id\":\"20-BC-L-10\",\"flavor\":\"Lemon\"},{\"id\":\"46-11\",\"flavor\":\"Napoleon\"},{\"id\":\"24-8x10\",\"flavor\":\"Opera\"},{\"id\":\"25-STR-9\",\"flavor\":\"Strawberry\"},{\"id\":\"26-8x10\",\"flavor\":\"Truffle\"}]}"
+            }
+        },
+        {
+            "id": 46,
+            "question": "Find all the items that have chocolate flavor but were not bought more than 10 times.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 9473, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 47,
+            "question": "What are the flavors available for Cake but not for Tart?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Casino"
+                    ],
+                    [
+                        "Opera"
+                    ],
+                    [
+                        "Strawberry"
+                    ],
+                    [
+                        "Truffle"
+                    ],
+                    [
+                        "Napoleon"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Casino\", \"Opera\", \"Strawberry\", \"Truffle\", \"Napoleon\"]}"
+            }
+        },
+        {
+            "id": 48,
+            "question": "What is the three most popular goods in this bakery?",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8896, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 49,
+            "question": "Find the ids of customers who have spent more than 150 dollars in total.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11682, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 50,
+            "question": "Find the ids of customers whose average spending for each good is above 5.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11682, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        },
+        {
+            "id": 51,
+            "question": "On which day did the bakery sell more than 100 dollars in total.",
+            "prediction": {
+                "answer": null,
+                "status": "context_error",
+                "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kr8v6svwe2stbrxfaxz5c7mp` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 11681, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+                "raw_output": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+  "tables": {
+    "club": [
+      {
+        "Club_ID": 1,
+        "Name": "Arsenal",
+        "Manager": "Arsène Wenger",
+        "Captain": "Cesc Fàbregas",
+        "Manufacturer": "Nike",
+        "Sponsor": "Fly Emirates"
+      },
+      {
+        "Club_ID": 2,
+        "Name": "Aston Villa",
+        "Manager": "Martin O'Neill",
+        "Captain": "Martin Laursen",
+        "Manufacturer": "Nike",
+        "Sponsor": "Acorns"
+      },
+      {
+        "Club_ID": 3,
+        "Name": "Blackburn Rovers",
+        "Manager": "Sam Allardyce",
+        "Captain": "Ryan Nelsen",
+        "Manufacturer": "Umbro",
+        "Sponsor": "Crown Paints"
+      },
+      {
+        "Club_ID": 4,
+        "Name": "Bolton Wanderers",
+        "Manager": "Gary Megson",
+        "Captain": "Kevin Davies",
+        "Manufacturer": "Reebok",
+        "Sponsor": "Reebok"
+      },
+      {
+        "Club_ID": 5,
+        "Name": "Chelsea",
+        "Manager": "Guus Hiddink",
+        "Captain": "John Terry",
+        "Manufacturer": "adidas",
+        "Sponsor": "Samsung"
+      },
+      {
+        "Club_ID": 6,
+        "Name": "Everton",
+        "Manager": "David Moyes",
+        "Captain": "Phil Neville",
+        "Manufacturer": "Umbro",
+        "Sponsor": "Chang"
+      },
+      {
+        "Club_ID": 7,
+        "Name": "Fulham",
+        "Manager": "Roy Hodgson",
+        "Captain": "Danny Murphy",
+        "Manufacturer": "Nike",
+        "Sponsor": "LG"
+      },
+      {
+        "Club_ID": 8,
+        "Name": "Hull City",
+        "Manager": "Phil Brown",
+        "Captain": "Ian Ashbee",
+        "Manufacturer": "Umbro",
+        "Sponsor": "Karoo (H) / Kingston Communications (A, 3rd)"
+      },
+      {
+        "Club_ID": 9,
+        "Name": "Liverpool",
+        "Manager": "Rafael Benítez",
+        "Captain": "Steven Gerrard",
+        "Manufacturer": "adidas",
+        "Sponsor": "Carlsberg"
+      }
+    ],
+    "player": [
+      {
+        "Player_ID": 1.0,
+        "Name": "Nick Price",
+        "Country": "Zimbabwe",
+        "Earnings": 1478557.0,
+        "Events_number": 18,
+        "Wins_count": 4,
+        "Club_ID": 1
+      },
+      {
+        "Player_ID": 2.0,
+        "Name": "Paul Azinger",
+        "Country": "United States",
+        "Earnings": 1458456.0,
+        "Events_number": 24,
+        "Wins_count": 3,
+        "Club_ID": 3
+      },
+      {
+        "Player_ID": 3.0,
+        "Name": "Greg Norman",
+        "Country": "Australia",
+        "Earnings": 1359653.0,
+        "Events_number": 15,
+        "Wins_count": 2,
+        "Club_ID": 5
+      },
+      {
+        "Player_ID": 4.0,
+        "Name": "Jim Gallagher, Jr.",
+        "Country": "United States",
+        "Earnings": 1078870.0,
+        "Events_number": 27,
+        "Wins_count": 2,
+        "Club_ID": 6
+      },
+      {
+        "Player_ID": 5.0,
+        "Name": "David Frost",
+        "Country": "South Africa",
+        "Earnings": 1030717.0,
+        "Events_number": 22,
+        "Wins_count": 2,
+        "Club_ID": 7
+      }
+    ]
+  }
+}

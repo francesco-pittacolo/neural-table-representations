@@ -1,0 +1,4390 @@
+{
+    "summary": {
+        "pipeline": "tableqa",
+        "prompt_method": "zero_shot",
+        "model": "llama-3.1-8b-instant",
+        "dataset": "bakery_1",
+        "subset": "bakery_1",
+        "evaluation_mode": "strict",
+        "num_examples": 52,
+        "skipped_context_errors": 0,
+        "metrics": {
+            "cell_precision": 0.3491,
+            "cell_recall": 0.4021,
+            "tuple_cardinality": 0.4746,
+            "tuple_constraint": 0.3,
+            "tuple_order": 0.3983
+        }
+    },
+    "data": [
+        {
+            "id": 0,
+            "question": "What is the most expensive cake and its flavor?",
+            "ground_truth": [
+                [
+                    "20-CA-7.5",
+                    "Casino"
+                ]
+            ],
+            "prediction": [
+                [
+                    "15.95",
+                    "Truffle"
+                ],
+                [
+                    "15.95",
+                    "Opera"
+                ],
+                [
+                    "15.95",
+                    "Casino"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.16666666666666666,
+                "cell_recall": 0.5,
+                "tuple_cardinality": 0.3333333333333333,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 1,
+            "question": "What is the cheapest cookie and its flavor?",
+            "ground_truth": [
+                [
+                    "70-LEM",
+                    "Lemon"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Raspberry",
+                    "1.09"
+                ],
+                [
+                    "Lemon",
+                    "0.79"
+                ],
+                [
+                    "Tuile",
+                    "1.25"
+                ],
+                [
+                    "Walnut",
+                    "0.79"
+                ],
+                [
+                    "Ganache",
+                    "1.15"
+                ],
+                [
+                    "Gongolais",
+                    "1.15"
+                ],
+                [
+                    "Marzipan",
+                    "1.25"
+                ],
+                [
+                    "Raspberry",
+                    "1.09"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.0625,
+                "cell_recall": 0.5,
+                "tuple_cardinality": 0.125,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 2,
+            "question": "Find the ids of goods that have apple flavor.",
+            "ground_truth": [
+                [
+                    "90-APIE-10"
+                ],
+                [
+                    "90-APP-11"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "51-APP"
+                ]
+            ],
+            "prediction": [
+                [
+                    "90-APIE-10"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "51-APP"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 0.75,
+                "tuple_cardinality": 0.75,
+                "tuple_constraint": 0.75,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 3,
+            "question": "What are the ids of goods that cost less than 3 dollars?",
+            "ground_truth": [
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-R"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "70-M-VA-SM-DZ"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-W"
+                ],
+                [
+                    "50-ALM"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "50-APR"
+                ],
+                [
+                    "50-CHS"
+                ],
+                [
+                    "50-CH"
+                ],
+                [
+                    "51-APR"
+                ],
+                [
+                    "51-APP"
+                ],
+                [
+                    "51-ATW"
+                ],
+                [
+                    "51-BC"
+                ],
+                [
+                    "51-BLU"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 4,
+            "question": "List the distinct ids of all customers who bought a lemon cake?",
+            "ground_truth": [
+                [
+                    "6"
+                ],
+                [
+                    "11"
+                ],
+                [
+                    "12"
+                ],
+                [
+                    "3"
+                ],
+                [
+                    "9"
+                ],
+                [
+                    "2"
+                ],
+                [
+                    "8"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 5,
+            "question": "For each type of food, tell me how many customers have ever bought it.",
+            "ground_truth": [
+                [
+                    "Bear Claw",
+                    "15"
+                ],
+                [
+                    "Cake",
+                    "20"
+                ],
+                [
+                    "Cookie",
+                    "20"
+                ],
+                [
+                    "Croissant",
+                    "17"
+                ],
+                [
+                    "Danish",
+                    "17"
+                ],
+                [
+                    "Eclair",
+                    "16"
+                ],
+                [
+                    "Meringue",
+                    "15"
+                ],
+                [
+                    "Pie",
+                    "9"
+                ],
+                [
+                    "Tart",
+                    "20"
+                ],
+                [
+                    "Twist",
+                    "11"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 6,
+            "question": "Find the id of customers who shopped at the bakery at least 15 times.",
+            "ground_truth": [
+                [
+                    "6"
+                ],
+                [
+                    "7"
+                ],
+                [
+                    "8"
+                ],
+                [
+                    "14"
+                ],
+                [
+                    "20"
+                ]
+            ],
+            "prediction": [
+                [
+                    "7"
+                ],
+                [
+                    "11"
+                ],
+                [
+                    "15"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.3333333333333333,
+                "cell_recall": 0.2,
+                "tuple_cardinality": 0.6,
+                "tuple_constraint": 0.2,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 7,
+            "question": "What is the last name of the customers who shopped at the bakery more than 10 times?",
+            "ground_truth": [
+                [
+                    "LOGAN"
+                ],
+                [
+                    "SLINGLAND"
+                ],
+                [
+                    "TOUSSAND"
+                ],
+                [
+                    "HELING"
+                ],
+                [
+                    "SOPKO"
+                ],
+                [
+                    "CALLENDAR"
+                ],
+                [
+                    "CRUZEN"
+                ],
+                [
+                    "ZEME"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 8,
+            "question": "How many types of Cake does this bakery sell?",
+            "ground_truth": [
+                [
+                    "7"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Cake",
+                    "9"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 9,
+            "question": "List all the flavors of Croissant available in this bakery.",
+            "ground_truth": [
+                [
+                    "Almond"
+                ],
+                [
+                    "Apple"
+                ],
+                [
+                    "Apricot"
+                ],
+                [
+                    "Cheese"
+                ],
+                [
+                    "Chocolate"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Almond"
+                ],
+                [
+                    "Apple"
+                ],
+                [
+                    "Apricot"
+                ],
+                [
+                    "Cheese"
+                ],
+                [
+                    "Chocolate"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 10,
+            "question": "Give me a list of all the distinct items bought by the customer number 15.",
+            "ground_truth": [
+                [
+                    "70-TU"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "90-LEM-11"
+                ],
+                [
+                    "90-APR-PF"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "90-APP-11"
+                ],
+                [
+                    "45-VA"
+                ],
+                [
+                    "51-ATW"
+                ],
+                [
+                    "90-CH-PF"
+                ],
+                [
+                    "90-BLK-PF"
+                ],
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "51-BC"
+                ],
+                [
+                    "90-BER-11"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 11,
+            "question": "For each type of food, what are the average, maximum and minimum price?",
+            "ground_truth": [
+                [
+                    "Bear Claw",
+                    "1.95",
+                    "1.95",
+                    "1.95"
+                ],
+                [
+                    "Cake",
+                    "13.027142857142858",
+                    "15.95",
+                    "8.95"
+                ],
+                [
+                    "Cookie",
+                    "1.0671428571428572",
+                    "1.25",
+                    "0.79"
+                ],
+                [
+                    "Croissant",
+                    "1.5699999999999998",
+                    "1.75",
+                    "1.45"
+                ],
+                [
+                    "Danish",
+                    "1.15",
+                    "1.15",
+                    "1.15"
+                ],
+                [
+                    "Eclair",
+                    "3.3333333333333335",
+                    "3.5",
+                    "3.25"
+                ],
+                [
+                    "Meringue",
+                    "1.2",
+                    "1.25",
+                    "1.15"
+                ],
+                [
+                    "Pie",
+                    "5.25",
+                    "5.25",
+                    "5.25"
+                ],
+                [
+                    "Tart",
+                    "3.4",
+                    "3.75",
+                    "3.25"
+                ],
+                [
+                    "Twist",
+                    "1.15",
+                    "1.15",
+                    "1.15"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Cake",
+                    "12.93",
+                    "15.95",
+                    "8.95"
+                ],
+                [
+                    "Eclair",
+                    "3.33",
+                    "3.5",
+                    "3.25"
+                ],
+                [
+                    "Tart",
+                    "3.38",
+                    "3.75",
+                    "3.25"
+                ],
+                [
+                    "Cookie",
+                    "1.11",
+                    "1.25",
+                    "0.79"
+                ],
+                [
+                    "Croissant",
+                    "1.5",
+                    "1.75",
+                    "1.45"
+                ],
+                [
+                    "Danish",
+                    "1.15",
+                    "1.15",
+                    "1.15"
+                ],
+                [
+                    "Twist",
+                    "1.15",
+                    "1.15",
+                    "1.15"
+                ],
+                [
+                    "Bear Claw",
+                    "1.95",
+                    "1.95",
+                    "1.95"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.84375,
+                "cell_recall": 0.675,
+                "tuple_cardinality": 0.8,
+                "tuple_constraint": 0.3,
+                "tuple_order": 0.25
+            }
+        },
+        {
+            "id": 12,
+            "question": "Find the receipt numbers where both Cake and Cookie were bought.",
+            "ground_truth": [
+                [
+                    "12698"
+                ],
+                [
+                    "12800"
+                ],
+                [
+                    "13355"
+                ],
+                [
+                    "16034"
+                ],
+                [
+                    "16532"
+                ],
+                [
+                    "17685"
+                ],
+                [
+                    "21040"
+                ],
+                [
+                    "26198"
+                ],
+                [
+                    "29908"
+                ],
+                [
+                    "34579"
+                ],
+                [
+                    "40305"
+                ],
+                [
+                    "53922"
+                ],
+                [
+                    "55944"
+                ],
+                [
+                    "61948"
+                ],
+                [
+                    "62707"
+                ],
+                [
+                    "64477"
+                ],
+                [
+                    "65165"
+                ],
+                [
+                    "67314"
+                ],
+                [
+                    "68753"
+                ],
+                [
+                    "70162"
+                ],
+                [
+                    "70655"
+                ],
+                [
+                    "72207"
+                ],
+                [
+                    "77032"
+                ],
+                [
+                    "86861"
+                ],
+                [
+                    "95514"
+                ],
+                [
+                    "96258"
+                ],
+                [
+                    "96531"
+                ],
+                [
+                    "96761"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 13,
+            "question": "Find all the receipt numbers in which customer id 5 purchased Croissant.",
+            "ground_truth": [
+                [
+                    "28117"
+                ],
+                [
+                    "89182"
+                ],
+                [
+                    "91192"
+                ]
+            ],
+            "prediction": [
+                [
+                    "28117"
+                ],
+                [
+                    "43752"
+                ],
+                [
+                    "61948"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.3333333333333333,
+                "cell_recall": 0.3333333333333333,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.333,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 14,
+            "question": "What is the receipt number and date of the receipt in which the most expensive item was bought?",
+            "ground_truth": [
+                [
+                    "51991",
+                    "17-Oct-2007"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 15,
+            "question": "What is the item that was bought the least number of times?",
+            "ground_truth": [
+                [
+                    "50-CH"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 16,
+            "question": "How many goods are available for each food type?",
+            "ground_truth": [
+                [
+                    "1",
+                    "Bear Claw"
+                ],
+                [
+                    "7",
+                    "Cake"
+                ],
+                [
+                    "7",
+                    "Cookie"
+                ],
+                [
+                    "5",
+                    "Croissant"
+                ],
+                [
+                    "3",
+                    "Danish"
+                ],
+                [
+                    "3",
+                    "Eclair"
+                ],
+                [
+                    "2",
+                    "Meringue"
+                ],
+                [
+                    "1",
+                    "Pie"
+                ],
+                [
+                    "10",
+                    "Tart"
+                ],
+                [
+                    "1",
+                    "Twist"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Cake",
+                    "9"
+                ],
+                [
+                    "Eclair",
+                    "3"
+                ],
+                [
+                    "Tart",
+                    "11"
+                ],
+                [
+                    "Pie",
+                    "1"
+                ],
+                [
+                    "Cookie",
+                    "8"
+                ],
+                [
+                    "Meringue",
+                    "2"
+                ],
+                [
+                    "Croissant",
+                    "4"
+                ],
+                [
+                    "Danish",
+                    "3"
+                ],
+                [
+                    "Twist",
+                    "1"
+                ],
+                [
+                    "Bear Claw",
+                    "1"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.8,
+                "cell_recall": 0.8,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.6,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 17,
+            "question": "What is the average price for each food type?",
+            "ground_truth": [
+                [
+                    "1.95",
+                    "Bear Claw"
+                ],
+                [
+                    "13.027142857142858",
+                    "Cake"
+                ],
+                [
+                    "1.0671428571428572",
+                    "Cookie"
+                ],
+                [
+                    "1.5699999999999998",
+                    "Croissant"
+                ],
+                [
+                    "1.15",
+                    "Danish"
+                ],
+                [
+                    "3.3333333333333335",
+                    "Eclair"
+                ],
+                [
+                    "1.2",
+                    "Meringue"
+                ],
+                [
+                    "5.25",
+                    "Pie"
+                ],
+                [
+                    "3.4",
+                    "Tart"
+                ],
+                [
+                    "1.15",
+                    "Twist"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Cake",
+                    "12.43"
+                ],
+                [
+                    "Eclair",
+                    "3.33"
+                ],
+                [
+                    "Tart",
+                    "3.38"
+                ],
+                [
+                    "Cookie",
+                    "1.08"
+                ],
+                [
+                    "Croissant",
+                    "1.48"
+                ],
+                [
+                    "Danish",
+                    "1.15"
+                ],
+                [
+                    "Twist",
+                    "1.15"
+                ],
+                [
+                    "Bear Claw",
+                    "1.95"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.6875,
+                "cell_recall": 0.55,
+                "tuple_cardinality": 0.8,
+                "tuple_constraint": 0.3,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 18,
+            "question": "What are the goods that have Apricot flavor and are cheaper than 5 dollars?",
+            "ground_truth": [
+                [
+                    "90-APR-PF"
+                ],
+                [
+                    "50-APR"
+                ],
+                [
+                    "51-APR"
+                ]
+            ],
+            "prediction": [
+                [
+                    "50-APR",
+                    "Apricot",
+                    "Croissant",
+                    "1.45"
+                ],
+                [
+                    "51-APR",
+                    "Apricot",
+                    "Danish",
+                    "1.15"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.25,
+                "cell_recall": 0.6666666666666666,
+                "tuple_cardinality": 0.6666666666666666,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 19,
+            "question": "Find flavor of cakes that cost more than 10 dollars.",
+            "ground_truth": [
+                [
+                    "Casino"
+                ],
+                [
+                    "Opera"
+                ],
+                [
+                    "Strawberry"
+                ],
+                [
+                    "Truffle"
+                ],
+                [
+                    "Napoleon"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Chocolate"
+                ],
+                [
+                    "Lemon"
+                ],
+                [
+                    "Casino"
+                ],
+                [
+                    "Opera"
+                ],
+                [
+                    "Strawberry"
+                ],
+                [
+                    "Truffle"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.6666666666666666,
+                "cell_recall": 0.8,
+                "tuple_cardinality": 0.8333333333333334,
+                "tuple_constraint": 0.8,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 20,
+            "question": "Give me the distinct id and price for all goods whose price is below the average of all goods?",
+            "ground_truth": [
+                [
+                    "45-CH",
+                    "3.25"
+                ],
+                [
+                    "45-CO",
+                    "3.5"
+                ],
+                [
+                    "45-VA",
+                    "3.25"
+                ],
+                [
+                    "50-ALM",
+                    "1.45"
+                ],
+                [
+                    "50-APP",
+                    "1.45"
+                ],
+                [
+                    "50-APR",
+                    "1.45"
+                ],
+                [
+                    "50-CH",
+                    "1.75"
+                ],
+                [
+                    "50-CHS",
+                    "1.75"
+                ],
+                [
+                    "51-APP",
+                    "1.15"
+                ],
+                [
+                    "51-APR",
+                    "1.15"
+                ],
+                [
+                    "51-ATW",
+                    "1.15"
+                ],
+                [
+                    "51-BC",
+                    "1.95"
+                ],
+                [
+                    "51-BLU",
+                    "1.15"
+                ],
+                [
+                    "70-GA",
+                    "1.15"
+                ],
+                [
+                    "70-GON",
+                    "1.15"
+                ],
+                [
+                    "70-LEM",
+                    "0.79"
+                ],
+                [
+                    "70-M-CH-DZ",
+                    "1.25"
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    "1.15"
+                ],
+                [
+                    "70-MAR",
+                    "1.25"
+                ],
+                [
+                    "70-R",
+                    "1.09"
+                ],
+                [
+                    "70-TU",
+                    "1.25"
+                ],
+                [
+                    "70-W",
+                    "0.79"
+                ],
+                [
+                    "90-ALM-I",
+                    "3.75"
+                ],
+                [
+                    "90-APP-11",
+                    "3.25"
+                ],
+                [
+                    "90-APR-PF",
+                    "3.25"
+                ],
+                [
+                    "90-BER-11",
+                    "3.25"
+                ],
+                [
+                    "90-BLK-PF",
+                    "3.25"
+                ],
+                [
+                    "90-BLU-11",
+                    "3.25"
+                ],
+                [
+                    "90-CH-PF",
+                    "3.75"
+                ],
+                [
+                    "90-CHR-11",
+                    "3.25"
+                ],
+                [
+                    "90-LEM-11",
+                    "3.25"
+                ],
+                [
+                    "90-PEC-11",
+                    "3.75"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 21,
+            "question": "What are the distinct ids of all goods that are cheaper than some goods of type Tart?",
+            "ground_truth": [
+                [
+                    "45-CH"
+                ],
+                [
+                    "45-CO"
+                ],
+                [
+                    "45-VA"
+                ],
+                [
+                    "50-ALM"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "50-APR"
+                ],
+                [
+                    "50-CH"
+                ],
+                [
+                    "50-CHS"
+                ],
+                [
+                    "51-APP"
+                ],
+                [
+                    "51-APR"
+                ],
+                [
+                    "51-ATW"
+                ],
+                [
+                    "51-BC"
+                ],
+                [
+                    "51-BLU"
+                ],
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "70-M-VA-SM-DZ"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-R"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-W"
+                ],
+                [
+                    "90-APP-11"
+                ],
+                [
+                    "90-APR-PF"
+                ],
+                [
+                    "90-BER-11"
+                ],
+                [
+                    "90-BLK-PF"
+                ],
+                [
+                    "90-BLU-11"
+                ],
+                [
+                    "90-CHR-11"
+                ],
+                [
+                    "90-LEM-11"
+                ]
+            ],
+            "prediction": [
+                [
+                    "20-BC-C-10"
+                ],
+                [
+                    "20-BC-L-10"
+                ],
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "26-8x10"
+                ],
+                [
+                    "45-CH"
+                ],
+                [
+                    "45-CO"
+                ],
+                [
+                    "45-VA"
+                ],
+                [
+                    "46-11"
+                ],
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-R"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "70-M-VA-SM-DZ"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-W"
+                ],
+                [
+                    "50-ALM"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "50-APR"
+                ],
+                [
+                    "50-CHS"
+                ],
+                [
+                    "50-CH"
+                ],
+                [
+                    "51-APR"
+                ],
+                [
+                    "51-APP"
+                ],
+                [
+                    "51-ATW"
+                ],
+                [
+                    "51-BC"
+                ],
+                [
+                    "51-BLU"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.7586206896551724,
+                "cell_recall": 0.7586206896551724,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.759,
+                "tuple_order": 0.5105
+            }
+        },
+        {
+            "id": 22,
+            "question": "List distinct receipt numbers for which someone bought a good that costs more than 13 dollars.",
+            "ground_truth": [
+                [
+                    "51991"
+                ],
+                [
+                    "83085"
+                ],
+                [
+                    "13355"
+                ],
+                [
+                    "52761"
+                ],
+                [
+                    "58770"
+                ],
+                [
+                    "55944"
+                ],
+                [
+                    "16034"
+                ],
+                [
+                    "64451"
+                ],
+                [
+                    "77406"
+                ],
+                [
+                    "99994"
+                ],
+                [
+                    "64861"
+                ],
+                [
+                    "33456"
+                ],
+                [
+                    "26240"
+                ],
+                [
+                    "37636"
+                ],
+                [
+                    "12698"
+                ],
+                [
+                    "26148"
+                ],
+                [
+                    "85858"
+                ],
+                [
+                    "67314"
+                ],
+                [
+                    "11891"
+                ],
+                [
+                    "45976"
+                ],
+                [
+                    "53376"
+                ],
+                [
+                    "96761"
+                ],
+                [
+                    "68199"
+                ],
+                [
+                    "49977"
+                ],
+                [
+                    "96258"
+                ],
+                [
+                    "12800"
+                ],
+                [
+                    "70655"
+                ],
+                [
+                    "19002"
+                ],
+                [
+                    "72207"
+                ],
+                [
+                    "38849"
+                ],
+                [
+                    "32701"
+                ],
+                [
+                    "68753"
+                ],
+                [
+                    "96531"
+                ],
+                [
+                    "53922"
+                ],
+                [
+                    "64477"
+                ],
+                [
+                    "77032"
+                ],
+                [
+                    "34910"
+                ],
+                [
+                    "45062"
+                ],
+                [
+                    "40305"
+                ],
+                [
+                    "33060"
+                ],
+                [
+                    "12396"
+                ],
+                [
+                    "70162"
+                ],
+                [
+                    "98806"
+                ],
+                [
+                    "61008"
+                ],
+                [
+                    "96402"
+                ],
+                [
+                    "35904"
+                ],
+                [
+                    "34579"
+                ],
+                [
+                    "17729"
+                ],
+                [
+                    "61948"
+                ],
+                [
+                    "95514"
+                ],
+                [
+                    "24829"
+                ],
+                [
+                    "44590"
+                ],
+                [
+                    "65165"
+                ],
+                [
+                    "16532"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 23,
+            "question": "On which date did some customer buy a good that costs more than 15 dollars?",
+            "ground_truth": [
+                [
+                    "17-Oct-2007"
+                ],
+                [
+                    "12-Oct-2007"
+                ],
+                [
+                    "19-Oct-2007"
+                ],
+                [
+                    "27-Oct-2007"
+                ],
+                [
+                    "22-Oct-2007"
+                ],
+                [
+                    "16-Oct-2007"
+                ],
+                [
+                    "10-Oct-2007"
+                ],
+                [
+                    "9-Oct-2007"
+                ],
+                [
+                    "21-Oct-2007"
+                ],
+                [
+                    "7-Oct-2007"
+                ],
+                [
+                    "20-Oct-2007"
+                ],
+                [
+                    "23-Oct-2007"
+                ],
+                [
+                    "31-Oct-2007"
+                ],
+                [
+                    "3-Oct-2007"
+                ],
+                [
+                    "14-Oct-2007"
+                ],
+                [
+                    "4-Oct-2007"
+                ],
+                [
+                    "18-Oct-2007"
+                ],
+                [
+                    "6-Oct-2007"
+                ],
+                [
+                    "15-Oct-2007"
+                ],
+                [
+                    "25-Oct-2007"
+                ],
+                [
+                    "8-Oct-2007"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 24,
+            "question": "Give me the list of all goods whose id has \"APP\".",
+            "ground_truth": [
+                [
+                    "50-APP"
+                ],
+                [
+                    "51-APP"
+                ],
+                [
+                    "90-APP-11"
+                ]
+            ],
+            "prediction": [
+                [
+                    "90-APIE-10",
+                    "Apple",
+                    "Pie",
+                    "5.25"
+                ],
+                [
+                    "50-APP",
+                    "Apple",
+                    "Croissant",
+                    "1.45"
+                ],
+                [
+                    "51-APP",
+                    "Apple",
+                    "Danish",
+                    "1.15"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.16666666666666666,
+                "cell_recall": 0.6666666666666666,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 25,
+            "question": "Which good has \"70\" in its id? And what is its price?",
+            "ground_truth": [
+                [
+                    "70-GA",
+                    "1.15"
+                ],
+                [
+                    "70-GON",
+                    "1.15"
+                ],
+                [
+                    "70-R",
+                    "1.09"
+                ],
+                [
+                    "70-LEM",
+                    "0.79"
+                ],
+                [
+                    "70-M-CH-DZ",
+                    "1.25"
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    "1.15"
+                ],
+                [
+                    "70-MAR",
+                    "1.25"
+                ],
+                [
+                    "70-TU",
+                    "1.25"
+                ],
+                [
+                    "70-W",
+                    "0.79"
+                ]
+            ],
+            "prediction": [
+                [
+                    "70-GA",
+                    "1.15"
+                ],
+                [
+                    "70-GON",
+                    "1.15"
+                ],
+                [
+                    "70-R",
+                    "1.09"
+                ],
+                [
+                    "70-LEM",
+                    "0.79"
+                ],
+                [
+                    "70-M-CH-DZ",
+                    "1.25"
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    "1.15"
+                ],
+                [
+                    "70-MAR",
+                    "1.25"
+                ],
+                [
+                    "70-TU",
+                    "1.25"
+                ],
+                [
+                    "70-W",
+                    "0.79"
+                ],
+                [
+                    "50-ALM",
+                    "1.45"
+                ],
+                [
+                    "50-APP",
+                    "1.45"
+                ],
+                [
+                    "50-APR",
+                    "1.45"
+                ],
+                [
+                    "50-CHS",
+                    "1.75"
+                ],
+                [
+                    "50-CH",
+                    "1.75"
+                ],
+                [
+                    "51-APR",
+                    "1.15"
+                ],
+                [
+                    "51-APP",
+                    "1.15"
+                ],
+                [
+                    "51-ATW",
+                    "1.15"
+                ],
+                [
+                    "51-BC",
+                    "1.95"
+                ],
+                [
+                    "51-BLU",
+                    "1.15"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.47368421052631576,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 0.47368421052631576,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 26,
+            "question": "List the last names of all customers in an alphabetical oder.",
+            "ground_truth": [
+                [
+                    "ARNN"
+                ],
+                [
+                    "ARZT"
+                ],
+                [
+                    "CALLENDAR"
+                ],
+                [
+                    "CRUZEN"
+                ],
+                [
+                    "DOMKOWSKI"
+                ],
+                [
+                    "DUKELOW"
+                ],
+                [
+                    "DUNLOW"
+                ],
+                [
+                    "ENGLEY"
+                ],
+                [
+                    "ESPOSITA"
+                ],
+                [
+                    "HAFFERKAMP"
+                ],
+                [
+                    "HELING"
+                ],
+                [
+                    "LOGAN"
+                ],
+                [
+                    "MCMAHAN"
+                ],
+                [
+                    "MESDAQ"
+                ],
+                [
+                    "SLINGLAND"
+                ],
+                [
+                    "SOPKO"
+                ],
+                [
+                    "STADICK"
+                ],
+                [
+                    "STENZ"
+                ],
+                [
+                    "TOUSSAND"
+                ],
+                [
+                    "ZEME"
+                ]
+            ],
+            "prediction": [
+                [
+                    "ARNN"
+                ],
+                [
+                    "ARZT"
+                ],
+                [
+                    "CALLENDAR"
+                ],
+                [
+                    "CRUZEN"
+                ],
+                [
+                    "DUNLOW"
+                ],
+                [
+                    "DOMKOWSKI"
+                ],
+                [
+                    "DUKELOW"
+                ],
+                [
+                    "DUNLOW"
+                ],
+                [
+                    "ENGLEY"
+                ],
+                [
+                    "ESPOSITA"
+                ],
+                [
+                    "HAFFERKAMP"
+                ],
+                [
+                    "HELING"
+                ],
+                [
+                    "LOGAN"
+                ],
+                [
+                    "MCMAHAN"
+                ],
+                [
+                    "MESDAQ"
+                ],
+                [
+                    "SLINGLAND"
+                ],
+                [
+                    "STADICK"
+                ],
+                [
+                    "STENZ"
+                ],
+                [
+                    "TOUSSAND"
+                ],
+                [
+                    "ZEME"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.95,
+                "cell_recall": 0.95,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.9,
+                "tuple_order": 0.9975
+            }
+        },
+        {
+            "id": 27,
+            "question": "Return the ordered list of all good ids.",
+            "ground_truth": [
+                [
+                    "20-BC-C-10"
+                ],
+                [
+                    "20-BC-L-10"
+                ],
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "26-8x10"
+                ],
+                [
+                    "45-CH"
+                ],
+                [
+                    "45-CO"
+                ],
+                [
+                    "45-VA"
+                ],
+                [
+                    "46-11"
+                ],
+                [
+                    "50-ALM"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "50-APR"
+                ],
+                [
+                    "50-CH"
+                ],
+                [
+                    "50-CHS"
+                ],
+                [
+                    "51-APP"
+                ],
+                [
+                    "51-APR"
+                ],
+                [
+                    "51-ATW"
+                ],
+                [
+                    "51-BC"
+                ],
+                [
+                    "51-BLU"
+                ],
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "70-M-VA-SM-DZ"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-R"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-W"
+                ],
+                [
+                    "90-ALM-I"
+                ],
+                [
+                    "90-APIE-10"
+                ],
+                [
+                    "90-APP-11"
+                ],
+                [
+                    "90-APR-PF"
+                ],
+                [
+                    "90-BER-11"
+                ],
+                [
+                    "90-BLK-PF"
+                ],
+                [
+                    "90-BLU-11"
+                ],
+                [
+                    "90-CH-PF"
+                ],
+                [
+                    "90-CHR-11"
+                ],
+                [
+                    "90-LEM-11"
+                ],
+                [
+                    "90-PEC-11"
+                ]
+            ],
+            "prediction": [
+                [
+                    "20-BC-C-10"
+                ],
+                [
+                    "20-BC-L-10"
+                ],
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "26-8x10"
+                ],
+                [
+                    "45-CH"
+                ],
+                [
+                    "45-CO"
+                ],
+                [
+                    "45-VA"
+                ],
+                [
+                    "46-11"
+                ],
+                [
+                    "90-ALM-I"
+                ],
+                [
+                    "90-APIE-10"
+                ],
+                [
+                    "90-APP-11"
+                ],
+                [
+                    "90-APR-PF"
+                ],
+                [
+                    "90-BER-11"
+                ],
+                [
+                    "90-BLK-PF"
+                ],
+                [
+                    "90-BLU-11"
+                ],
+                [
+                    "90-CH-PF"
+                ],
+                [
+                    "90-CHR-11"
+                ],
+                [
+                    "90-LEM-11"
+                ],
+                [
+                    "90-PEC-11"
+                ],
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-R"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "70-M-VA-SM-DZ"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-W"
+                ],
+                [
+                    "50-ALM"
+                ],
+                [
+                    "50-APP"
+                ],
+                [
+                    "50-APR"
+                ],
+                [
+                    "50-CHS"
+                ],
+                [
+                    "50-CH"
+                ],
+                [
+                    "51-APR"
+                ],
+                [
+                    "51-APP"
+                ],
+                [
+                    "51-ATW"
+                ],
+                [
+                    "51-BC"
+                ],
+                [
+                    "51-BLU"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 0.6245
+            }
+        },
+        {
+            "id": 28,
+            "question": "Find all receipts in which either apple flavor pie was bought or customer id 12 shopped.",
+            "ground_truth": [
+                [
+                    "11548"
+                ],
+                [
+                    "17685"
+                ],
+                [
+                    "21545"
+                ],
+                [
+                    "29226"
+                ],
+                [
+                    "39109"
+                ],
+                [
+                    "39605"
+                ],
+                [
+                    "39685"
+                ],
+                [
+                    "44798"
+                ],
+                [
+                    "47353"
+                ],
+                [
+                    "48647"
+                ],
+                [
+                    "50660"
+                ],
+                [
+                    "51991"
+                ],
+                [
+                    "53376"
+                ],
+                [
+                    "56365"
+                ],
+                [
+                    "66227"
+                ],
+                [
+                    "70796"
+                ],
+                [
+                    "85492"
+                ],
+                [
+                    "87454"
+                ],
+                [
+                    "91937"
+                ],
+                [
+                    "98806"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 29,
+            "question": "Find all receipts which has the latest date. Also tell me that date.",
+            "ground_truth": [
+                [
+                    "11923",
+                    "9-Oct-2007"
+                ],
+                [
+                    "28117",
+                    "9-Oct-2007"
+                ],
+                [
+                    "48647",
+                    "9-Oct-2007"
+                ],
+                [
+                    "56724",
+                    "9-Oct-2007"
+                ],
+                [
+                    "61008",
+                    "9-Oct-2007"
+                ],
+                [
+                    "65091",
+                    "9-Oct-2007"
+                ],
+                [
+                    "70162",
+                    "9-Oct-2007"
+                ],
+                [
+                    "77406",
+                    "9-Oct-2007"
+                ],
+                [
+                    "89588",
+                    "9-Oct-2007"
+                ],
+                [
+                    "95514",
+                    "9-Oct-2007"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 30,
+            "question": "Find all receipts which either has the earliest date or has a good with price above 10.",
+            "ground_truth": [
+                [
+                    "11891"
+                ],
+                [
+                    "12396"
+                ],
+                [
+                    "12698"
+                ],
+                [
+                    "12800"
+                ],
+                [
+                    "13355"
+                ],
+                [
+                    "16034"
+                ],
+                [
+                    "16532"
+                ],
+                [
+                    "17729"
+                ],
+                [
+                    "19002"
+                ],
+                [
+                    "24829"
+                ],
+                [
+                    "25906"
+                ],
+                [
+                    "26148"
+                ],
+                [
+                    "26240"
+                ],
+                [
+                    "28117"
+                ],
+                [
+                    "29908"
+                ],
+                [
+                    "32701"
+                ],
+                [
+                    "33060"
+                ],
+                [
+                    "33456"
+                ],
+                [
+                    "34579"
+                ],
+                [
+                    "34910"
+                ],
+                [
+                    "35904"
+                ],
+                [
+                    "37636"
+                ],
+                [
+                    "38849"
+                ],
+                [
+                    "40305"
+                ],
+                [
+                    "44590"
+                ],
+                [
+                    "44798"
+                ],
+                [
+                    "45062"
+                ],
+                [
+                    "45976"
+                ],
+                [
+                    "49977"
+                ],
+                [
+                    "51991"
+                ],
+                [
+                    "52761"
+                ],
+                [
+                    "53240"
+                ],
+                [
+                    "53376"
+                ],
+                [
+                    "53922"
+                ],
+                [
+                    "55944"
+                ],
+                [
+                    "58770"
+                ],
+                [
+                    "61008"
+                ],
+                [
+                    "61948"
+                ],
+                [
+                    "64451"
+                ],
+                [
+                    "64477"
+                ],
+                [
+                    "64861"
+                ],
+                [
+                    "65165"
+                ],
+                [
+                    "67314"
+                ],
+                [
+                    "68199"
+                ],
+                [
+                    "68753"
+                ],
+                [
+                    "70162"
+                ],
+                [
+                    "70655"
+                ],
+                [
+                    "72207"
+                ],
+                [
+                    "73437"
+                ],
+                [
+                    "76663"
+                ],
+                [
+                    "77032"
+                ],
+                [
+                    "77406"
+                ],
+                [
+                    "83085"
+                ],
+                [
+                    "85492"
+                ],
+                [
+                    "85858"
+                ],
+                [
+                    "95514"
+                ],
+                [
+                    "96258"
+                ],
+                [
+                    "96402"
+                ],
+                [
+                    "96531"
+                ],
+                [
+                    "96761"
+                ],
+                [
+                    "98806"
+                ],
+                [
+                    "99994"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 31,
+            "question": "What are the ids of Cookie and Cake that cost between 3 and 7 dollars.",
+            "ground_truth": [],
+            "prediction": [
+                [
+                    "70-R"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "20-BC-C-10"
+                ],
+                [
+                    "20-BC-L-10"
+                ],
+                [
+                    "24-8x10"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 32,
+            "question": "Find the first name and last name of a customer who visited on the earliest date.",
+            "ground_truth": [
+                [
+                    "JOSETTE",
+                    "SLINGLAND"
+                ]
+            ],
+            "prediction": [
+                [
+                    "DAVID",
+                    "CALLENDAR"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 33,
+            "question": "What is average price of goods whose flavor is blackberry or blueberry?",
+            "ground_truth": [
+                [
+                    "2.5500000000000003"
+                ]
+            ],
+            "prediction": [
+                [
+                    "3.25"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 34,
+            "question": "Return the cheapest price for goods with cheese flavor.",
+            "ground_truth": [
+                [
+                    "1.75"
+                ]
+            ],
+            "prediction": [
+                [
+                    "1.75"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 35,
+            "question": "What are highest, lowest, and average prices of goods, grouped and ordered by flavor?",
+            "ground_truth": [
+                [
+                    "3.75",
+                    "1.15",
+                    "2.0749999999999997",
+                    "Almond"
+                ],
+                [
+                    "5.25",
+                    "1.15",
+                    "2.775",
+                    "Apple"
+                ],
+                [
+                    "3.25",
+                    "1.15",
+                    "1.95",
+                    "Apricot"
+                ],
+                [
+                    "3.25",
+                    "3.25",
+                    "3.25",
+                    "Berry"
+                ],
+                [
+                    "3.25",
+                    "3.25",
+                    "3.25",
+                    "Blackberry"
+                ],
+                [
+                    "3.25",
+                    "1.15",
+                    "2.2",
+                    "Blueberry"
+                ],
+                [
+                    "15.95",
+                    "15.95",
+                    "15.95",
+                    "Casino"
+                ],
+                [
+                    "1.75",
+                    "1.75",
+                    "1.75",
+                    "Cheese"
+                ],
+                [
+                    "3.25",
+                    "3.25",
+                    "3.25",
+                    "Cherry"
+                ],
+                [
+                    "8.95",
+                    "1.25",
+                    "3.79",
+                    "Chocolate"
+                ],
+                [
+                    "3.5",
+                    "3.5",
+                    "3.5",
+                    "Coffee"
+                ],
+                [
+                    "1.15",
+                    "1.15",
+                    "1.15",
+                    "Ganache"
+                ],
+                [
+                    "1.15",
+                    "1.15",
+                    "1.15",
+                    "Gongolais"
+                ],
+                [
+                    "8.95",
+                    "0.79",
+                    "4.329999999999999",
+                    "Lemon"
+                ],
+                [
+                    "1.25",
+                    "1.25",
+                    "1.25",
+                    "Marzipan"
+                ],
+                [
+                    "13.49",
+                    "13.49",
+                    "13.49",
+                    "Napoleon"
+                ],
+                [
+                    "15.95",
+                    "15.95",
+                    "15.95",
+                    "Opera"
+                ],
+                [
+                    "3.75",
+                    "3.75",
+                    "3.75",
+                    "Pecan"
+                ],
+                [
+                    "1.09",
+                    "1.09",
+                    "1.09",
+                    "Raspberry"
+                ],
+                [
+                    "11.95",
+                    "11.95",
+                    "11.95",
+                    "Strawberry"
+                ],
+                [
+                    "15.95",
+                    "15.95",
+                    "15.95",
+                    "Truffle"
+                ],
+                [
+                    "1.25",
+                    "1.25",
+                    "1.25",
+                    "Tuile"
+                ],
+                [
+                    "3.25",
+                    "1.15",
+                    "2.2",
+                    "Vanilla"
+                ],
+                [
+                    "0.79",
+                    "0.79",
+                    "0.79",
+                    "Walnut"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Chocolate",
+                    "15.95",
+                    "3.25",
+                    "8.6"
+                ],
+                [
+                    "Lemon",
+                    "8.95",
+                    "0.79",
+                    "4.87"
+                ],
+                [
+                    "Strawberry",
+                    "11.95",
+                    "1.09",
+                    "6.52"
+                ],
+                [
+                    "Vanilla",
+                    "1.75",
+                    "1.15",
+                    "1.45"
+                ],
+                [
+                    "Almond",
+                    "3.75",
+                    "1.45",
+                    "2.4"
+                ],
+                [
+                    "Apple",
+                    "5.25",
+                    "1.45",
+                    "3.35"
+                ],
+                [
+                    "Apricot",
+                    "1.75",
+                    "1.45",
+                    "1.6"
+                ],
+                [
+                    "Berry",
+                    "3.25",
+                    "1.09",
+                    "2.17"
+                ],
+                [
+                    "Blackberry",
+                    "3.25",
+                    "1.09",
+                    "2.17"
+                ],
+                [
+                    "Blueberry",
+                    "1.15",
+                    "1.09",
+                    "1.12"
+                ],
+                [
+                    "Cherry",
+                    "3.25",
+                    "1.09",
+                    "2.17"
+                ],
+                [
+                    "Ganache",
+                    "1.15",
+                    "1.09",
+                    "1.12"
+                ],
+                [
+                    "Gongolais",
+                    "1.15",
+                    "1.09",
+                    "1.12"
+                ],
+                [
+                    "Marzipan",
+                    "1.25",
+                    "1.09",
+                    "1.17"
+                ],
+                [
+                    "Napoleon",
+                    "13.49",
+                    "1.09",
+                    "7.29"
+                ],
+                [
+                    "Opera",
+                    "15.95",
+                    "1.09",
+                    "8.52"
+                ],
+                [
+                    "Pecan",
+                    "3.75",
+                    "1.09",
+                    "2.4"
+                ],
+                [
+                    "Raspberry",
+                    "1.09",
+                    "1.09",
+                    "1.09"
+                ],
+                [
+                    "Tuile",
+                    "1.25",
+                    "1.09",
+                    "1.17"
+                ],
+                [
+                    "Walnut",
+                    "0.79",
+                    "1.09",
+                    "0.94"
+                ],
+                [
+                    "Truffle",
+                    "15.95",
+                    "1.09",
+                    "8.52"
+                ],
+                [
+                    "Eclair",
+                    "3.5",
+                    "3.25",
+                    "3.38"
+                ],
+                [
+                    "Tart",
+                    "3.75",
+                    "3.25",
+                    "3.46"
+                ],
+                [
+                    "Cookie",
+                    "1.25",
+                    "0.79",
+                    "1.04"
+                ],
+                [
+                    "Croissant",
+                    "1.75",
+                    "1.45",
+                    "1.6"
+                ],
+                [
+                    "Danish",
+                    "1.95",
+                    "1.15",
+                    "1.55"
+                ],
+                [
+                    "Meringue",
+                    "1.25",
+                    "1.15",
+                    "1.2"
+                ],
+                [
+                    "Bear Claw",
+                    "1.95",
+                    "1.15",
+                    "1.55"
+                ],
+                [
+                    "Twist",
+                    "1.15",
+                    "1.15",
+                    "1.15"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.5344827586206896,
+                "cell_recall": 0.6458333333333334,
+                "tuple_cardinality": 0.8275862068965517,
+                "tuple_constraint": 0.042,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 36,
+            "question": "Return the lowest and highest prices of goods grouped and ordered by food type.",
+            "ground_truth": [
+                [
+                    "1.95",
+                    "1.95",
+                    "Bear Claw"
+                ],
+                [
+                    "8.95",
+                    "15.95",
+                    "Cake"
+                ],
+                [
+                    "0.79",
+                    "1.25",
+                    "Cookie"
+                ],
+                [
+                    "1.45",
+                    "1.75",
+                    "Croissant"
+                ],
+                [
+                    "1.15",
+                    "1.15",
+                    "Danish"
+                ],
+                [
+                    "3.25",
+                    "3.5",
+                    "Eclair"
+                ],
+                [
+                    "1.15",
+                    "1.25",
+                    "Meringue"
+                ],
+                [
+                    "5.25",
+                    "5.25",
+                    "Pie"
+                ],
+                [
+                    "3.25",
+                    "3.75",
+                    "Tart"
+                ],
+                [
+                    "1.15",
+                    "1.15",
+                    "Twist"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Cake",
+                    "8.95",
+                    "15.95"
+                ],
+                [
+                    "Eclair",
+                    "3.25",
+                    "3.5"
+                ],
+                [
+                    "Tart",
+                    "3.25",
+                    "3.75"
+                ],
+                [
+                    "Cookie",
+                    "0.79",
+                    "1.25"
+                ],
+                [
+                    "Croissant",
+                    "1.45",
+                    "1.75"
+                ],
+                [
+                    "Danish",
+                    "1.15",
+                    "1.15"
+                ],
+                [
+                    "Twist",
+                    "1.15",
+                    "1.15"
+                ],
+                [
+                    "Bear Claw",
+                    "1.95",
+                    "1.95"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 0.8,
+                "tuple_cardinality": 0.8,
+                "tuple_constraint": 0.8,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 37,
+            "question": "Find the top three dates when the most goods were sold.",
+            "ground_truth": [
+                [
+                    "1-Oct-2007"
+                ],
+                [
+                    "11-Oct-2007"
+                ],
+                [
+                    "26-Oct-2007"
+                ]
+            ],
+            "prediction": [
+                [
+                    "30-Oct-2007"
+                ],
+                [
+                    "10-Oct-2007"
+                ],
+                [
+                    "7-Oct-2007"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 38,
+            "question": "Which customer shopped most often? How many times?",
+            "ground_truth": [
+                [
+                    "2",
+                    "6"
+                ]
+            ],
+            "prediction": [
+                [
+                    "7",
+                    "13"
+                ],
+                [
+                    "15",
+                    "9"
+                ],
+                [
+                    "11",
+                    "7"
+                ],
+                [
+                    "13",
+                    "7"
+                ],
+                [
+                    "20",
+                    "6"
+                ],
+                [
+                    "8",
+                    "6"
+                ],
+                [
+                    "6",
+                    "6"
+                ],
+                [
+                    "4",
+                    "4"
+                ],
+                [
+                    "16",
+                    "4"
+                ],
+                [
+                    "12",
+                    "4"
+                ],
+                [
+                    "10",
+                    "4"
+                ],
+                [
+                    "19",
+                    "3"
+                ],
+                [
+                    "14",
+                    "3"
+                ],
+                [
+                    "18",
+                    "3"
+                ],
+                [
+                    "5",
+                    "3"
+                ],
+                [
+                    "9",
+                    "3"
+                ],
+                [
+                    "3",
+                    "2"
+                ],
+                [
+                    "2",
+                    "2"
+                ],
+                [
+                    "1",
+                    "2"
+                ],
+                [
+                    "17",
+                    "2"
+                ],
+                [
+                    "21",
+                    "1"
+                ],
+                [
+                    "22",
+                    "1"
+                ],
+                [
+                    "23",
+                    "1"
+                ],
+                [
+                    "24",
+                    "1"
+                ],
+                [
+                    "25",
+                    "1"
+                ],
+                [
+                    "26",
+                    "1"
+                ],
+                [
+                    "27",
+                    "1"
+                ],
+                [
+                    "28",
+                    "1"
+                ],
+                [
+                    "29",
+                    "1"
+                ],
+                [
+                    "30",
+                    "1"
+                ],
+                [
+                    "31",
+                    "1"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.03225806451612903,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 0.03225806451612903,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.5
+            }
+        },
+        {
+            "id": 39,
+            "question": "For each date, return how many distinct customers visited on that day.",
+            "ground_truth": [
+                [
+                    "1-Oct-2007",
+                    "1"
+                ],
+                [
+                    "10-Oct-2007",
+                    "9"
+                ],
+                [
+                    "11-Oct-2007",
+                    "2"
+                ],
+                [
+                    "12-Oct-2007",
+                    "9"
+                ],
+                [
+                    "13-Oct-2007",
+                    "5"
+                ],
+                [
+                    "14-Oct-2007",
+                    "5"
+                ],
+                [
+                    "15-Oct-2007",
+                    "8"
+                ],
+                [
+                    "16-Oct-2007",
+                    "9"
+                ],
+                [
+                    "17-Oct-2007",
+                    "4"
+                ],
+                [
+                    "18-Oct-2007",
+                    "4"
+                ],
+                [
+                    "19-Oct-2007",
+                    "4"
+                ],
+                [
+                    "2-Oct-2007",
+                    "3"
+                ],
+                [
+                    "20-Oct-2007",
+                    "9"
+                ],
+                [
+                    "21-Oct-2007",
+                    "5"
+                ],
+                [
+                    "22-Oct-2007",
+                    "7"
+                ],
+                [
+                    "23-Oct-2007",
+                    "6"
+                ],
+                [
+                    "24-Oct-2007",
+                    "5"
+                ],
+                [
+                    "25-Oct-2007",
+                    "6"
+                ],
+                [
+                    "26-Oct-2007",
+                    "3"
+                ],
+                [
+                    "27-Oct-2007",
+                    "3"
+                ],
+                [
+                    "28-Oct-2007",
+                    "5"
+                ],
+                [
+                    "29-Oct-2007",
+                    "6"
+                ],
+                [
+                    "3-Oct-2007",
+                    "6"
+                ],
+                [
+                    "30-Oct-2007",
+                    "4"
+                ],
+                [
+                    "31-Oct-2007",
+                    "6"
+                ],
+                [
+                    "4-Oct-2007",
+                    "8"
+                ],
+                [
+                    "5-Oct-2007",
+                    "3"
+                ],
+                [
+                    "6-Oct-2007",
+                    "3"
+                ],
+                [
+                    "7-Oct-2007",
+                    "6"
+                ],
+                [
+                    "8-Oct-2007",
+                    "4"
+                ],
+                [
+                    "9-Oct-2007",
+                    "9"
+                ]
+            ],
+            "prediction": [
+                [
+                    "1-Oct-2007",
+                    "1"
+                ],
+                [
+                    "2-Oct-2007",
+                    "3"
+                ],
+                [
+                    "3-Oct-2007",
+                    "6"
+                ],
+                [
+                    "4-Oct-2007",
+                    "7"
+                ],
+                [
+                    "5-Oct-2007",
+                    "5"
+                ],
+                [
+                    "6-Oct-2007",
+                    "3"
+                ],
+                [
+                    "7-Oct-2007",
+                    "9"
+                ],
+                [
+                    "8-Oct-2007",
+                    "5"
+                ],
+                [
+                    "9-Oct-2007",
+                    "9"
+                ],
+                [
+                    "10-Oct-2007",
+                    "9"
+                ],
+                [
+                    "11-Oct-2007",
+                    "4"
+                ],
+                [
+                    "12-Oct-2007",
+                    "10"
+                ],
+                [
+                    "13-Oct-2007",
+                    "7"
+                ],
+                [
+                    "14-Oct-2007",
+                    "8"
+                ],
+                [
+                    "15-Oct-2007",
+                    "5"
+                ],
+                [
+                    "16-Oct-2007",
+                    "7"
+                ],
+                [
+                    "17-Oct-2007",
+                    "4"
+                ],
+                [
+                    "18-Oct-2007",
+                    "5"
+                ],
+                [
+                    "19-Oct-2007",
+                    "5"
+                ],
+                [
+                    "20-Oct-2007",
+                    "8"
+                ],
+                [
+                    "21-Oct-2007",
+                    "7"
+                ],
+                [
+                    "22-Oct-2007",
+                    "7"
+                ],
+                [
+                    "23-Oct-2007",
+                    "6"
+                ],
+                [
+                    "24-Oct-2007",
+                    "6"
+                ],
+                [
+                    "25-Oct-2007",
+                    "6"
+                ],
+                [
+                    "26-Oct-2007",
+                    "3"
+                ],
+                [
+                    "27-Oct-2007",
+                    "3"
+                ],
+                [
+                    "28-Oct-2007",
+                    "4"
+                ],
+                [
+                    "29-Oct-2007",
+                    "5"
+                ],
+                [
+                    "30-Oct-2007",
+                    "6"
+                ],
+                [
+                    "31-Oct-2007",
+                    "5"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.8870967741935484,
+                "cell_recall": 0.8870967741935484,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 0.387,
+                "tuple_order": 0.6015
+            }
+        },
+        {
+            "id": 40,
+            "question": "Give me the first name and last name of customers who have bought apple flavor Tart.",
+            "ground_truth": [
+                [
+                    "RAYFORD",
+                    "SOPKO"
+                ],
+                [
+                    "ARIANE",
+                    "CRUZEN"
+                ],
+                [
+                    "RUPERT",
+                    "HELING"
+                ],
+                [
+                    "TERRELL",
+                    "ARZT"
+                ],
+                [
+                    "ALMETA",
+                    "DOMKOWSKI"
+                ],
+                [
+                    "NATACHA",
+                    "STENZ"
+                ],
+                [
+                    "JULIET",
+                    "LOGAN"
+                ],
+                [
+                    "CHARLENE",
+                    "MESDAQ"
+                ],
+                [
+                    "KIP",
+                    "ARNN"
+                ],
+                [
+                    "SHARRON",
+                    "TOUSSAND"
+                ],
+                [
+                    "DAVID",
+                    "CALLENDAR"
+                ],
+                [
+                    "STEPHEN",
+                    "ZEME"
+                ],
+                [
+                    "CORETTA",
+                    "DUKELOW"
+                ],
+                [
+                    "JOSETTE",
+                    "SLINGLAND"
+                ],
+                [
+                    "OSVALDO",
+                    "DUNLOW"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 41,
+            "question": "What are the ids of Cookies whose price is lower than any Croissant?",
+            "ground_truth": [
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-R"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-W"
+                ]
+            ],
+            "prediction": [
+                [
+                    "70-R"
+                ],
+                [
+                    "70-LEM"
+                ],
+                [
+                    "70-W"
+                ],
+                [
+                    "70-GON"
+                ],
+                [
+                    "70-GA"
+                ],
+                [
+                    "70-TU"
+                ],
+                [
+                    "70-MAR"
+                ],
+                [
+                    "70-M-CH-DZ"
+                ],
+                [
+                    "70-M-VA-SM-DZ"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.7777777777777778,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 0.7777777777777778,
+                "tuple_constraint": 1.0,
+                "tuple_order": 0.5715
+            }
+        },
+        {
+            "id": 42,
+            "question": "Give me the ids of Cakes whose price is at least three times as much as the average price of Tart?",
+            "ground_truth": [
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "26-8x10"
+                ],
+                [
+                    "46-11"
+                ]
+            ],
+            "prediction": [
+                [
+                    "20-BC-C-10"
+                ],
+                [
+                    "20-BC-L-10"
+                ],
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "26-8x10"
+                ],
+                [
+                    "46-11"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.7142857142857143,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 0.7142857142857143,
+                "tuple_constraint": 1.0,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 43,
+            "question": "What are the ids of goods whose price is above twice the average price of all goods?",
+            "ground_truth": [
+                [
+                    "20-BC-C-10"
+                ],
+                [
+                    "20-BC-L-10"
+                ],
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "25-STR-9"
+                ],
+                [
+                    "26-8x10"
+                ],
+                [
+                    "46-11"
+                ]
+            ],
+            "prediction": [
+                [
+                    "20-CA-7.5"
+                ],
+                [
+                    "24-8x10"
+                ],
+                [
+                    "26-8x10"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 0.42857142857142855,
+                "tuple_cardinality": 0.42857142857142855,
+                "tuple_constraint": 0.429,
+                "tuple_order": 1.0
+            }
+        },
+        {
+            "id": 44,
+            "question": "List the id, flavor and type of food of goods ordered by price.",
+            "ground_truth": [
+                [
+                    "70-LEM",
+                    "Lemon",
+                    "Cookie"
+                ],
+                [
+                    "70-W",
+                    "Walnut",
+                    "Cookie"
+                ],
+                [
+                    "70-R",
+                    "Raspberry",
+                    "Cookie"
+                ],
+                [
+                    "70-GA",
+                    "Ganache",
+                    "Cookie"
+                ],
+                [
+                    "70-GON",
+                    "Gongolais",
+                    "Cookie"
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    "Vanilla",
+                    "Meringue"
+                ],
+                [
+                    "51-APR",
+                    "Apricot",
+                    "Danish"
+                ],
+                [
+                    "51-APP",
+                    "Apple",
+                    "Danish"
+                ],
+                [
+                    "51-ATW",
+                    "Almond",
+                    "Twist"
+                ],
+                [
+                    "51-BLU",
+                    "Blueberry",
+                    "Danish"
+                ],
+                [
+                    "70-M-CH-DZ",
+                    "Chocolate",
+                    "Meringue"
+                ],
+                [
+                    "70-MAR",
+                    "Marzipan",
+                    "Cookie"
+                ],
+                [
+                    "70-TU",
+                    "Tuile",
+                    "Cookie"
+                ],
+                [
+                    "50-ALM",
+                    "Almond",
+                    "Croissant"
+                ],
+                [
+                    "50-APP",
+                    "Apple",
+                    "Croissant"
+                ],
+                [
+                    "50-APR",
+                    "Apricot",
+                    "Croissant"
+                ],
+                [
+                    "50-CHS",
+                    "Cheese",
+                    "Croissant"
+                ],
+                [
+                    "50-CH",
+                    "Chocolate",
+                    "Croissant"
+                ],
+                [
+                    "51-BC",
+                    "Almond",
+                    "Bear Claw"
+                ],
+                [
+                    "45-CH",
+                    "Chocolate",
+                    "Eclair"
+                ],
+                [
+                    "45-VA",
+                    "Vanilla",
+                    "Eclair"
+                ],
+                [
+                    "90-APP-11",
+                    "Apple",
+                    "Tart"
+                ],
+                [
+                    "90-APR-PF",
+                    "Apricot",
+                    "Tart"
+                ],
+                [
+                    "90-BER-11",
+                    "Berry",
+                    "Tart"
+                ],
+                [
+                    "90-BLK-PF",
+                    "Blackberry",
+                    "Tart"
+                ],
+                [
+                    "90-BLU-11",
+                    "Blueberry",
+                    "Tart"
+                ],
+                [
+                    "90-CHR-11",
+                    "Cherry",
+                    "Tart"
+                ],
+                [
+                    "90-LEM-11",
+                    "Lemon",
+                    "Tart"
+                ],
+                [
+                    "45-CO",
+                    "Coffee",
+                    "Eclair"
+                ],
+                [
+                    "90-ALM-I",
+                    "Almond",
+                    "Tart"
+                ],
+                [
+                    "90-CH-PF",
+                    "Chocolate",
+                    "Tart"
+                ],
+                [
+                    "90-PEC-11",
+                    "Pecan",
+                    "Tart"
+                ],
+                [
+                    "90-APIE-10",
+                    "Apple",
+                    "Pie"
+                ],
+                [
+                    "20-BC-C-10",
+                    "Chocolate",
+                    "Cake"
+                ],
+                [
+                    "20-BC-L-10",
+                    "Lemon",
+                    "Cake"
+                ],
+                [
+                    "25-STR-9",
+                    "Strawberry",
+                    "Cake"
+                ],
+                [
+                    "46-11",
+                    "Napoleon",
+                    "Cake"
+                ],
+                [
+                    "20-CA-7.5",
+                    "Casino",
+                    "Cake"
+                ],
+                [
+                    "24-8x10",
+                    "Opera",
+                    "Cake"
+                ],
+                [
+                    "26-8x10",
+                    "Truffle",
+                    "Cake"
+                ]
+            ],
+            "prediction": [
+                [
+                    "20-BC-C-10",
+                    "Chocolate",
+                    "Cake"
+                ],
+                [
+                    "20-BC-L-10",
+                    "Lemon",
+                    "Cake"
+                ],
+                [
+                    "24-8x10",
+                    "Opera",
+                    "Cake"
+                ],
+                [
+                    "26-8x10",
+                    "Truffle",
+                    "Cake"
+                ],
+                [
+                    "20-CA-7.5",
+                    "Casino",
+                    "Cake"
+                ],
+                [
+                    "25-STR-9",
+                    "Strawberry",
+                    "Cake"
+                ],
+                [
+                    "46-11",
+                    "Napoleon",
+                    "Cake"
+                ],
+                [
+                    "45-CH",
+                    "Chocolate",
+                    "Eclair"
+                ],
+                [
+                    "45-CO",
+                    "Coffee",
+                    "Eclair"
+                ],
+                [
+                    "45-VA",
+                    "Vanilla",
+                    "Eclair"
+                ],
+                [
+                    "90-ALM-I",
+                    "Almond",
+                    "Tart"
+                ],
+                [
+                    "90-APIE-10",
+                    "Apple",
+                    "Pie"
+                ],
+                [
+                    "90-APP-11",
+                    "Apple",
+                    "Tart"
+                ],
+                [
+                    "90-APR-PF",
+                    "Apricot",
+                    "Tart"
+                ],
+                [
+                    "90-BER-11",
+                    "Berry",
+                    "Tart"
+                ],
+                [
+                    "90-BLK-PF",
+                    "Blackberry",
+                    "Tart"
+                ],
+                [
+                    "90-BLU-11",
+                    "Blueberry",
+                    "Tart"
+                ],
+                [
+                    "90-CH-PF",
+                    "Chocolate",
+                    "Tart"
+                ],
+                [
+                    "90-CHR-11",
+                    "Cherry",
+                    "Tart"
+                ],
+                [
+                    "90-LEM-11",
+                    "Lemon",
+                    "Tart"
+                ],
+                [
+                    "90-PEC-11",
+                    "Pecan",
+                    "Tart"
+                ],
+                [
+                    "70-GA",
+                    "Ganache",
+                    "Cookie"
+                ],
+                [
+                    "70-GON",
+                    "Gongolais",
+                    "Cookie"
+                ],
+                [
+                    "70-R",
+                    "Raspberry",
+                    "Cookie"
+                ],
+                [
+                    "70-LEM",
+                    "Lemon",
+                    "Cookie"
+                ],
+                [
+                    "70-M-CH-DZ",
+                    "Chocolate",
+                    "Meringue"
+                ],
+                [
+                    "70-M-VA-SM-DZ",
+                    "Vanilla",
+                    "Meringue"
+                ],
+                [
+                    "70-MAR",
+                    "Marzipan",
+                    "Cookie"
+                ],
+                [
+                    "70-TU",
+                    "Tuile",
+                    "Cookie"
+                ],
+                [
+                    "70-W",
+                    "Walnut",
+                    "Cookie"
+                ],
+                [
+                    "50-ALM",
+                    "Almond",
+                    "Croissant"
+                ],
+                [
+                    "50-APP",
+                    "Apple",
+                    "Croissant"
+                ],
+                [
+                    "50-APR",
+                    "Apricot",
+                    "Croissant"
+                ],
+                [
+                    "50-CHS",
+                    "Cheese",
+                    "Croissant"
+                ],
+                [
+                    "50-CH",
+                    "Chocolate",
+                    "Croissant"
+                ],
+                [
+                    "51-APR",
+                    "Apricot",
+                    "Danish"
+                ],
+                [
+                    "51-APP",
+                    "Apple",
+                    "Danish"
+                ],
+                [
+                    "51-ATW",
+                    "Almond",
+                    "Twist"
+                ],
+                [
+                    "51-BC",
+                    "Almond",
+                    "Bear Claw"
+                ],
+                [
+                    "51-BLU",
+                    "Blueberry",
+                    "Danish"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 0.11599999999999999
+            }
+        },
+        {
+            "id": 45,
+            "question": "Return a list of the id and flavor for Cakes ordered by flavor.",
+            "ground_truth": [
+                [
+                    "20-CA-7.5",
+                    "Casino"
+                ],
+                [
+                    "20-BC-C-10",
+                    "Chocolate"
+                ],
+                [
+                    "20-BC-L-10",
+                    "Lemon"
+                ],
+                [
+                    "46-11",
+                    "Napoleon"
+                ],
+                [
+                    "24-8x10",
+                    "Opera"
+                ],
+                [
+                    "25-STR-9",
+                    "Strawberry"
+                ],
+                [
+                    "26-8x10",
+                    "Truffle"
+                ]
+            ],
+            "prediction": [
+                [
+                    "20-BC-C-10",
+                    "Chocolate"
+                ],
+                [
+                    "20-BC-L-10",
+                    "Lemon"
+                ],
+                [
+                    "20-CA-7.5",
+                    "Casino"
+                ],
+                [
+                    "24-8x10",
+                    "Opera"
+                ],
+                [
+                    "25-STR-9",
+                    "Strawberry"
+                ],
+                [
+                    "26-8x10",
+                    "Truffle"
+                ],
+                [
+                    "46-11",
+                    "Napoleon"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 1.0,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 1.0,
+                "tuple_constraint": 1.0,
+                "tuple_order": 0.8395
+            }
+        },
+        {
+            "id": 46,
+            "question": "Find all the items that have chocolate flavor but were not bought more than 10 times.",
+            "ground_truth": [
+                [
+                    "50-CH"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 47,
+            "question": "What are the flavors available for Cake but not for Tart?",
+            "ground_truth": [
+                [
+                    "Casino"
+                ],
+                [
+                    "Napoleon"
+                ],
+                [
+                    "Opera"
+                ],
+                [
+                    "Strawberry"
+                ],
+                [
+                    "Truffle"
+                ]
+            ],
+            "prediction": [
+                [
+                    "Chocolate"
+                ],
+                [
+                    "Lemon"
+                ],
+                [
+                    "Casino"
+                ],
+                [
+                    "Opera"
+                ],
+                [
+                    "Strawberry"
+                ],
+                [
+                    "Truffle"
+                ],
+                [
+                    "Napoleon"
+                ]
+            ],
+            "metrics": {
+                "cell_precision": 0.7142857142857143,
+                "cell_recall": 1.0,
+                "tuple_cardinality": 0.7142857142857143,
+                "tuple_constraint": 1.0,
+                "tuple_order": 0.7
+            }
+        },
+        {
+            "id": 48,
+            "question": "What is the three most popular goods in this bakery?",
+            "ground_truth": [
+                [
+                    "90-APP-11"
+                ],
+                [
+                    "90-APR-PF"
+                ],
+                [
+                    "90-BLK-PF"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 49,
+            "question": "Find the ids of customers who have spent more than 150 dollars in total.",
+            "ground_truth": [
+                [
+                    "1"
+                ],
+                [
+                    "6"
+                ],
+                [
+                    "7"
+                ],
+                [
+                    "8"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 50,
+            "question": "Find the ids of customers whose average spending for each good is above 5.",
+            "ground_truth": [
+                [
+                    "4"
+                ],
+                [
+                    "10"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        },
+        {
+            "id": 51,
+            "question": "On which day did the bakery sell more than 100 dollars in total.",
+            "ground_truth": [
+                [
+                    "10-Oct-2007"
+                ],
+                [
+                    "12-Oct-2007"
+                ],
+                [
+                    "16-Oct-2007"
+                ],
+                [
+                    "19-Oct-2007"
+                ],
+                [
+                    "4-Oct-2007"
+                ],
+                [
+                    "7-Oct-2007"
+                ],
+                [
+                    "9-Oct-2007"
+                ]
+            ],
+            "prediction": [],
+            "metrics": {
+                "cell_precision": 0.0,
+                "cell_recall": 0.0,
+                "tuple_cardinality": 0.0,
+                "tuple_constraint": 0.0,
+                "tuple_order": 0.0
+            }
+        }
+    ]
+}

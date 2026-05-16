@@ -1,0 +1,424 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "How many clubs are there?",
+            "prediction": {
+                "sql": "SELECT COUNT(*) FROM club",
+                "answer": [
+                    [
+                        "9"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 1,
+            "question": "List the name of clubs in ascending alphabetical order.",
+            "prediction": {
+                "sql": "SELECT Name FROM club ORDER BY Name ASC",
+                "answer": [
+                    [
+                        "Arsenal"
+                    ],
+                    [
+                        "Aston Villa"
+                    ],
+                    [
+                        "Blackburn Rovers"
+                    ],
+                    [
+                        "Bolton Wanderers"
+                    ],
+                    [
+                        "Chelsea"
+                    ],
+                    [
+                        "Everton"
+                    ],
+                    [
+                        "Fulham"
+                    ],
+                    [
+                        "Hull City"
+                    ],
+                    [
+                        "Liverpool"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 2,
+            "question": "What are the managers and captains of clubs?",
+            "prediction": {
+                "sql": "SELECT Manager, Captain FROM club",
+                "answer": [
+                    [
+                        "Arsène Wenger",
+                        "Cesc Fàbregas"
+                    ],
+                    [
+                        "David Moyes",
+                        "Phil Neville"
+                    ],
+                    [
+                        "Gary Megson",
+                        "Kevin Davies"
+                    ],
+                    [
+                        "Guus Hiddink",
+                        "John Terry"
+                    ],
+                    [
+                        "Martin O'Neill",
+                        "Martin Laursen"
+                    ],
+                    [
+                        "Phil Brown",
+                        "Ian Ashbee"
+                    ],
+                    [
+                        "Rafael Benítez",
+                        "Steven Gerrard"
+                    ],
+                    [
+                        "Roy Hodgson",
+                        "Danny Murphy"
+                    ],
+                    [
+                        "Sam Allardyce",
+                        "Ryan Nelsen"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 3,
+            "question": "List the name of clubs whose manufacturer is not \"Nike\"",
+            "prediction": {
+                "sql": "SELECT Name FROM club WHERE Manufacturer != 'Nike'",
+                "answer": [
+                    [
+                        "Blackburn Rovers"
+                    ],
+                    [
+                        "Bolton Wanderers"
+                    ],
+                    [
+                        "Chelsea"
+                    ],
+                    [
+                        "Everton"
+                    ],
+                    [
+                        "Hull City"
+                    ],
+                    [
+                        "Liverpool"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 4,
+            "question": "What are the names of players in ascending order of wins count?",
+            "prediction": {
+                "sql": "SELECT Name FROM player ORDER BY Wins_count ASC",
+                "answer": [
+                    [
+                        "David Frost"
+                    ],
+                    [
+                        "Greg Norman"
+                    ],
+                    [
+                        "Jim Gallagher, Jr."
+                    ],
+                    [
+                        "Nick Price"
+                    ],
+                    [
+                        "Paul Azinger"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 5,
+            "question": "What is the name of the player with the highest earnings?",
+            "prediction": {
+                "sql": "SELECT Name FROM player ORDER BY Earnings DESC LIMIT 1",
+                "answer": [
+                    [
+                        "Nick Price"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 6,
+            "question": "What are the distinct countries of players with earnings higher than 1200000?",
+            "prediction": {
+                "sql": "SELECT DISTINCT Country FROM player WHERE Earnings > 1200000",
+                "answer": [
+                    [
+                        "Australia"
+                    ],
+                    [
+                        "United States"
+                    ],
+                    [
+                        "Zimbabwe"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 7,
+            "question": "What is the country of the player with the highest earnings among players that have more than 2 win counts?",
+            "prediction": {
+                "sql": "SELECT Country FROM player WHERE Earnings = (SELECT MAX(Earnings) FROM player WHERE Wins_count > 2) AND Wins_count > 2",
+                "answer": [
+                    [
+                        "Zimbabwe"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 8,
+            "question": "Show names of players and names of clubs they are in.",
+            "prediction": {
+                "sql": "SELECT player.Name, club.Name FROM player JOIN club ON player.Club_ID = club.Club_ID",
+                "answer": [
+                    [
+                        "David Frost",
+                        "Fulham"
+                    ],
+                    [
+                        "Greg Norman",
+                        "Chelsea"
+                    ],
+                    [
+                        "Jim Gallagher, Jr.",
+                        "Everton"
+                    ],
+                    [
+                        "Nick Price",
+                        "Arsenal"
+                    ],
+                    [
+                        "Paul Azinger",
+                        "Blackburn Rovers"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 9,
+            "question": "Show names of clubs that have players with more than 2 win counts.",
+            "prediction": {
+                "sql": "SELECT DISTINCT club.Name FROM club JOIN player ON club.Club_ID = player.Club_ID WHERE player.Wins_count > 2",
+                "answer": [
+                    [
+                        "Arsenal"
+                    ],
+                    [
+                        "Blackburn Rovers"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 10,
+            "question": "Show names of players from the club with manager \"Sam Allardyce\".",
+            "prediction": {
+                "sql": "SELECT T2.Name FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE LOWER(T1.Manager) = LOWER('Sam Allardyce')",
+                "answer": [
+                    [
+                        "Paul Azinger"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 11,
+            "question": "Show names of clubs in descending order of average earnings of players belonging.",
+            "prediction": {
+                "sql": "SELECT club.Name, AVG(player.Earnings) FROM club INNER JOIN player ON club.Club_ID = player.Club_ID GROUP BY club.Club_ID ORDER BY AVG(player.Earnings) DESC",
+                "answer": [
+                    [
+                        "Arsenal",
+                        "1478557.0"
+                    ],
+                    [
+                        "Blackburn Rovers",
+                        "1458456.0"
+                    ],
+                    [
+                        "Chelsea",
+                        "1359653.0"
+                    ],
+                    [
+                        "Everton",
+                        "1078870.0"
+                    ],
+                    [
+                        "Fulham",
+                        "1030717.0"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 12,
+            "question": "Show different manufacturers and the number of clubs they are associated with.",
+            "prediction": {
+                "sql": "SELECT Manufacturer, COUNT(*) FROM club GROUP BY Manufacturer",
+                "answer": [
+                    [
+                        "Nike",
+                        "3"
+                    ],
+                    [
+                        "Reebok",
+                        "1"
+                    ],
+                    [
+                        "Umbro",
+                        "3"
+                    ],
+                    [
+                        "adidas",
+                        "2"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 13,
+            "question": "Please show the most common manufacturer of clubs.",
+            "prediction": {
+                "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer ORDER BY COUNT(*) DESC LIMIT 1",
+                "answer": [
+                    [
+                        "Umbro"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 14,
+            "question": "List the manufacturers that are associated with more than one club.",
+            "prediction": {
+                "sql": "SELECT Manufacturer FROM club GROUP BY Manufacturer HAVING COUNT(*) > 1",
+                "answer": [
+                    [
+                        "Nike"
+                    ],
+                    [
+                        "Umbro"
+                    ],
+                    [
+                        "adidas"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 15,
+            "question": "List the country that have more than one player.",
+            "prediction": {
+                "sql": "SELECT Country FROM player GROUP BY Country HAVING COUNT(*) > 1",
+                "answer": [
+                    [
+                        "United States"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 16,
+            "question": "List the name of clubs that do not have players.",
+            "prediction": {
+                "sql": null,
+                "answer": [],
+                "status": "empty"
+            }
+        },
+        {
+            "id": 17,
+            "question": "Show the country of players with earnings more than 1400000 and players with earnings less than 1100000.",
+            "prediction": {
+                "sql": "SELECT Country FROM player WHERE Earnings > 1400000 AND Earnings < 1100000",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 18,
+            "question": "What is the number of distinct countries of all players?",
+            "prediction": {
+                "sql": "SELECT COUNT(DISTINCT Country) FROM player",
+                "answer": [
+                    [
+                        "4"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 19,
+            "question": "Show the earnings of players from country \"Australia\" or \"Zimbabwe\".",
+            "prediction": {
+                "sql": "SELECT Earnings FROM player WHERE Country IN ('Australia', 'Zimbabwe')",
+                "answer": [
+                    [
+                        "1359653.0"
+                    ],
+                    [
+                        "1478557.0"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        }
+    ]
+}

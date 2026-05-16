@@ -1,0 +1,442 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "How many clubs are there?",
+            "prediction": {
+                "answer": [
+                    [
+                        "9"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [9]}"
+            }
+        },
+        {
+            "id": 1,
+            "question": "List the name of clubs in ascending alphabetical order.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Arsenal"
+                    ],
+                    [
+                        "Aston Villa"
+                    ],
+                    [
+                        "Blackburn Rovers"
+                    ],
+                    [
+                        "Bolton Wanderers"
+                    ],
+                    [
+                        "Chelsea"
+                    ],
+                    [
+                        "Everton"
+                    ],
+                    [
+                        "Fulham"
+                    ],
+                    [
+                        "Hull City"
+                    ],
+                    [
+                        "Liverpool"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[\"Arsenal\",\"Aston Villa\",\"Blackburn Rovers\",\"Bolton Wanderers\",\"Chelsea\",\"Everton\",\"Fulham\",\"Hull City\",\"Liverpool\"]}"
+            }
+        },
+        {
+            "id": 2,
+            "question": "What are the managers and captains of clubs?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Arsenal",
+                        "Arsène Wenger",
+                        "Cesc Fàbregas"
+                    ],
+                    [
+                        "Aston Villa",
+                        "Martin O'Neill",
+                        "Martin Laursen"
+                    ],
+                    [
+                        "Blackburn Rovers",
+                        "Sam Allardyce",
+                        "Ryan Nelsen"
+                    ],
+                    [
+                        "Bolton Wanderers",
+                        "Gary Megson",
+                        "Kevin Davies"
+                    ],
+                    [
+                        "Chelsea",
+                        "Guus Hiddink",
+                        "John Terry"
+                    ],
+                    [
+                        "Everton",
+                        "David Moyes",
+                        "Phil Neville"
+                    ],
+                    [
+                        "Fulham",
+                        "Roy Hodgson",
+                        "Danny Murphy"
+                    ],
+                    [
+                        "Hull City",
+                        "Phil Brown",
+                        "Ian Ashbee"
+                    ],
+                    [
+                        "Liverpool",
+                        "Rafael Benítez",
+                        "Steven Gerrard"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"Club\":\"Arsenal\",\"Manager\":\"Arsène Wenger\",\"Captain\":\"Cesc Fàbregas\"},{\"Club\":\"Aston Villa\",\"Manager\":\"Martin O'Neill\",\"Captain\":\"Martin Laursen\"},{\"Club\":\"Blackburn Rovers\",\"Manager\":\"Sam Allardyce\",\"Captain\":\"Ryan Nelsen\"},{\"Club\":\"Bolton Wanderers\",\"Manager\":\"Gary Megson\",\"Captain\":\"Kevin Davies\"},{\"Club\":\"Chelsea\",\"Manager\":\"Guus Hiddink\",\"Captain\":\"John Terry\"},{\"Club\":\"Everton\",\"Manager\":\"David Moyes\",\"Captain\":\"Phil Neville\"},{\"Club\":\"Fulham\",\"Manager\":\"Roy Hodgson\",\"Captain\":\"Danny Murphy\"},{\"Club\":\"Hull City\",\"Manager\":\"Phil Brown\",\"Captain\":\"Ian Ashbee\"},{\"Club\":\"Liverpool\",\"Manager\":\"Rafael Benítez\",\"Captain\":\"Steven Gerrard\"}]}"
+            }
+        },
+        {
+            "id": 3,
+            "question": "List the name of clubs whose manufacturer is not \"Nike\"",
+            "prediction": {
+                "answer": [
+                    [
+                        "Blackburn Rovers"
+                    ],
+                    [
+                        "Bolton Wanderers"
+                    ],
+                    [
+                        "Chelsea"
+                    ],
+                    [
+                        "Everton"
+                    ],
+                    [
+                        "Hull City"
+                    ],
+                    [
+                        "Liverpool"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[\"Blackburn Rovers\",\"Bolton Wanderers\",\"Chelsea\",\"Everton\",\"Hull City\",\"Liverpool\"]}"
+            }
+        },
+        {
+            "id": 4,
+            "question": "What are the names of players in ascending order of wins count?",
+            "prediction": {
+                "answer": [
+                    [
+                        "David Frost"
+                    ],
+                    [
+                        "Greg Norman"
+                    ],
+                    [
+                        "Jim Gallagher, Jr."
+                    ],
+                    [
+                        "Paul Azinger"
+                    ],
+                    [
+                        "Nick Price"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[\"David Frost\",\"Greg Norman\",\"Jim Gallagher, Jr.\",\"Paul Azinger\",\"Nick Price\"]}"
+            }
+        },
+        {
+            "id": 5,
+            "question": "What is the name of the player with the highest earnings?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Nick Price"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Nick Price\"]}"
+            }
+        },
+        {
+            "id": 6,
+            "question": "What are the distinct countries of players with earnings higher than 1200000?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Zimbabwe"
+                    ],
+                    [
+                        "United States"
+                    ],
+                    [
+                        "Australia"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Zimbabwe\", \"United States\", \"Australia\"]}"
+            }
+        },
+        {
+            "id": 7,
+            "question": "What is the country of the player with the highest earnings among players that have more than 2 win counts?",
+            "prediction": {
+                "answer": [
+                    [
+                        "Zimbabwe"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Zimbabwe\"]}"
+            }
+        },
+        {
+            "id": 8,
+            "question": "Show names of players and names of clubs they are in.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Nick Price",
+                        "Arsenal"
+                    ],
+                    [
+                        "Paul Azinger",
+                        "Blackburn Rovers"
+                    ],
+                    [
+                        "Greg Norman",
+                        "Chelsea"
+                    ],
+                    [
+                        "Jim Gallagher, Jr.",
+                        "Everton"
+                    ],
+                    [
+                        "David Frost",
+                        "Fulham"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"player\":\"Nick Price\",\"club\":\"Arsenal\"},{\"player\":\"Paul Azinger\",\"club\":\"Blackburn Rovers\"},{\"player\":\"Greg Norman\",\"club\":\"Chelsea\"},{\"player\":\"Jim Gallagher, Jr.\",\"club\":\"Everton\"},{\"player\":\"David Frost\",\"club\":\"Fulham\"}]}"
+            }
+        },
+        {
+            "id": 9,
+            "question": "Show names of clubs that have players with more than 2 win counts.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Arsenal"
+                    ],
+                    [
+                        "Aston Villa"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Arsenal\", \"Aston Villa\"]}"
+            }
+        },
+        {
+            "id": 10,
+            "question": "Show names of players from the club with manager \"Sam Allardyce\".",
+            "prediction": {
+                "answer": [
+                    [
+                        "Paul Azinger"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Paul Azinger\"]}"
+            }
+        },
+        {
+            "id": 11,
+            "question": "Show names of clubs in descending order of average earnings of players belonging.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Arsenal"
+                    ],
+                    [
+                        "Aston Villa"
+                    ],
+                    [
+                        "Blackburn Rovers"
+                    ],
+                    [
+                        "Everton"
+                    ],
+                    [
+                        "Fulham"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Arsenal\",\"Aston Villa\",\"Blackburn Rovers\",\"Everton\",\"Fulham\"]}"
+            }
+        },
+        {
+            "id": 12,
+            "question": "Show different manufacturers and the number of clubs they are associated with.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Nike",
+                        "3"
+                    ],
+                    [
+                        "Umbro",
+                        "3"
+                    ],
+                    [
+                        "Reebok",
+                        "1"
+                    ],
+                    [
+                        "adidas",
+                        "2"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[{\"Manufacturer\":\"Nike\",\"Count\":3},{\"Manufacturer\":\"Umbro\",\"Count\":3},{\"Manufacturer\":\"Reebok\",\"Count\":1},{\"Manufacturer\":\"adidas\",\"Count\":2}]}"
+            }
+        },
+        {
+            "id": 13,
+            "question": "Please show the most common manufacturer of clubs.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Nike"
+                    ],
+                    [
+                        "Umbro"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"Nike\", \"Umbro\"]}"
+            }
+        },
+        {
+            "id": 14,
+            "question": "List the manufacturers that are associated with more than one club.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Nike"
+                    ],
+                    [
+                        "Umbro"
+                    ],
+                    [
+                        "adidas"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[\"Nike\",\"Umbro\",\"adidas\"]}"
+            }
+        },
+        {
+            "id": 15,
+            "question": "List the country that have more than one player.",
+            "prediction": {
+                "answer": [
+                    [
+                        "United States"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [\"United States\"]}"
+            }
+        },
+        {
+            "id": 16,
+            "question": "List the name of clubs that do not have players.",
+            "prediction": {
+                "answer": [],
+                "status": "cannot_infer",
+                "error": null,
+                "raw_output": "{\"answer\": null}"
+            }
+        },
+        {
+            "id": 17,
+            "question": "Show the country of players with earnings more than 1400000 and players with earnings less than 1100000.",
+            "prediction": {
+                "answer": [
+                    [
+                        "Zimbabwe"
+                    ],
+                    [
+                        "United States"
+                    ],
+                    [
+                        "South Africa"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\":[\"Zimbabwe\",\"United States\",\"South Africa\"]}"
+            }
+        },
+        {
+            "id": 18,
+            "question": "What is the number of distinct countries of all players?",
+            "prediction": {
+                "answer": [
+                    [
+                        "4"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [4]}"
+            }
+        },
+        {
+            "id": 19,
+            "question": "Show the earnings of players from country \"Australia\" or \"Zimbabwe\".",
+            "prediction": {
+                "answer": [
+                    [
+                        "1478557.0"
+                    ],
+                    [
+                        "1359653.0"
+                    ]
+                ],
+                "status": "ok",
+                "error": null,
+                "raw_output": "{\"answer\": [1478557.0, 1359653.0]}"
+            }
+        }
+    ]
+}

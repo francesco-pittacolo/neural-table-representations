@@ -1,0 +1,989 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "What is the most expensive cake and its flavor?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "question": "What is the cheapest cookie and its flavor?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "Find the ids of goods that have apple flavor.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "What are the ids of goods that cost less than 3 dollars?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "List the distinct ids of all customers who bought a lemon cake?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                },
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "For each type of food, tell me how many customers have ever bought it.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                },
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "question": "Find the id of customers who shopped at the bakery at least 15 times.",
+            "schema": [
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "question": "What is the last name of the customers who shopped at the bakery more than 10 times?",
+            "schema": [
+                {
+                    "table": "customers",
+                    "columns": [
+                        "Id",
+                        "LastName",
+                        "FirstName"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "question": "How many types of Cake does this bakery sell?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "question": "List all the flavors of Croissant available in this bakery.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "question": "Give me a list of all the distinct items bought by the customer number 15.",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "question": "For each type of food, what are the average, maximum and minimum price?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "question": "Find the receipt numbers where both Cake and Cookie were bought.",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "question": "Find all the receipt numbers in which customer id 5 purchased Croissant.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "question": "What is the receipt number and date of the receipt in which the most expensive item was bought?",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "question": "What is the item that was bought the least number of times?",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "question": "How many goods are available for each food type?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "question": "What is the average price for each food type?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "question": "What are the goods that have Apricot flavor and are cheaper than 5 dollars?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "question": "Find flavor of cakes that cost more than 10 dollars.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "question": "Give me the distinct id and price for all goods whose price is below the average of all goods?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "question": "What are the distinct ids of all goods that are cheaper than some goods of type Tart?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "question": "List distinct receipt numbers for which someone bought a good that costs more than 13 dollars.",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "question": "On which date did some customer buy a good that costs more than 15 dollars?",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "question": "Give me the list of all goods whose id has \"APP\".",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "question": "Which good has \"70\" in its id? And what is its price?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "question": "List the last names of all customers in an alphabetical oder.",
+            "schema": [
+                {
+                    "table": "customers",
+                    "columns": [
+                        "Id",
+                        "LastName",
+                        "FirstName"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "question": "Return the ordered list of all good ids.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "question": "Find all receipts in which either apple flavor pie was bought or customer id 12 shopped.",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "question": "Find all receipts which has the latest date. Also tell me that date.",
+            "schema": [
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "question": "Find all receipts which either has the earliest date or has a good with price above 10.",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "question": "What are the ids of Cookie and Cake that cost between 3 and 7 dollars.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "question": "Find the first name and last name of a customer who visited on the earliest date.",
+            "schema": [
+                {
+                    "table": "customers",
+                    "columns": [
+                        "Id",
+                        "LastName",
+                        "FirstName"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "question": "What is average price of goods whose flavor is blackberry or blueberry?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "question": "Return the cheapest price for goods with cheese flavor.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "question": "What are highest, lowest, and average prices of goods, grouped and ordered by flavor?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "question": "Return the lowest and highest prices of goods grouped and ordered by food type.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "question": "Find the top three dates when the most goods were sold.",
+            "schema": [
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "question": "Which customer shopped most often? How many times?",
+            "schema": [
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "question": "For each date, return how many distinct customers visited on that day.",
+            "schema": [
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "question": "Give me the first name and last name of customers who have bought apple flavor Tart.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                },
+                {
+                    "table": "customers",
+                    "columns": [
+                        "Id",
+                        "LastName",
+                        "FirstName"
+                    ]
+                },
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "question": "What are the ids of Cookies whose price is lower than any Croissant?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "question": "Give me the ids of Cakes whose price is at least three times as much as the average price of Tart?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "question": "What are the ids of goods whose price is above twice the average price of all goods?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "question": "List the id, flavor and type of food of goods ordered by price.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "question": "Return a list of the id and flavor for Cakes ordered by flavor.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "question": "Find all the items that have chocolate flavor but were not bought more than 10 times.",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                },
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "question": "What are the flavors available for Cake but not for Tart?",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "question": "What is the three most popular goods in this bakery?",
+            "schema": [
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "question": "Find the ids of customers who have spent more than 150 dollars in total.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                },
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "question": "Find the ids of customers whose average spending for each good is above 5.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                },
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "question": "On which day did the bakery sell more than 100 dollars in total.",
+            "schema": [
+                {
+                    "table": "goods",
+                    "columns": [
+                        "Id",
+                        "Flavor",
+                        "Food",
+                        "Price"
+                    ]
+                },
+                {
+                    "table": "receipts",
+                    "columns": [
+                        "ReceiptNumber",
+                        "Date",
+                        "CustomerId"
+                    ]
+                },
+                {
+                    "table": "items",
+                    "columns": [
+                        "Receipt",
+                        "Ordinal",
+                        "Item"
+                    ]
+                }
+            ]
+        }
+    ]
+}

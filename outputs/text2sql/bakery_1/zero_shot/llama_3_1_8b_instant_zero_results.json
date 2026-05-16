@@ -1,0 +1,2242 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "question": "What is the most expensive cake and its flavor?",
+            "prediction": {
+                "sql": "SELECT Flavor, Price FROM goods WHERE Price = (SELECT MAX(Price) FROM goods)",
+                "answer": [
+                    [
+                        "Casino",
+                        "15.95"
+                    ],
+                    [
+                        "Opera",
+                        "15.95"
+                    ],
+                    [
+                        "Truffle",
+                        "15.95"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 1,
+            "question": "What is the cheapest cookie and its flavor?",
+            "prediction": {
+                "sql": "SELECT Flavor, Price FROM goods WHERE Price = (SELECT MIN(Price) FROM goods)",
+                "answer": [
+                    [
+                        "Lemon",
+                        "0.79"
+                    ],
+                    [
+                        "Walnut",
+                        "0.79"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 2,
+            "question": "Find the ids of goods that have apple flavor.",
+            "prediction": {
+                "sql": "SELECT Id FROM goods WHERE LOWER(Flavor) = LOWER('apple')",
+                "answer": [
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "90-APIE-10"
+                    ],
+                    [
+                        "90-APP-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 3,
+            "question": "What are the ids of goods that cost less than 3 dollars?",
+            "prediction": {
+                "sql": "SELECT Id FROM goods WHERE Price < 3",
+                "answer": [
+                    [
+                        "50-ALM"
+                    ],
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "50-APR"
+                    ],
+                    [
+                        "50-CH"
+                    ],
+                    [
+                        "50-CHS"
+                    ],
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "51-APR"
+                    ],
+                    [
+                        "51-ATW"
+                    ],
+                    [
+                        "51-BC"
+                    ],
+                    [
+                        "51-BLU"
+                    ],
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-M-CH-DZ"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 4,
+            "question": "List the distinct ids of all customers who bought a lemon cake?",
+            "prediction": {
+                "sql": "SELECT DISTINCT T2.CustomerId FROM items AS T1 INNER JOIN receipts AS T2 ON T1.Receipt = T2.ReceiptNumber INNER JOIN goods AS T3 ON T1.Item = T3.Id WHERE LOWER(T3.Flavor) = LOWER('lemon cake')",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 5,
+            "question": "For each type of food, tell me how many customers have ever bought it.",
+            "prediction": {
+                "sql": "SELECT COUNT(DISTINCT i.CustomerId) AS count FROM items i INNER JOIN receipts r ON i.Receipt = r.ReceiptNumber INNER JOIN goods g ON i.Item = g.Id GROUP BY g.Food",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such column: i.CustomerId"
+            }
+        },
+        {
+            "id": 6,
+            "question": "Find the id of customers who shopped at the bakery at least 15 times.",
+            "prediction": {
+                "sql": "SELECT CustomerId FROM receipts GROUP BY CustomerId HAVING COUNT(CustomerId) >= 15",
+                "answer": [
+                    [
+                        "14"
+                    ],
+                    [
+                        "20"
+                    ],
+                    [
+                        "6"
+                    ],
+                    [
+                        "7"
+                    ],
+                    [
+                        "8"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 7,
+            "question": "What is the last name of the customers who shopped at the bakery more than 10 times?",
+            "prediction": {
+                "sql": "SELECT c.LastName FROM customers c JOIN receipts r ON c.Id = r.CustomerId GROUP BY c.Id HAVING COUNT(r.ReceiptNumber) > 10",
+                "answer": [
+                    [
+                        "CALLENDAR"
+                    ],
+                    [
+                        "CRUZEN"
+                    ],
+                    [
+                        "HELING"
+                    ],
+                    [
+                        "LOGAN"
+                    ],
+                    [
+                        "SLINGLAND"
+                    ],
+                    [
+                        "SOPKO"
+                    ],
+                    [
+                        "TOUSSAND"
+                    ],
+                    [
+                        "ZEME"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 8,
+            "question": "How many types of Cake does this bakery sell?",
+            "prediction": {
+                "sql": "SELECT COUNT(DISTINCT Food) FROM goods WHERE LOWER(Food) = LOWER('Cake')",
+                "answer": [
+                    [
+                        "1"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 9,
+            "question": "List all the flavors of Croissant available in this bakery.",
+            "prediction": {
+                "sql": "SELECT Flavor FROM goods WHERE LOWER(Food) = LOWER('Croissant')",
+                "answer": [
+                    [
+                        "Almond"
+                    ],
+                    [
+                        "Apple"
+                    ],
+                    [
+                        "Apricot"
+                    ],
+                    [
+                        "Cheese"
+                    ],
+                    [
+                        "Chocolate"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 10,
+            "question": "Give me a list of all the distinct items bought by the customer number 15.",
+            "prediction": {
+                "sql": "SELECT DISTINCT T1.Item FROM Item AS T1 INNER JOIN Ordinal AS T2 ON T1.Ordinal = T2.Ordinal INNER JOIN Receipt AS T3 ON T2.ReceiptNumber = T3.ReceiptNumber WHERE T3.CustomerId = 15",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Item"
+            }
+        },
+        {
+            "id": 11,
+            "question": "For each type of food, what are the average, maximum and minimum price?",
+            "prediction": {
+                "sql": "SELECT Food, AVG(Price) AS avg_price, MAX(Price) AS max_price, MIN(Price) AS min_price FROM goods GROUP BY Food",
+                "answer": [
+                    [
+                        "Bear Claw",
+                        "1.95",
+                        "1.95",
+                        "1.95"
+                    ],
+                    [
+                        "Cake",
+                        "13.027142857142858",
+                        "15.95",
+                        "8.95"
+                    ],
+                    [
+                        "Cookie",
+                        "1.0671428571428572",
+                        "1.25",
+                        "0.79"
+                    ],
+                    [
+                        "Croissant",
+                        "1.5699999999999998",
+                        "1.75",
+                        "1.45"
+                    ],
+                    [
+                        "Danish",
+                        "1.15",
+                        "1.15",
+                        "1.15"
+                    ],
+                    [
+                        "Eclair",
+                        "3.3333333333333335",
+                        "3.5",
+                        "3.25"
+                    ],
+                    [
+                        "Meringue",
+                        "1.2",
+                        "1.25",
+                        "1.15"
+                    ],
+                    [
+                        "Pie",
+                        "5.25",
+                        "5.25",
+                        "5.25"
+                    ],
+                    [
+                        "Tart",
+                        "3.4",
+                        "3.75",
+                        "3.25"
+                    ],
+                    [
+                        "Twist",
+                        "1.15",
+                        "1.15",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 12,
+            "question": "Find the receipt numbers where both Cake and Cookie were bought.",
+            "prediction": {
+                "sql": "SELECT Receipt FROM Item WHERE Id IN (SELECT Id FROM goods WHERE LOWER(Food) = LOWER('Cake') OR LOWER(Food) = LOWER('Cookie'))",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Item"
+            }
+        },
+        {
+            "id": 13,
+            "question": "Find all the receipt numbers in which customer id 5 purchased Croissant.",
+            "prediction": {
+                "sql": "SELECT T2.ReceiptNumber FROM goods AS T1 INNER JOIN receipts AS T2 ON T1.Id = T2.CustomerId WHERE LOWER(T1.Food) = LOWER('Croissant') AND T1.Id = 5",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 14,
+            "question": "What is the receipt number and date of the receipt in which the most expensive item was bought?",
+            "prediction": {
+                "sql": "SELECT r.ReceiptNumber, r.Date FROM receipts AS r INNER JOIN items AS i ON r.ReceiptNumber = i.Receipt INNER JOIN goods AS g ON i.Ordinal = g.Id ORDER BY g.Price DESC LIMIT 1",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 15,
+            "question": "What is the item that was bought the least number of times?",
+            "prediction": {
+                "sql": "SELECT i.Item FROM Receipt r INNER JOIN Ordinal o ON r.ReceiptID = o.ReceiptID INNER JOIN Item i ON o.OrdinalID = i.OrdinalID GROUP BY i.Item ORDER BY COUNT(i.Item) ASC LIMIT 1",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Receipt"
+            }
+        },
+        {
+            "id": 16,
+            "question": "How many goods are available for each food type?",
+            "prediction": {
+                "sql": "SELECT Food, COUNT(*) FROM goods GROUP BY Food",
+                "answer": [
+                    [
+                        "Bear Claw",
+                        "1"
+                    ],
+                    [
+                        "Cake",
+                        "7"
+                    ],
+                    [
+                        "Cookie",
+                        "7"
+                    ],
+                    [
+                        "Croissant",
+                        "5"
+                    ],
+                    [
+                        "Danish",
+                        "3"
+                    ],
+                    [
+                        "Eclair",
+                        "3"
+                    ],
+                    [
+                        "Meringue",
+                        "2"
+                    ],
+                    [
+                        "Pie",
+                        "1"
+                    ],
+                    [
+                        "Tart",
+                        "10"
+                    ],
+                    [
+                        "Twist",
+                        "1"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 17,
+            "question": "What is the average price for each food type?",
+            "prediction": {
+                "sql": "SELECT Food, AVG(Price) FROM goods GROUP BY Food",
+                "answer": [
+                    [
+                        "Bear Claw",
+                        "1.95"
+                    ],
+                    [
+                        "Cake",
+                        "13.027142857142858"
+                    ],
+                    [
+                        "Cookie",
+                        "1.0671428571428572"
+                    ],
+                    [
+                        "Croissant",
+                        "1.5699999999999998"
+                    ],
+                    [
+                        "Danish",
+                        "1.15"
+                    ],
+                    [
+                        "Eclair",
+                        "3.3333333333333335"
+                    ],
+                    [
+                        "Meringue",
+                        "1.2"
+                    ],
+                    [
+                        "Pie",
+                        "5.25"
+                    ],
+                    [
+                        "Tart",
+                        "3.4"
+                    ],
+                    [
+                        "Twist",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 18,
+            "question": "What are the goods that have Apricot flavor and are cheaper than 5 dollars?",
+            "prediction": {
+                "sql": "SELECT * FROM goods WHERE LOWER(Flavor) = LOWER('Apricot') AND Price < 5",
+                "answer": [
+                    [
+                        "50-APR",
+                        "Apricot",
+                        "Croissant",
+                        "1.45"
+                    ],
+                    [
+                        "51-APR",
+                        "Apricot",
+                        "Danish",
+                        "1.15"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "Apricot",
+                        "Tart",
+                        "3.25"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 19,
+            "question": "Find flavor of cakes that cost more than 10 dollars.",
+            "prediction": {
+                "sql": "SELECT Flavor FROM goods WHERE Price > 10",
+                "answer": [
+                    [
+                        "Casino"
+                    ],
+                    [
+                        "Napoleon"
+                    ],
+                    [
+                        "Opera"
+                    ],
+                    [
+                        "Strawberry"
+                    ],
+                    [
+                        "Truffle"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 20,
+            "question": "Give me the distinct id and price for all goods whose price is below the average of all goods?",
+            "prediction": {
+                "sql": "SELECT DISTINCT Id, Price FROM goods WHERE Price < (SELECT AVG(Price) FROM goods)",
+                "answer": [
+                    [
+                        "45-CH",
+                        "3.25"
+                    ],
+                    [
+                        "45-CO",
+                        "3.5"
+                    ],
+                    [
+                        "45-VA",
+                        "3.25"
+                    ],
+                    [
+                        "50-ALM",
+                        "1.45"
+                    ],
+                    [
+                        "50-APP",
+                        "1.45"
+                    ],
+                    [
+                        "50-APR",
+                        "1.45"
+                    ],
+                    [
+                        "50-CH",
+                        "1.75"
+                    ],
+                    [
+                        "50-CHS",
+                        "1.75"
+                    ],
+                    [
+                        "51-APP",
+                        "1.15"
+                    ],
+                    [
+                        "51-APR",
+                        "1.15"
+                    ],
+                    [
+                        "51-ATW",
+                        "1.15"
+                    ],
+                    [
+                        "51-BC",
+                        "1.95"
+                    ],
+                    [
+                        "51-BLU",
+                        "1.15"
+                    ],
+                    [
+                        "70-GA",
+                        "1.15"
+                    ],
+                    [
+                        "70-GON",
+                        "1.15"
+                    ],
+                    [
+                        "70-LEM",
+                        "0.79"
+                    ],
+                    [
+                        "70-M-CH-DZ",
+                        "1.25"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ",
+                        "1.15"
+                    ],
+                    [
+                        "70-MAR",
+                        "1.25"
+                    ],
+                    [
+                        "70-R",
+                        "1.09"
+                    ],
+                    [
+                        "70-TU",
+                        "1.25"
+                    ],
+                    [
+                        "70-W",
+                        "0.79"
+                    ],
+                    [
+                        "90-ALM-I",
+                        "3.75"
+                    ],
+                    [
+                        "90-APP-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "3.25"
+                    ],
+                    [
+                        "90-BER-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-BLK-PF",
+                        "3.25"
+                    ],
+                    [
+                        "90-BLU-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-CH-PF",
+                        "3.75"
+                    ],
+                    [
+                        "90-CHR-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-LEM-11",
+                        "3.25"
+                    ],
+                    [
+                        "90-PEC-11",
+                        "3.75"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 21,
+            "question": "What are the distinct ids of all goods that are cheaper than some goods of type Tart?",
+            "prediction": {
+                "sql": "SELECT DISTINCT Id FROM goods WHERE Price < (SELECT MIN(Price) FROM goods WHERE LOWER(Flavor) = LOWER('Tart'))",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 22,
+            "question": "List distinct receipt numbers for which someone bought a good that costs more than 13 dollars.",
+            "prediction": {
+                "sql": "SELECT DISTINCT T1.Receipt FROM items AS T1 INNER JOIN goods AS T2 ON T1.Item = T2.Id WHERE T2.Price > 13",
+                "answer": [
+                    [
+                        "11891"
+                    ],
+                    [
+                        "12396"
+                    ],
+                    [
+                        "12698"
+                    ],
+                    [
+                        "12800"
+                    ],
+                    [
+                        "13355"
+                    ],
+                    [
+                        "16034"
+                    ],
+                    [
+                        "16532"
+                    ],
+                    [
+                        "17729"
+                    ],
+                    [
+                        "19002"
+                    ],
+                    [
+                        "24829"
+                    ],
+                    [
+                        "26148"
+                    ],
+                    [
+                        "26240"
+                    ],
+                    [
+                        "32701"
+                    ],
+                    [
+                        "33060"
+                    ],
+                    [
+                        "33456"
+                    ],
+                    [
+                        "34579"
+                    ],
+                    [
+                        "34910"
+                    ],
+                    [
+                        "35904"
+                    ],
+                    [
+                        "37636"
+                    ],
+                    [
+                        "38849"
+                    ],
+                    [
+                        "40305"
+                    ],
+                    [
+                        "44590"
+                    ],
+                    [
+                        "45062"
+                    ],
+                    [
+                        "45976"
+                    ],
+                    [
+                        "49977"
+                    ],
+                    [
+                        "51991"
+                    ],
+                    [
+                        "52761"
+                    ],
+                    [
+                        "53376"
+                    ],
+                    [
+                        "53922"
+                    ],
+                    [
+                        "55944"
+                    ],
+                    [
+                        "58770"
+                    ],
+                    [
+                        "61008"
+                    ],
+                    [
+                        "61948"
+                    ],
+                    [
+                        "64451"
+                    ],
+                    [
+                        "64477"
+                    ],
+                    [
+                        "64861"
+                    ],
+                    [
+                        "65165"
+                    ],
+                    [
+                        "67314"
+                    ],
+                    [
+                        "68199"
+                    ],
+                    [
+                        "68753"
+                    ],
+                    [
+                        "70162"
+                    ],
+                    [
+                        "70655"
+                    ],
+                    [
+                        "72207"
+                    ],
+                    [
+                        "77032"
+                    ],
+                    [
+                        "77406"
+                    ],
+                    [
+                        "83085"
+                    ],
+                    [
+                        "85858"
+                    ],
+                    [
+                        "95514"
+                    ],
+                    [
+                        "96258"
+                    ],
+                    [
+                        "96402"
+                    ],
+                    [
+                        "96531"
+                    ],
+                    [
+                        "96761"
+                    ],
+                    [
+                        "98806"
+                    ],
+                    [
+                        "99994"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 23,
+            "question": "On which date did some customer buy a good that costs more than 15 dollars?",
+            "prediction": {
+                "sql": "SELECT T2.Date FROM Receipt AS T1 INNER JOIN receipts AS T2 ON T1.ReceiptNumber = T2.ReceiptNumber INNER JOIN Item AS T3 ON T1.Ordinal = T3.Ordinal INNER JOIN goods AS T4 ON T3.GoodId = T4.Id WHERE T4.Price > 15",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Receipt"
+            }
+        },
+        {
+            "id": 24,
+            "question": "Give me the list of all goods whose id has \"APP\".",
+            "prediction": {
+                "sql": "SELECT * FROM goods WHERE Id LIKE '%APP%'",
+                "answer": [
+                    [
+                        "50-APP",
+                        "Apple",
+                        "Croissant",
+                        "1.45"
+                    ],
+                    [
+                        "51-APP",
+                        "Apple",
+                        "Danish",
+                        "1.15"
+                    ],
+                    [
+                        "90-APP-11",
+                        "Apple",
+                        "Tart",
+                        "3.25"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 25,
+            "question": "Which good has \"70\" in its id? And what is its price?",
+            "prediction": {
+                "sql": "SELECT Price FROM goods WHERE LOWER(Id) = LOWER('70')",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 26,
+            "question": "List the last names of all customers in an alphabetical oder.",
+            "prediction": {
+                "sql": "SELECT LastName FROM customers ORDER BY LastName",
+                "answer": [
+                    [
+                        "ARNN"
+                    ],
+                    [
+                        "ARZT"
+                    ],
+                    [
+                        "CALLENDAR"
+                    ],
+                    [
+                        "CRUZEN"
+                    ],
+                    [
+                        "DOMKOWSKI"
+                    ],
+                    [
+                        "DUKELOW"
+                    ],
+                    [
+                        "DUNLOW"
+                    ],
+                    [
+                        "ENGLEY"
+                    ],
+                    [
+                        "ESPOSITA"
+                    ],
+                    [
+                        "HAFFERKAMP"
+                    ],
+                    [
+                        "HELING"
+                    ],
+                    [
+                        "LOGAN"
+                    ],
+                    [
+                        "MCMAHAN"
+                    ],
+                    [
+                        "MESDAQ"
+                    ],
+                    [
+                        "SLINGLAND"
+                    ],
+                    [
+                        "SOPKO"
+                    ],
+                    [
+                        "STADICK"
+                    ],
+                    [
+                        "STENZ"
+                    ],
+                    [
+                        "TOUSSAND"
+                    ],
+                    [
+                        "ZEME"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 27,
+            "question": "Return the ordered list of all good ids.",
+            "prediction": {
+                "sql": "SELECT Id FROM goods ORDER BY Id",
+                "answer": [
+                    [
+                        "20-BC-C-10"
+                    ],
+                    [
+                        "20-BC-L-10"
+                    ],
+                    [
+                        "20-CA-7.5"
+                    ],
+                    [
+                        "24-8x10"
+                    ],
+                    [
+                        "25-STR-9"
+                    ],
+                    [
+                        "26-8x10"
+                    ],
+                    [
+                        "45-CH"
+                    ],
+                    [
+                        "45-CO"
+                    ],
+                    [
+                        "45-VA"
+                    ],
+                    [
+                        "46-11"
+                    ],
+                    [
+                        "50-ALM"
+                    ],
+                    [
+                        "50-APP"
+                    ],
+                    [
+                        "50-APR"
+                    ],
+                    [
+                        "50-CH"
+                    ],
+                    [
+                        "50-CHS"
+                    ],
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "51-APR"
+                    ],
+                    [
+                        "51-ATW"
+                    ],
+                    [
+                        "51-BC"
+                    ],
+                    [
+                        "51-BLU"
+                    ],
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-M-CH-DZ"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ],
+                    [
+                        "90-ALM-I"
+                    ],
+                    [
+                        "90-APIE-10"
+                    ],
+                    [
+                        "90-APP-11"
+                    ],
+                    [
+                        "90-APR-PF"
+                    ],
+                    [
+                        "90-BER-11"
+                    ],
+                    [
+                        "90-BLK-PF"
+                    ],
+                    [
+                        "90-BLU-11"
+                    ],
+                    [
+                        "90-CH-PF"
+                    ],
+                    [
+                        "90-CHR-11"
+                    ],
+                    [
+                        "90-LEM-11"
+                    ],
+                    [
+                        "90-PEC-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 28,
+            "question": "Find all receipts in which either apple flavor pie was bought or customer id 12 shopped.",
+            "prediction": {
+                "sql": "SELECT * FROM Receipt WHERE Id IN (SELECT Receipt FROM Ordinal WHERE Item IN (SELECT Id FROM goods WHERE LOWER(Flavor) = LOWER('apple') OR LOWER(Food) = LOWER('pie')))",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Receipt"
+            }
+        },
+        {
+            "id": 29,
+            "question": "Find all receipts which has the latest date. Also tell me that date.",
+            "prediction": {
+                "sql": "SELECT Date, MAX(Date) FROM receipts GROUP BY CustomerId",
+                "answer": [
+                    [
+                        "31-Oct-2007",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "31-Oct-2007",
+                        "31-Oct-2007"
+                    ],
+                    [
+                        "4-Oct-2007",
+                        "4-Oct-2007"
+                    ],
+                    [
+                        "4-Oct-2007",
+                        "4-Oct-2007"
+                    ],
+                    [
+                        "6-Oct-2007",
+                        "6-Oct-2007"
+                    ],
+                    [
+                        "7-Oct-2007",
+                        "7-Oct-2007"
+                    ],
+                    [
+                        "7-Oct-2007",
+                        "7-Oct-2007"
+                    ],
+                    [
+                        "7-Oct-2007",
+                        "7-Oct-2007"
+                    ],
+                    [
+                        "7-Oct-2007",
+                        "7-Oct-2007"
+                    ],
+                    [
+                        "7-Oct-2007",
+                        "7-Oct-2007"
+                    ],
+                    [
+                        "8-Oct-2007",
+                        "8-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9-Oct-2007"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 30,
+            "question": "Find all receipts which either has the earliest date or has a good with price above 10.",
+            "prediction": {
+                "sql": "SELECT * FROM Receipt WHERE date = (SELECT MIN(date) FROM Receipt) OR EXISTS (SELECT 1 FROM Item WHERE Receipt.Id = Item.ReceiptId AND Price > 10)",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Receipt"
+            }
+        },
+        {
+            "id": 31,
+            "question": "What are the ids of Cookie and Cake that cost between 3 and 7 dollars.",
+            "prediction": {
+                "sql": "SELECT Id FROM goods WHERE LOWER(Food) = LOWER('Cookie') AND Price BETWEEN 3 AND 7 UNION SELECT Id FROM goods WHERE LOWER(Food) = LOWER('Cake') AND Price BETWEEN 3 AND 7",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 32,
+            "question": "Find the first name and last name of a customer who visited on the earliest date.",
+            "prediction": {
+                "sql": "SELECT c.FirstName, c.LastName FROM customers c INNER JOIN receipts r ON c.Id = r.CustomerId ORDER BY r.Date ASC LIMIT 1",
+                "answer": [
+                    [
+                        "JOSETTE",
+                        "SLINGLAND"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 33,
+            "question": "What is average price of goods whose flavor is blackberry or blueberry?",
+            "prediction": {
+                "sql": "SELECT AVG(Price) FROM goods WHERE LOWER(Flavor) = LOWER('blackberry') OR LOWER(Flavor) = LOWER('blueberry')",
+                "answer": [
+                    [
+                        "2.5500000000000003"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 34,
+            "question": "Return the cheapest price for goods with cheese flavor.",
+            "prediction": {
+                "sql": "SELECT MIN(Price) FROM goods WHERE LOWER(Flavor) = LOWER('cheese')",
+                "answer": [
+                    [
+                        "1.75"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 35,
+            "question": "What are highest, lowest, and average prices of goods, grouped and ordered by flavor?",
+            "prediction": {
+                "sql": "SELECT Flavor, MAX(Price) AS max_price, MIN(Price) AS min_price, AVG(Price) AS avg_price FROM goods GROUP BY Flavor ORDER BY Flavor",
+                "answer": [
+                    [
+                        "Almond",
+                        "3.75",
+                        "1.15",
+                        "2.0749999999999997"
+                    ],
+                    [
+                        "Apple",
+                        "5.25",
+                        "1.15",
+                        "2.775"
+                    ],
+                    [
+                        "Apricot",
+                        "3.25",
+                        "1.15",
+                        "1.95"
+                    ],
+                    [
+                        "Berry",
+                        "3.25",
+                        "3.25",
+                        "3.25"
+                    ],
+                    [
+                        "Blackberry",
+                        "3.25",
+                        "3.25",
+                        "3.25"
+                    ],
+                    [
+                        "Blueberry",
+                        "3.25",
+                        "1.15",
+                        "2.2"
+                    ],
+                    [
+                        "Casino",
+                        "15.95",
+                        "15.95",
+                        "15.95"
+                    ],
+                    [
+                        "Cheese",
+                        "1.75",
+                        "1.75",
+                        "1.75"
+                    ],
+                    [
+                        "Cherry",
+                        "3.25",
+                        "3.25",
+                        "3.25"
+                    ],
+                    [
+                        "Chocolate",
+                        "8.95",
+                        "1.25",
+                        "3.79"
+                    ],
+                    [
+                        "Coffee",
+                        "3.5",
+                        "3.5",
+                        "3.5"
+                    ],
+                    [
+                        "Ganache",
+                        "1.15",
+                        "1.15",
+                        "1.15"
+                    ],
+                    [
+                        "Gongolais",
+                        "1.15",
+                        "1.15",
+                        "1.15"
+                    ],
+                    [
+                        "Lemon",
+                        "8.95",
+                        "0.79",
+                        "4.329999999999999"
+                    ],
+                    [
+                        "Marzipan",
+                        "1.25",
+                        "1.25",
+                        "1.25"
+                    ],
+                    [
+                        "Napoleon",
+                        "13.49",
+                        "13.49",
+                        "13.49"
+                    ],
+                    [
+                        "Opera",
+                        "15.95",
+                        "15.95",
+                        "15.95"
+                    ],
+                    [
+                        "Pecan",
+                        "3.75",
+                        "3.75",
+                        "3.75"
+                    ],
+                    [
+                        "Raspberry",
+                        "1.09",
+                        "1.09",
+                        "1.09"
+                    ],
+                    [
+                        "Strawberry",
+                        "11.95",
+                        "11.95",
+                        "11.95"
+                    ],
+                    [
+                        "Truffle",
+                        "15.95",
+                        "15.95",
+                        "15.95"
+                    ],
+                    [
+                        "Tuile",
+                        "1.25",
+                        "1.25",
+                        "1.25"
+                    ],
+                    [
+                        "Vanilla",
+                        "3.25",
+                        "1.15",
+                        "2.2"
+                    ],
+                    [
+                        "Walnut",
+                        "0.79",
+                        "0.79",
+                        "0.79"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 36,
+            "question": "Return the lowest and highest prices of goods grouped and ordered by food type.",
+            "prediction": {
+                "sql": "SELECT Food, MIN(Price) AS MinPrice, MAX(Price) AS MaxPrice FROM goods GROUP BY Food ORDER BY Food",
+                "answer": [
+                    [
+                        "Bear Claw",
+                        "1.95",
+                        "1.95"
+                    ],
+                    [
+                        "Cake",
+                        "8.95",
+                        "15.95"
+                    ],
+                    [
+                        "Cookie",
+                        "0.79",
+                        "1.25"
+                    ],
+                    [
+                        "Croissant",
+                        "1.45",
+                        "1.75"
+                    ],
+                    [
+                        "Danish",
+                        "1.15",
+                        "1.15"
+                    ],
+                    [
+                        "Eclair",
+                        "3.25",
+                        "3.5"
+                    ],
+                    [
+                        "Meringue",
+                        "1.15",
+                        "1.25"
+                    ],
+                    [
+                        "Pie",
+                        "5.25",
+                        "5.25"
+                    ],
+                    [
+                        "Tart",
+                        "3.25",
+                        "3.75"
+                    ],
+                    [
+                        "Twist",
+                        "1.15",
+                        "1.15"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 37,
+            "question": "Find the top three dates when the most goods were sold.",
+            "prediction": {
+                "sql": "SELECT Date FROM receipts GROUP BY Date ORDER BY COUNT(Date) DESC LIMIT 3",
+                "answer": [
+                    [
+                        "12-Oct-2007"
+                    ],
+                    [
+                        "7-Oct-2007"
+                    ],
+                    [
+                        "9-Oct-2007"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 38,
+            "question": "Which customer shopped most often? How many times?",
+            "prediction": {
+                "sql": "SELECT CustomerId, COUNT(*) FROM receipts GROUP BY CustomerId ORDER BY COUNT(*) DESC LIMIT 1",
+                "answer": [
+                    [
+                        "8",
+                        "18"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 39,
+            "question": "For each date, return how many distinct customers visited on that day.",
+            "prediction": {
+                "sql": "SELECT Date, COUNT(DISTINCT CustomerId) FROM receipts GROUP BY Date",
+                "answer": [
+                    [
+                        "1-Oct-2007",
+                        "1"
+                    ],
+                    [
+                        "10-Oct-2007",
+                        "9"
+                    ],
+                    [
+                        "11-Oct-2007",
+                        "2"
+                    ],
+                    [
+                        "12-Oct-2007",
+                        "9"
+                    ],
+                    [
+                        "13-Oct-2007",
+                        "5"
+                    ],
+                    [
+                        "14-Oct-2007",
+                        "5"
+                    ],
+                    [
+                        "15-Oct-2007",
+                        "8"
+                    ],
+                    [
+                        "16-Oct-2007",
+                        "9"
+                    ],
+                    [
+                        "17-Oct-2007",
+                        "4"
+                    ],
+                    [
+                        "18-Oct-2007",
+                        "4"
+                    ],
+                    [
+                        "19-Oct-2007",
+                        "4"
+                    ],
+                    [
+                        "2-Oct-2007",
+                        "3"
+                    ],
+                    [
+                        "20-Oct-2007",
+                        "9"
+                    ],
+                    [
+                        "21-Oct-2007",
+                        "5"
+                    ],
+                    [
+                        "22-Oct-2007",
+                        "7"
+                    ],
+                    [
+                        "23-Oct-2007",
+                        "6"
+                    ],
+                    [
+                        "24-Oct-2007",
+                        "5"
+                    ],
+                    [
+                        "25-Oct-2007",
+                        "6"
+                    ],
+                    [
+                        "26-Oct-2007",
+                        "3"
+                    ],
+                    [
+                        "27-Oct-2007",
+                        "3"
+                    ],
+                    [
+                        "28-Oct-2007",
+                        "5"
+                    ],
+                    [
+                        "29-Oct-2007",
+                        "6"
+                    ],
+                    [
+                        "3-Oct-2007",
+                        "6"
+                    ],
+                    [
+                        "30-Oct-2007",
+                        "4"
+                    ],
+                    [
+                        "31-Oct-2007",
+                        "6"
+                    ],
+                    [
+                        "4-Oct-2007",
+                        "8"
+                    ],
+                    [
+                        "5-Oct-2007",
+                        "3"
+                    ],
+                    [
+                        "6-Oct-2007",
+                        "3"
+                    ],
+                    [
+                        "7-Oct-2007",
+                        "6"
+                    ],
+                    [
+                        "8-Oct-2007",
+                        "4"
+                    ],
+                    [
+                        "9-Oct-2007",
+                        "9"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 40,
+            "question": "Give me the first name and last name of customers who have bought apple flavor Tart.",
+            "prediction": {
+                "sql": "SELECT T1.FirstName, T1.LastName FROM customers AS T1 INNER JOIN receipts AS T2 ON T1.Id = T2.CustomerId INNER JOIN items AS T3 ON T2.ReceiptNumber = T3.Receipt WHERE T3.Receipt IN (SELECT Receipt FROM items WHERE LOWER(Item) = LOWER('Tart') AND LOWER(Flavor) = LOWER('Apple'))",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such column: Flavor"
+            }
+        },
+        {
+            "id": 41,
+            "question": "What are the ids of Cookies whose price is lower than any Croissant?",
+            "prediction": {
+                "sql": "SELECT Id FROM goods WHERE Price < (SELECT MIN(Price) FROM goods WHERE LOWER(Food) = LOWER('Croissant'))",
+                "answer": [
+                    [
+                        "51-APP"
+                    ],
+                    [
+                        "51-APR"
+                    ],
+                    [
+                        "51-ATW"
+                    ],
+                    [
+                        "51-BLU"
+                    ],
+                    [
+                        "70-GA"
+                    ],
+                    [
+                        "70-GON"
+                    ],
+                    [
+                        "70-LEM"
+                    ],
+                    [
+                        "70-M-CH-DZ"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ"
+                    ],
+                    [
+                        "70-MAR"
+                    ],
+                    [
+                        "70-R"
+                    ],
+                    [
+                        "70-TU"
+                    ],
+                    [
+                        "70-W"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 42,
+            "question": "Give me the ids of Cakes whose price is at least three times as much as the average price of Tart?",
+            "prediction": {
+                "sql": "SELECT Id FROM goods WHERE Price >= (SELECT AVG(Price) * 3 FROM goods WHERE LOWER(Food) = LOWER('Tart'))",
+                "answer": [
+                    [
+                        "20-CA-7.5"
+                    ],
+                    [
+                        "24-8x10"
+                    ],
+                    [
+                        "25-STR-9"
+                    ],
+                    [
+                        "26-8x10"
+                    ],
+                    [
+                        "46-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 43,
+            "question": "What are the ids of goods whose price is above twice the average price of all goods?",
+            "prediction": {
+                "sql": "SELECT Id FROM goods WHERE Price > (SELECT AVG(Price) FROM goods) * 2",
+                "answer": [
+                    [
+                        "20-BC-C-10"
+                    ],
+                    [
+                        "20-BC-L-10"
+                    ],
+                    [
+                        "20-CA-7.5"
+                    ],
+                    [
+                        "24-8x10"
+                    ],
+                    [
+                        "25-STR-9"
+                    ],
+                    [
+                        "26-8x10"
+                    ],
+                    [
+                        "46-11"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 44,
+            "question": "List the id, flavor and type of food of goods ordered by price.",
+            "prediction": {
+                "sql": "SELECT Id, Flavor, Food FROM goods ORDER BY Price",
+                "answer": [
+                    [
+                        "20-BC-C-10",
+                        "Chocolate",
+                        "Cake"
+                    ],
+                    [
+                        "20-BC-L-10",
+                        "Lemon",
+                        "Cake"
+                    ],
+                    [
+                        "20-CA-7.5",
+                        "Casino",
+                        "Cake"
+                    ],
+                    [
+                        "24-8x10",
+                        "Opera",
+                        "Cake"
+                    ],
+                    [
+                        "25-STR-9",
+                        "Strawberry",
+                        "Cake"
+                    ],
+                    [
+                        "26-8x10",
+                        "Truffle",
+                        "Cake"
+                    ],
+                    [
+                        "45-CH",
+                        "Chocolate",
+                        "Eclair"
+                    ],
+                    [
+                        "45-CO",
+                        "Coffee",
+                        "Eclair"
+                    ],
+                    [
+                        "45-VA",
+                        "Vanilla",
+                        "Eclair"
+                    ],
+                    [
+                        "46-11",
+                        "Napoleon",
+                        "Cake"
+                    ],
+                    [
+                        "50-ALM",
+                        "Almond",
+                        "Croissant"
+                    ],
+                    [
+                        "50-APP",
+                        "Apple",
+                        "Croissant"
+                    ],
+                    [
+                        "50-APR",
+                        "Apricot",
+                        "Croissant"
+                    ],
+                    [
+                        "50-CH",
+                        "Chocolate",
+                        "Croissant"
+                    ],
+                    [
+                        "50-CHS",
+                        "Cheese",
+                        "Croissant"
+                    ],
+                    [
+                        "51-APP",
+                        "Apple",
+                        "Danish"
+                    ],
+                    [
+                        "51-APR",
+                        "Apricot",
+                        "Danish"
+                    ],
+                    [
+                        "51-ATW",
+                        "Almond",
+                        "Twist"
+                    ],
+                    [
+                        "51-BC",
+                        "Almond",
+                        "Bear Claw"
+                    ],
+                    [
+                        "51-BLU",
+                        "Blueberry",
+                        "Danish"
+                    ],
+                    [
+                        "70-GA",
+                        "Ganache",
+                        "Cookie"
+                    ],
+                    [
+                        "70-GON",
+                        "Gongolais",
+                        "Cookie"
+                    ],
+                    [
+                        "70-LEM",
+                        "Lemon",
+                        "Cookie"
+                    ],
+                    [
+                        "70-M-CH-DZ",
+                        "Chocolate",
+                        "Meringue"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ",
+                        "Vanilla",
+                        "Meringue"
+                    ],
+                    [
+                        "70-MAR",
+                        "Marzipan",
+                        "Cookie"
+                    ],
+                    [
+                        "70-R",
+                        "Raspberry",
+                        "Cookie"
+                    ],
+                    [
+                        "70-TU",
+                        "Tuile",
+                        "Cookie"
+                    ],
+                    [
+                        "70-W",
+                        "Walnut",
+                        "Cookie"
+                    ],
+                    [
+                        "90-ALM-I",
+                        "Almond",
+                        "Tart"
+                    ],
+                    [
+                        "90-APIE-10",
+                        "Apple",
+                        "Pie"
+                    ],
+                    [
+                        "90-APP-11",
+                        "Apple",
+                        "Tart"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "Apricot",
+                        "Tart"
+                    ],
+                    [
+                        "90-BER-11",
+                        "Berry",
+                        "Tart"
+                    ],
+                    [
+                        "90-BLK-PF",
+                        "Blackberry",
+                        "Tart"
+                    ],
+                    [
+                        "90-BLU-11",
+                        "Blueberry",
+                        "Tart"
+                    ],
+                    [
+                        "90-CH-PF",
+                        "Chocolate",
+                        "Tart"
+                    ],
+                    [
+                        "90-CHR-11",
+                        "Cherry",
+                        "Tart"
+                    ],
+                    [
+                        "90-LEM-11",
+                        "Lemon",
+                        "Tart"
+                    ],
+                    [
+                        "90-PEC-11",
+                        "Pecan",
+                        "Tart"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 45,
+            "question": "Return a list of the id and flavor for Cakes ordered by flavor.",
+            "prediction": {
+                "sql": "SELECT Id, Flavor FROM goods ORDER BY Flavor",
+                "answer": [
+                    [
+                        "20-BC-C-10",
+                        "Chocolate"
+                    ],
+                    [
+                        "20-BC-L-10",
+                        "Lemon"
+                    ],
+                    [
+                        "20-CA-7.5",
+                        "Casino"
+                    ],
+                    [
+                        "24-8x10",
+                        "Opera"
+                    ],
+                    [
+                        "25-STR-9",
+                        "Strawberry"
+                    ],
+                    [
+                        "26-8x10",
+                        "Truffle"
+                    ],
+                    [
+                        "45-CH",
+                        "Chocolate"
+                    ],
+                    [
+                        "45-CO",
+                        "Coffee"
+                    ],
+                    [
+                        "45-VA",
+                        "Vanilla"
+                    ],
+                    [
+                        "46-11",
+                        "Napoleon"
+                    ],
+                    [
+                        "50-ALM",
+                        "Almond"
+                    ],
+                    [
+                        "50-APP",
+                        "Apple"
+                    ],
+                    [
+                        "50-APR",
+                        "Apricot"
+                    ],
+                    [
+                        "50-CH",
+                        "Chocolate"
+                    ],
+                    [
+                        "50-CHS",
+                        "Cheese"
+                    ],
+                    [
+                        "51-APP",
+                        "Apple"
+                    ],
+                    [
+                        "51-APR",
+                        "Apricot"
+                    ],
+                    [
+                        "51-ATW",
+                        "Almond"
+                    ],
+                    [
+                        "51-BC",
+                        "Almond"
+                    ],
+                    [
+                        "51-BLU",
+                        "Blueberry"
+                    ],
+                    [
+                        "70-GA",
+                        "Ganache"
+                    ],
+                    [
+                        "70-GON",
+                        "Gongolais"
+                    ],
+                    [
+                        "70-LEM",
+                        "Lemon"
+                    ],
+                    [
+                        "70-M-CH-DZ",
+                        "Chocolate"
+                    ],
+                    [
+                        "70-M-VA-SM-DZ",
+                        "Vanilla"
+                    ],
+                    [
+                        "70-MAR",
+                        "Marzipan"
+                    ],
+                    [
+                        "70-R",
+                        "Raspberry"
+                    ],
+                    [
+                        "70-TU",
+                        "Tuile"
+                    ],
+                    [
+                        "70-W",
+                        "Walnut"
+                    ],
+                    [
+                        "90-ALM-I",
+                        "Almond"
+                    ],
+                    [
+                        "90-APIE-10",
+                        "Apple"
+                    ],
+                    [
+                        "90-APP-11",
+                        "Apple"
+                    ],
+                    [
+                        "90-APR-PF",
+                        "Apricot"
+                    ],
+                    [
+                        "90-BER-11",
+                        "Berry"
+                    ],
+                    [
+                        "90-BLK-PF",
+                        "Blackberry"
+                    ],
+                    [
+                        "90-BLU-11",
+                        "Blueberry"
+                    ],
+                    [
+                        "90-CH-PF",
+                        "Chocolate"
+                    ],
+                    [
+                        "90-CHR-11",
+                        "Cherry"
+                    ],
+                    [
+                        "90-LEM-11",
+                        "Lemon"
+                    ],
+                    [
+                        "90-PEC-11",
+                        "Pecan"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 46,
+            "question": "Find all the items that have chocolate flavor but were not bought more than 10 times.",
+            "prediction": {
+                "sql": "SELECT i.* FROM items AS i INNER JOIN Receipt AS r ON i.Id = r.ItemId INNER JOIN Ordinal AS o ON r.Ordinal = o.Ordinal WHERE LOWER(i.Flavor) = LOWER('chocolate') AND o.Ordinal <= 10",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Receipt"
+            }
+        },
+        {
+            "id": 47,
+            "question": "What are the flavors available for Cake but not for Tart?",
+            "prediction": {
+                "sql": "SELECT Flavor FROM goods WHERE LOWER(Food) = LOWER('Cake') AND Flavor NOT IN (SELECT Flavor FROM goods WHERE LOWER(Food) = LOWER('Tart'))",
+                "answer": [
+                    [
+                        "Casino"
+                    ],
+                    [
+                        "Napoleon"
+                    ],
+                    [
+                        "Opera"
+                    ],
+                    [
+                        "Strawberry"
+                    ],
+                    [
+                        "Truffle"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 48,
+            "question": "What is the three most popular goods in this bakery?",
+            "prediction": {
+                "sql": "SELECT i.Name, COUNT(o.Ordinal) AS Count FROM Receipt r INNER JOIN Ordinal o ON r.ReceiptID = o.ReceiptID INNER JOIN Item i ON o.ItemID = i.ItemID GROUP BY i.Name ORDER BY Count DESC LIMIT 3",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such table: Receipt"
+            }
+        },
+        {
+            "id": 49,
+            "question": "Find the ids of customers who have spent more than 150 dollars in total.",
+            "prediction": {
+                "sql": "SELECT T1.CustomerId FROM receipts AS T1 INNER JOIN items AS T2 ON T1.ReceiptNumber = T2.Receipt GROUP BY T1.CustomerId HAVING SUM(T2.Price) > 150",
+                "answer": [],
+                "status": "sql_error",
+                "error": "no such column: T2.Price"
+            }
+        },
+        {
+            "id": 50,
+            "question": "Find the ids of customers whose average spending for each good is above 5.",
+            "prediction": {
+                "sql": "SELECT DISTINCT T1.CustomerId FROM receipts AS T1 INNER JOIN items AS T2 ON T1.ReceiptNumber = T2.Receipt INNER JOIN goods AS T3 ON T2.Item = T3.Id GROUP BY T1.CustomerId HAVING AVG(T3.Price) > 5",
+                "answer": [
+                    [
+                        "10"
+                    ],
+                    [
+                        "4"
+                    ]
+                ],
+                "status": "ok",
+                "error": null
+            }
+        },
+        {
+            "id": 51,
+            "question": "On which day did the bakery sell more than 100 dollars in total.",
+            "prediction": {
+                "sql": "SELECT T2.Date FROM items AS T1 INNER JOIN receipts AS T2 ON T1.Receipt = T2.ReceiptNumber WHERE T1.Item IN (SELECT Id FROM goods WHERE Price > 100)",
+                "answer": [],
+                "status": "ok",
+                "error": null
+            }
+        }
+    ]
+}
