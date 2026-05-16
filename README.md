@@ -123,7 +123,14 @@ Each run produces structured outputs used for evaluation and comparison.
 
 ---
 
+## Evaluation
 
+To evaluate the outputs of both pipelines, run:
+
+```bash
+python src/evaluation/run_evaluation.py
+```
+Results are saved in the evaluations/ directory.
 ---
 
 ## Key Idea
