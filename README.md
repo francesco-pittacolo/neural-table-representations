@@ -131,6 +131,7 @@ To evaluate the outputs of both pipelines, run:
 python src/evaluation/run_evaluation.py
 ```
 Results are saved in the evaluations/ directory.
+
 ---
 
 ## Key Idea
