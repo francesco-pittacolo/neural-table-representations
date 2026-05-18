@@ -145,4 +145,4 @@ The focus is on **behavioral differences and failure modes**, not absolute perfo
 
 ## Acknowledgements
 
-Built for the course *Advanced Topics in Computer Science* .
+Built for the course *Advanced Topics in Computer Science*.
