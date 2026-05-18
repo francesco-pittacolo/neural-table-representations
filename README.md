@@ -70,6 +70,18 @@ datasets = {
 ```python
 MODES = ["zero_shot", "few_shot"]
 ```
+### Resume Interrupted Runs
+
+```python
+RESUME = True
+```
+When enabled, the pipeline resumes from existing `.jsonl` output files and skips already completed examples.
+
+This is useful for:
+
+* Recovering from API rate limits or daily quotas
+* Continuing long-running experiments
+* Avoiding duplicate inference costs
 
 ---
 
